@@ -112,6 +112,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
+            android:name="com.codejam.amadeha.main.videos.youtube.videoTres"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name="com.codejam.amadeha.main.videos.youtube.VideoCuatro"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
@@ -121,23 +126,5 @@
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-
-        <!--Amadeha test-->
-        <activity
-            android:name="com.codejam.amadeha.test.MainActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="sensorLandscape" />
-        <activity
-            android:name="com.codejam.amadeha.test.MenuActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="sensorLandscape" />
-        <activity
-            android:name="com.codejam.amadeha.test.ActivityInstrucctions"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="Instrucciones"
-            android:screenOrientation="sensorLandscape"
-            android:theme="@android:style/Theme.Holo.Light.Dialog" />
-        <activity android:name="com.codejam.amadeha.main.videos.youtube.videoTres"></activity>
     </application>
-
 </manifest>
