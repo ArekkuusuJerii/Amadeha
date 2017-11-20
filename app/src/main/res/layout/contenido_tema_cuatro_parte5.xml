@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="194dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:id="@+id/justifyTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/layout8Matrices"
+                android:textSize="15sp"
+                android:textColor="@color/bg_screen3" />
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:id="@+id/justifyTextView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/titulo5Matrices"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/bg_screen3"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:id="@+id/justifyTextView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/layout9Matrices"
+                android:textSize="15sp"
+                android:textColor="@color/bg_screen3"/>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

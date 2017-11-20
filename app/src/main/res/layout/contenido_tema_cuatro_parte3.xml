@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/titulo4Matrices"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/bg_screen3"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:textSize="15sp"
+                android:text="@string/subtitulo1Matrices"
+                android:textColor="@color/bg_screen3"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/layout5Matrices"
+                android:textSize="15sp"
+                android:textColor="@color/bg_screen3"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/matrices4" />
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/layout6Matrices"
+                android:textSize="15sp"
+                android:textColor="@color/bg_screen3"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/matrices5" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

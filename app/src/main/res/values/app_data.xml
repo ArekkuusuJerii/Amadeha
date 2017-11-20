@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="load_duration">3000</integer>
+    <integer name="next_level_dutation">1350</integer>
+</resources>

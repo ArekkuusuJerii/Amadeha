@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="50dp">
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:id="@+id/justifyTextView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:textSize="15sp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/bg_screen3"
+                android:text="@string/layout2.1Conjuntos" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:textSize="15sp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/bg_screen3"
+                android:text="@string/layout3Conjuntos" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

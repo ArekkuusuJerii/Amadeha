@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cover_details"
+        android:layout_marginTop="31dp">
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="1dp"
+                android:text="@string/titulo2Estadistica" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/layout4Estadistica" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/estadistica1" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/layout5Estadistica" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

@@ -1,0 +1,111 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/background"
+             tools:context="com.codejam.amadeha.game.LevelsScreen$LevelFragment">
+
+    <ImageView
+        android:id="@+id/arrow_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:contentDescription="@string/app_name"
+        android:onClick="scroll"
+        app:srcCompat="@drawable/arrow_reverse"/>
+
+    <ImageView
+        android:id="@+id/arrow_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:contentDescription="@string/app_name"
+        android:onClick="scroll"
+        app:srcCompat="@drawable/arrow"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginEnd="90dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="90dp"
+            android:layout_marginStart="90dp"
+            android:contentDescription="@string/sets_game"
+            android:gravity="center_horizontal"
+            android:src="@drawable/conjuntos_text"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingEnd="60dp"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:paddingStart="60dp"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:id="@+id/_game"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/conjuntos"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <View
+                    style="@style/Divider"
+                    android:layout_margin="10sp"
+                    android:background="@android:color/darker_gray"/>
+
+                <Button
+                    android:id="@+id/play_game"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="20sp"
+                    android:layout_marginStart="20sp"
+                    android:background="@android:color/white"
+                    android:onClick="play"
+                    android:text="@string/jugar"/>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_margin="10sp"
+                    android:background="@android:color/darker_gray"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <ImageView
+        android:id="@+id/screen_block"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/game_blocked"/>
+    <TextView
+        android:id="@+id/screen_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:button="@drawable/check_box"
+        android:clickable="false"
+        android:text="@string/sets_unblock"/>
+</FrameLayout>

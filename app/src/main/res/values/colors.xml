@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00ab84</color>
+    <color name="colorPrimaryDark">#00305d</color>
+    <color name="colorAccent">#aa00ff</color>
+
+    <!-- Screens background -->
+    <color name="bg_screen1">#00ab84</color>
+    <color name="bg_screen2">#00305d</color>
+    <color name="bg_screen3">#ffffff</color>
+    <color name="bg_screen4">#00305d</color>
+    <color name="bg_screen5">#00ab84</color>
+
+    <!-- dots active colors -->
+    <color name="dot_active">#000000</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_inactive">#cccccc</color>
+
+    <color name="fontWhite">#ffffff</color>
+    <color name="fontBlack">#000000</color>
+
+    <!-- Game menu -->
+    <color name="lvl_1">#1565C0</color>
+    <color name="lvl_2">#0D47A1</color>
+
+    <!--Score menu -->
+    <color name="score_lvl_1">#00695C</color>
+    <color name="score_lvl_2">#004D40</color>
+</resources>

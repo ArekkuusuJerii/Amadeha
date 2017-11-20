@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/iconinicio"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_contenido"
+            android:icon="@drawable/iconlibro"
+            android:title="Teoría" />
+        <item
+            android:id="@+id/nav_videos"
+            android:icon="@drawable/iconvideo"
+            android:title="Vídeo tutoriales" />
+        <item
+            android:id="@+id/nav_jugando"
+            android:icon="@drawable/iconcontrol"
+            android:title="Aprende jugando" />
+    </group>
+
+    <item
+        android:id="@+id/navigation_subheader"
+        android:title="Otras opciones">
+        <menu>
+            <item
+                android:id="@+id/nav_puntaje"
+                android:icon="@drawable/icondesarrollador"
+                android:title="Créditos" />
+            <item
+                android:id="@+id/nav_c"
+                android:icon="@drawable/iconreferencia"
+                android:title="Referencias" />
+        </menu>
+    </item>
+
+</menu>

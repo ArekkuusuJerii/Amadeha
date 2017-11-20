@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo">
+
+    <!--Contenido desplazable -->
+
+    <RelativeLayout
+        android:id="@+id/rel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/cover_bg_details"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/matrix"
+            android:transitionName="selectedMovie" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:alpha="0.3"
+            android:background="#000000" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/cover_details"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="157dp"
+            android:background="@drawable/matrix"
+            android:scaleType="centerCrop"
+            app:riv_border_color="#ffffff"
+            app:riv_border_width="2dip" />
+
+        <TextView
+            android:id="@+id/txt_movie_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_plot_details"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@+id/cover_details"
+            android:layout_toRightOf="@+id/cover_details"
+            android:singleLine="true"
+            android:text="@string/titulo4"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_plot_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cover_bg_details"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="21dp"
+            android:layout_toEndOf="@+id/cover_details"
+            android:layout_toRightOf="@+id/cover_details"
+            android:paddingRight="10dp"
+            android:text="@string/objetivoUnidadCuatroTeoria"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/bg_screen3"
+            android:textSize="14sp" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/cover_details"
+            android:layout_marginTop="31dp">
+
+            <TableRow>
+
+                <TextView android:layout_width="15dp" />
+
+                <com.codejam.amadeha.main.JustifyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:textStyle="bold"
+                    android:text="@string/titulo1Matrices"
+                    android:textSize="15sp"
+                    android:textColor="@color/bg_screen3" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView android:layout_width="15dp" />
+
+                <com.codejam.amadeha.main.JustifyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:textSize="15sp"
+                    android:text="@string/layout1Matrices"
+                    android:textColor="@color/bg_screen3" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView android:layout_width="15dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:src="@drawable/matrices1" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView android:layout_width="15dp" />
+
+                <com.codejam.amadeha.main.JustifyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="@string/titulo2Matrices"
+                    android:textColor="@color/bg_screen3" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView android:layout_width="15dp" />
+
+                <com.codejam.amadeha.main.JustifyTextView
+                    android:id="@+id/justifyTextView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:textSize="15sp"
+                    android:text="@string/layout2Matrices"
+                    android:textColor="@color/bg_screen3" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,104 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:label="Creditos"
+    tools:context="com.codejam.amadeha.main.contenido.FragmentCreditos">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="Álgebra intermedia"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="Ángel, A., Petrie, D., Ibarra Mercado, V. (2008). Álgebra intermedia. México: Pearson Educación." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="20dp"
+            android:text="Álgebra lineal"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="Grossman, S. and Ibarra Escutia, J. (2016). Álgebra lineal. México, D.F:
+McGraw-Hill Interamericana." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="20dp"
+            android:text="Introducción a la probabilidad y estadística:"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="Mendenhall, W., Beaver, R., Beaver, B. Introduction to probability and statistics." />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp">
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_weight="5"
+                        android:src="@drawable/algebraintermedia" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_weight="5"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/algebralineal" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_weight="5"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/estadisticadescriptiva" />
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

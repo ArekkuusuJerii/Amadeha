@@ -1,0 +1,78 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:label="Contenidos"
+    tools:context="com.codejam.amadeha.main.contenido.FragmentContenido">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager_contenido"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:paddingTop="20dp" />
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/indicador_contenido"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dip"
+            android:paddingTop="250dp" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+                <TextView android:layout_width="15dp"/>
+
+                <com.codejam.amadeha.main.JustifyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/contenido1Fragment" />
+            </TableRow>
+
+            <TableRow>
+                <TextView android:layout_width="15dp"/>
+
+                <com.codejam.amadeha.main.JustifyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/contenido2Fragment" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"/>
+
+        <Button
+            android:id="@+id/btn_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView7"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryDark"
+            android:text="Estudiar"
+            android:textColor="@color/bg_screen3" />
+    </LinearLayout>
+</FrameLayout>

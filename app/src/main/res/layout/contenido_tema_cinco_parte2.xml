@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cover_details"
+        android:layout_marginTop="31dp">
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="1dp"
+                android:text="@string/layout2Estadistica" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/subtitulo2Estadistica" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/layout3Estadistica" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
