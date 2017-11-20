@@ -22,9 +22,9 @@
 
     <string name="equation_unblock">Para desploquear este nivel consigue 20+ puntos en Funciones</string>
     <string name="function_unblock">Para desploquear este nivel consigue…</string>
-    <string name="statistic_unblock">Para desploquear este nivel consigue…</string>
-    <string name="sets_unblock">Para desploquear este nivel consigue…</string>
-    <string name="matrix_unblock">Para desploquear este nivel consigue…</string>
+    <string name="statistic_unblock">Para desploquear este nivel consigue 20+ puntos en Matrices</string>
+    <string name="sets_unblock">Para desploquear este nivel consigue 8+ puntos en Estadística</string>
+    <string name="matrix_unblock">Para desploquear este nivel consigue 8+ puntos en Ecuaciones</string>
 
     <!--Amadeha level menus-->
     <string name="pause_button">Pausa</string>
@@ -70,7 +70,7 @@
     <string name="delete_highscores_question">¿Desea eliminar los HighScores?</string>
 
     <!--Amadeha setting-->
-    <string name="settings">Settings</string>
+    <string name="settings">Configuración</string>
     <string name="volume_effects">Volumen de Efectos</string>
     <string name="volume_musics">Volumen de Música</string>
     <string name="volume">Volumen:</string>

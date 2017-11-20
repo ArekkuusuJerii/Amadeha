@@ -21,39 +21,34 @@ import com.codejam.amadeha.game.levels.statistic.StatisticScreen;
  */
 
 public enum Game {
-    EQUATION (EquationScreen.class,  Equation.class,  R.layout.fragment_equation,  R.raw.equation){
+    EQUATION(EquationScreen.class, Equation.class, R.layout.fragment_equation, R.raw.equation) {
         @Override
         public boolean canUnblock(Game from, Score score) {
             return from == FUNCTION && score.getScore() >= 20;
         }
     },
-    FUNCTION (FunctionScreen.class,  Function.class,  R.layout.fragment_function,  R.raw.function){
+    FUNCTION(FunctionScreen.class, Function.class, R.layout.fragment_function, R.raw.function) {
         @Override
         public boolean isUnblocked(User user) {
             return true;
         }
     },
-    STATISTIC(StatisticScreen.class, Statistic.class, R.layout.fragment_statistic, R.raw.statistic){
+    STATISTIC(StatisticScreen.class, Statistic.class, R.layout.fragment_statistic, R.raw.statistic) {
         @Override
         public boolean canUnblock(Game from, Score score) {
-            return from == FUNCTION && score.getScore() >= 20;
+            return from == MATRIX && score.getScore() >= 20;
         }
     },
-    SETS     (SetsScreen.class,      Sets.class,      R.layout.fragment_sets,      R.raw.sets){
+    SETS(SetsScreen.class, Sets.class, R.layout.fragment_sets, R.raw.sets) {
         @Override
         public boolean canUnblock(Game from, Score score) {
-            return from == FUNCTION && score.getScore() >= 20;
+            return from == STATISTIC && score.getScore() >= 8;
         }
     },
-    MATRIX   (MatrixScreen.class,    Matrix.class,    R.layout.fragment_matrix,    R.raw.matrix){
-        @Override
-        public boolean isUnblocked(User user) {
-            return true;
-        }
-
+    MATRIX(MatrixScreen.class, Matrix.class, R.layout.fragment_matrix, R.raw.matrix) {
         @Override
         public boolean canUnblock(Game from, Score score) {
-            return from == FUNCTION && score.getScore() >= 20;
+            return from == EQUATION && score.getScore() >= 8;
         }
     };
 
