@@ -87,12 +87,17 @@ public class FunctionScreen extends LevelBase implements ITickable {
         }
         if (level == cards.size() / 2) {
             canSelectCard = false;
-            if(getScore() <= 0) {
-                lose.play();
-            } else {
-                win.play();
-            }
-            setGameOver();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if(getScore() <= 0) {
+                        lose.play();
+                    } else {
+                        win.play();
+                    }
+                    gameover();
+                }
+            }, 2000);
         }
     }
 
@@ -142,7 +147,7 @@ public class FunctionScreen extends LevelBase implements ITickable {
 
     @Override
     public int getScore() {
-        return !isGameOver() ? score : Math.min(0, score);
+        return !isGameOver() ? score : ((score > 0) ? score : 0);
     }
 
     @Override
