@@ -1,7 +1,6 @@
 package com.codejam.amadeha.game.core.widget;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
 /**
@@ -31,22 +30,28 @@ public class TextMatrix extends AutoResizeTextView {
     }
 
     public void setMatrixArray(int[][] matrixArray) {
-        this.matrixArray = matrixArray;
-
-        StringBuilder chars = new StringBuilder();
-        for (int i = 0, length = matrixArray.length; i < length; i++) {
-            int[] row = matrixArray[i];
-            for (int j = 0, rows = row.length; j < rows; j++) {
-                int c = row[j];
-                chars.append(c);
-                if(j != rows - 1) {
-                    chars.append(" ");
+        if(matrixArray != null) {
+            this.matrixArray = matrixArray;
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0, length = matrixArray.length; i < length; i++) {
+                int[] row = matrixArray[i];
+                for (int j = 0, rows = row.length; j < rows; j++) {
+                    int c = row[j];
+                    builder.append(c);
+                    if (j != rows - 1) {
+                        builder.append(" ");
+                    }
+                }
+                if (i != length - 1) {
+                    builder.append("\n");
                 }
             }
-            if(i != length - 1) {
-                chars.append("\n");
-            }
+            setMaxLines(matrixArray.length);
+            setMinLines(matrixArray.length);
+            setText(builder.toString());
+        } else {
+            this.matrixArray = null;
+            setText("");
         }
-        setText(chars.toString());
     }
 }

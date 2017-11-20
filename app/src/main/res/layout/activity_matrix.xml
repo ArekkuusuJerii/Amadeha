@@ -75,188 +75,197 @@
 
     </LinearLayout>
 
+    <View
+        style="@style/Divider"
+        android:layout_margin="10dp"
+        android:background="@android:color/darker_gray"/>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TableRow
-            android:id="@+id/top"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#40FFFFFF"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="#40FFFFFF">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.1"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0"
                 android:gravity="center"
+                android:scaleY="1.7"
                 android:text="@string/bracket_left"
                 android:textSize="120sp"/>
 
             <com.codejam.amadeha.game.core.widget.TextMatrix
-                android:id="@+id/matrix_0"
+                android:id="@+id/matrix_x"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
-                android:textSize="40sp"/>
+                android:textSize="120sp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.1"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0"
                 android:gravity="center"
+                android:scaleY="1.7"
                 android:text="@string/bracket_right"
                 android:textSize="120sp"/>
 
             <TextView
                 android:id="@+id/_operation"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0"
+                android:gravity="center"
                 android:text="@string/question_mark"
                 android:textSize="36sp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.1"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0"
                 android:gravity="center"
+                android:scaleY="1.7"
                 android:text="@string/bracket_left"
                 android:textSize="120sp"/>
 
             <com.codejam.amadeha.game.core.widget.TextMatrix
-                android:id="@+id/matrix_1"
+                android:id="@+id/matrix_y"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
-                android:textSize="40sp"/>
+                android:textSize="120sp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.1"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0"
                 android:gravity="center"
+                android:scaleY="1.7"
                 android:text="@string/bracket_right"
                 android:textSize="120sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0"
+                android:gravity="center"
                 android:text="@string/equals"
                 android:textSize="36sp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.1"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0"
                 android:gravity="center"
+                android:scaleY="1.7"
                 android:text="@string/bracket_left"
                 android:textSize="120sp"/>
 
-            <com.codejam.amadeha.game.core.widget.TextMatrix
+            <TableLayout
                 android:id="@+id/matrix_answer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#40FFFFFF"
-                android:gravity="center"
-                android:textSize="40sp"/>
+                android:layout_width="175dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+            </TableLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.1"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0"
                 android:gravity="center"
+                android:scaleY="1.7"
                 android:text="@string/bracket_right"
                 android:textSize="120sp"/>
         </TableRow>
 
         <View
             style="@style/Divider"
-            android:layout_margin="10sp"
+            android:layout_margin="10dp"
             android:background="@android:color/darker_gray"/>
 
-        <LinearLayout
+        <!--<TableRow
             android:id="@+id/bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
+            android:layout_weight="0.1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TableRow
+            <com.codejam.amadeha.game.core.widget.TextMatrix
+                android:id="@+id/answer_0"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:text="@string/question_mark"
+                android:textSize="30sp"/>
 
-                <com.codejam.amadeha.game.core.widget.TextMatrix
-                    android:id="@+id/answer_0"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5sp"
-                    android:layout_marginEnd="5sp"
-                    android:layout_marginStart="5sp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/question_mark"
-                    android:textSize="30sp"/>
+            <com.codejam.amadeha.game.core.widget.TextMatrix
+                android:id="@+id/answer_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/question_mark"
+                android:textSize="30sp"/>
 
-                <com.codejam.amadeha.game.core.widget.TextMatrix
-                    android:id="@+id/answer_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5sp"
-                    android:layout_marginEnd="5sp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/question_mark"
-                    android:textSize="30sp"/>
+            <com.codejam.amadeha.game.core.widget.TextMatrix
+                android:id="@+id/answer_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/question_mark"
+                android:textSize="30sp"/>
 
-                <com.codejam.amadeha.game.core.widget.TextMatrix
-                    android:id="@+id/answer_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5sp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/question_mark"
-                    android:textSize="30sp"/>
+            <com.codejam.amadeha.game.core.widget.TextMatrix
+                android:id="@+id/answer_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/question_mark"
+                android:textSize="30sp"/>
 
-                <com.codejam.amadeha.game.core.widget.TextMatrix
-                    android:id="@+id/answer_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5sp"
-                    android:layout_marginStart="5sp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/question_mark"
-                    android:textSize="30sp"/>
-
-                <com.codejam.amadeha.game.core.widget.TextMatrix
-                    android:id="@+id/answer_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5sp"
-                    android:layout_marginEnd="5sp"
-                    android:layout_marginStart="5sp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/question_mark"
-                    android:textSize="30sp"/>
-            </TableRow>
-        </LinearLayout>
+            <com.codejam.amadeha.game.core.widget.TextMatrix
+                android:id="@+id/answer_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/question_mark"
+                android:textSize="30sp"/>
+        </TableRow>-->
     </TableLayout>
 </LinearLayout>
