@@ -20,11 +20,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
                 android:text="@string/layout8Matrices"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/bg_screen3" />
         </TableRow>
         <TableRow>
@@ -36,11 +34,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
                 android:text="@string/titulo5Matrices"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/bg_screen3"/>
         </TableRow>
@@ -53,11 +49,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
                 android:text="@string/layout9Matrices"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/bg_screen3"/>
         </TableRow>
     </TableLayout>

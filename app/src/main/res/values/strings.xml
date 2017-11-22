@@ -117,34 +117,36 @@
     <string name="titulo4">Matrices</string>
     <string name="titulo5">Estadística descriptiva</string>
 
-    <string name="objetivoUnidadUnoTeoria">Objetivo: Clasificar los diferentes tipos de conuntos y operaciones.</string>
+    <string name="objetivoUnidadUnoTeoria">Objetivo: Clasificar los diferentes tipos de conjuntos y operaciones.</string>
     <string name="objetivoUnidadDosTeoria">Objetivo: Diferenciar las relaciones y funciones para poder representar la asociación y el comportamiento de elementos.</string>
     <string name="objetivoUnidadTresTeoria">Objetivo: Conocer y entender el sistema de ecuaciones lineales y sus conceptos básicos.</string>
     <string name="objetivoUnidadCuatroTeoria">Objetivo: Conocer los conceptos básicos de las matrices y sus variadas operaciones.</string>
     <string name="objetivoUnidadCincoTeoria">Objetivo: Interpretar la información para establecer el comportamiento de los datos que se le presenten en su día a día.</string>
 
-    <string name="objetivoUnidadUnoVídeos">Objetivo: Entender los diferentes tipos de conunto y operaciones.</string>
+
+    <string name="objetivoUnidadUnoVídeos">Objetivo: Entender los diferentes tipos de conjunto y operaciones.</string>
     <string name="objetivoUnidadDosVídeos">Objetivo: Detectar las relaciones y funciones para poder representar la asociación y el comportamiento de elementos.</string>
     <string name="objetivoUnidadTresVídeos">Objetivo: Apreciar y entender el sistema de ecuaciones lineales y sus conceptos básicos.</string>
     <string name="objetivoUnidadCuatroVídeos">Objetivo: Deducir los conceptos básicos de las matrices y sus variadas operaciones.</string>
     <string name="objetivoUnidadCincoVídeos">Objetivo: Asociar la información para establecer el comportamiento de los datos que se le presenten en su día a día.</string>
 
-    <string name="videosFragment">Entonces… ¡Te encuantras en el lugar indicado!, aquí encontrarás diferentes vídeos explicativos referente a cada unidad de la materia que te ayudarán a estudiar de una manera más divertida.\n</string>
+    <string name="videosFragment">Entonces... ¡Te encuentras en el lugar indicado!, aquí encontrarás diferentes vídeos explicativos referente a cada unidad de la materia que te ayudarán a estudiar de una manera más divertida.\n</string>
     <string name="contenido1Fragment">Bienvenidos (as) al apartado del contenido teórico que AMADEHA te tiene preparado para ayudarte de una forma concreta y rápida en tus clases.\n</string>
     <string name="contenido2Fragment">Aquí encontrarán contenido básico de cada una de las unidades que abarca la materia de \nDesarrollo de habilidades del pensamiento matemático.</string>
-    <string name="fragmentJuegos">Bien, entonces les deceamos mucha suerte porque aquí encontrarán ejercicios que los pondra a pensar.\n</string>
+    <string name="fragmentJuegos">Bien, entonces les deseamos mucha suerte porque aquí encontrarán ejercicios que los pondrá a pensar.\n</string>
+
     //Teoría
-    <string name="titulo1Cojuntos">Identificar conjutos \n</string>
+    <string name="titulo1Cojuntos">Identificar conjuntos \n</string>
     <string name="titulo1Funciones">Localizar puntos en el sistema de coordenadas cartesianas.\n</string>
     <string name="titulo1Ecuaciones">Resolución de ecuaciones lineales\n</string>
-    <string name="titulo2Ecuaciones">Formula cuadrática\n</string>
+    <string name="titulo2Ecuaciones">Fórmula cuadrática\n</string>
     <string name="titulo1Matrices">Vector renglón de n componentes\n</string>
     <string name="titulo2Matrices">\nVector columna de n componentes\n</string>
     <string name="titulo3Matrices">Matriz \n</string>
     <string name="titulo4Matrices">Localización de las componentes de una matriz:\n</string>
     <string name="titulo5Matrices">\nIgualdad de matrices\n</string>
     <string name="titulo1Estadistica">Descripción de datos por medio de gráficas\n</string>
-    <string name="titulo2Estadistica">\nDescripción de datos con medidas numéricas\n</string>
+    <string name="titulo2Estadistica">Descripción de datos con medidas numéricas\n</string>
 
     <string name="subtitulo1Conjuntos">\nUnión e intersección de conjuntos \n</string>
     <string name="subtitulo2Conjuntos">\nUnión \n</string>
@@ -170,17 +172,16 @@ Otro importante conjunto  infinito es el de enteros. El conjunto de enteros es: 
 I = {…, -4, -3, -2, -1, 0, 1, 2, 3, 4,…} \n\n
 Observe que el conjunto de enteros incluye tanto a los enteros positivos como a los negativos y al número cero, 0. \n\n
 Si escribimos \n\n
-D = {1, 2, 3, 4, 5,…, 163} \n
-Queremos decir que el conjunto continúa de la misma manera hasta el número 163. El conjunto D es el conjunto de los primeros 163 números naturales, por tanto D es un conjunto finito.\n\n</string>
+D = {1, 2, 3, 4, 5,…, 163} \n\n</string>
+    <string name="layout3Conjuntos1.1">Queremos decir que el conjunto continúa de la misma manera hasta el número 163. El conjunto D es el conjunto de los primeros 163 números naturales, por tanto D es un conjunto finito.\n\n</string>
     <string name="layout4Conjuntos">Un conjunto especial que no tiene elementos se llama el conjunto nulo o conjunto vacío, se escribe { } o ∅. Por ejemplo, el conjunto de estudiantes en su clase que tienen más de 150 años es el conjunto vacío o nulo.\n</string>
     <string name="layout5Conjuntos">Al igual que operaciones tales como la suma y la multiplicación se realizan sobre los números, existen operaciones que pueden realizarse sobre conjuntos. Dos operaciones de conjuntos son la unión y la intersección. \n</string>
-    <string name="layout6Conjuntos">La unión del conjunto A y el conjunto B, escrita A ∪ B, es el conjunto de elementos que pertenecen al conjunto A o al conjunto B.\n
-Ejemplos de unión de conjuntos\n
-A = {1, 2, 3, 4, 5},	B = {3, 4, 5, 6, 7},	A ∪ B = {1, 2, 3, 4, 5, 6, 7}\n
-A = {a, b, c, d, e},	B = {x, y, z},		A ∪ B = {a, b, c, d, e, x, y, z} \n
-En la notación constructiva de conjuntos podemos expresar a A ∪ B como \n
-A ∪ B = {x | x ∈ A o x ∈ B}\n
-</string>
+    <string name="layout6Conjuntos">La unión del conjunto A y el conjunto B, escrita A ∪ B, es el conjunto de elementos que pertenecen al conjunto A o al conjunto B.\n\n
+Ejemplos de unión de conjuntos\n\n
+A = {1, 2, 3, 4, 5},	B = {3, 4, 5, 6, 7},	A ∪ B = {1, 2, 3, 4, 5, 6, 7}\n\n
+A = {a, b, c, d, e},	B = {x, y, z},		A ∪ B = {a, b, c, d, e, x, y, z} \n\n
+En la notación constructiva de conjuntos podemos expresar a A ∪ B como \n\n
+A ∪ B = {x | x ∈ A o x ∈ B}\n</string>
     <string name="layout7Conjuntos">La intersección del conjunto A y el conjunto B, denotada A ∩ B, es el conjunto de todos los elementos que son comunes a ambos conjuntos A y B.\n\n
 Ejemplos de intersección de conjuntos\n \n
 A = {1, 2, 3, 4, 5},		B = {3, 4, 5, 6, 7},		A ∩ B = {3, 4, 5}\n\n
@@ -188,13 +189,15 @@ A = {a, b, c, d, e},		B = {x, y, z},			A ∩ B = {  }\n\n
 Observe que en el último ejemplo, los conjuntos A y B no tienen elementos en común. Por lo tanto, su intersección es el conjunto vacío. En la notación constructiva de conjuntos podemos expresar A ∩ B como \n\n
 A ∩ B = {x | x ∈ A y x ∈ B}\n
 </string>
+
     //Funciones
     <string name="layout1Funciones">Una gráfica es una imagen que muestra la relación entre dos o más variables de una ecuación. \n\n
 	El sistema de coordenadas cartesiano (o rectangular), consiste en dos ejes (o rectas numéricas) en un plano, dibujado de forma perpendicular una de la otra. Observe cómo los dos ejes determinan cuadrantes, etiquetados con numerales romanos.\n
 </string>
-    <string name="layout2Funciones">\nIniciando en el origen y moviéndose hacia la derecha, los números creen, moviéndose a la izquierda los números decrecen. \n\n</string>
+    <string name="layout2Funciones">\nIniciando en el origen y moviéndose hacia la derecha, los números crecen, moviéndose a la izquierda los números decrecen. \n\n</string>
     <string name="layout3Funciones">Un par ordenado (x, y) se utiliza para dar las dos coordenadas de un punto. La coordenada x siempre es la primera coordenada en el par ordenado.\n\n
 Localizando el punto correspondiente al par ordenado:    (2,3)\n</string>
+
     //Ecuaciones
     <string name="layout1Ecuaciones">Propiedad de la igualdad\n
 Para todos los números reales a, b y c:\n\n
@@ -219,34 +222,28 @@ Si x = a y a = 4y, entonces x = 4y.\n
     <string name="layout4Ecuaciones">Dos o más ecuaciones con el mismo conjunto de solución son ecuaciones equivalentes. Por lo general las ecuaciones equivalentes más simples.\n</string>
     <string name="layout5Ecuaciones">Una ecuación lineal es aquella que puede escribirse en la forma ax+b=c,a≠0.\n
 Para resolver ecuaciones, aplicamos las propiedades de suma y multiplicación de la igualdad para aislar la variable en un lado del signo igual.\n\n</string>
-
     <string name="layout5Ecuaciones1.1">Propiedad de la suma para la igualdad\n\n</string>
     <string name="layout5Ecuaciones1.2">Si a = b, entonces a + b = b+ c para cualesquiera a, b y c.\n</string>
     <string name="layout6Ecuaciones">La propiedad de la suma para la igualdad establece que podemos sumar el mismo número en ambos lados de una ecuación sin cambiar la solución de la ecuación original. Como la resta está definida en términos de una suma, la propiedad de la suma para la igualdad también nos permite restar el mismo número en ambos lados de una ecuación.\n</string>
     <string name="layout6Ecuaciones1.1">Propiedad de la multiplicación para la igualdad\n\n</string>
-    <string name="layout6Ecuaciones1.2">
-Si a = b, entonces a*c=b*c para cualesquiera a, b y c.\n\n
-La propiedad de la multiplicación para la igualdad establece que podemos multiplicar ambos lados de una ecuación por el mismo número sin cambiar la solución. Como la división está definida en términos de la multiplicación, la propiedad de la multiplicación para la igualdad también nos permite dividir ambos lados de una ecuación por el mismo número distinto de cero.\n
-\nCon frecuencia, para resolver una ecuación tendremos que aplicar una combinación de propiedades a fin de aislar la variable. Nuestra meta es tener la variable completamente sola en un lado de la ecuación (para aislar la variable).\n \nA continuación damos un procedimiento general para resolver ecuaciones lineales.\n</string>
+    <string name="layout6Ecuaciones1.2">Si a = b, entonces a*c=b*c para cualesquiera a, b  y  c.\n\nLa propiedad de la multiplicación para la igualdad establece que podemos multiplicar ambos lados de una ecuación por el mismo número sin cambiar la solución. Como la división está definida en términos de la multiplicación, la propiedad de la multiplicación para la igualdad también nos permite dividir ambos lados de una ecuación por el mismo número distinto de cero.\n\n</string>
+    <string name="layout6Ecuaciones1.3">Con frecuencia, para resolver una ecuación tendremos que aplicar una combinación de propiedades a fin de aislar la variable. Nuestra meta es tener la variable completamente sola en un lado de la ecuación (para aislar la variable).\n \nA continuación damos un procedimiento general para resolver ecuaciones lineales.\n</string>
     <string name="layout7Ecuaciones">Para resolver ecuaciones lineales\n\n</string>
-    <string name="layout7Ecuaciones1.1">
-1.	Quite fracciones. Si la ecuación contiene fracciones, elimínelas multiplicando ambos lados de la ecuación por el mínimo común denominador.\n\n
-2.	Simplifique cada lado de forma separada. Simplifique cada lado de la ecuación tanto como sea posible. Utilice la propiedad distributiva para eliminar paréntesis y reduzca términos semejantes como sea necesario.\n\n
-3.	Aísle el término variable en un lado. Utilice la propiedad de la suma para dejar todos los términos que contienen la variable en un lado de la ecuación y todos los términos constantes en el otro lado. Para hacer esto quizá se requiera aplicar varias veces la propiedad de la suma.\n\n
-4.	Despeje la variable. Aplique la propiedad de la multiplicación para obtener una ecuación que tenga sola la variable (con un coeficiente de 1) en un lado.\n\n
-5.	Compruebe. Verifique, mediante sustitución, la solución obtenida en el paso 4 en la ecuación original.\n</string>
-    <string name="layout9Ecuaciones">La fórmula cuadrática puede usarse para resolver cualquier ecuación cuadrática. De hecho, es el método más útil u versátil para resolver ecuaciones cuadráticas. Por su eficiencia, por lo general se le utiliza en lugar del método de completar el cuadrado.\n\n
-	La fórmula general de una ecuación cuadrática es ax2 + bx + c = 0, donde a es el coeficiente del termino cuadrático, b es el coeficiente del término del primer grado y c es la constante.\n\n
+    <string name="layout7Ecuaciones1.1">1.	Quite fracciones. Si la ecuación contiene fracciones, elimínelas multiplicando ambos lados de la ecuación por el mínimo común denominador.\n\n2.	Simplifique cada lado de forma separada. Simplifique cada lado de la ecuación tanto como sea posible. Utilice la propiedad distributiva para eliminar paréntesis y reduzca términos semejantes como sea necesario.\n\n</string>
+    <string name="layout7Ecuaciones1.2">3.	Aísle el término variable en un lado. Utilice la propiedad de la suma para dejar todos los términos que contienen la variable en un lado de la ecuación y todos los términos constantes en el otro lado. Para hacer esto quizá se requiera aplicar varias veces la propiedad de la suma.\n\n4.	Despeje la variable. Aplique la propiedad de la multiplicación para obtener una ecuación que tenga sola la variable (con un coeficiente de 1) en un lado.\n\n5.	Compruebe. Verifique, mediante sustitución, la solución obtenida en el paso 4 en la ecuación original.\n</string>
+    <string name="layout9Ecuaciones">La fórmula cuadrática puede usarse para resolver cualquier ecuación cuadrática. De hecho, es el método más útil u versátil para resolver ecuaciones cuadráticas. Por su eficiencia, por lo general se le utiliza en lugar del método de completar el cuadrado.\n\n</string>
+    <string name="layout9Ecuaciones1.1">La fórmula general de una ecuación cuadrática es ax2 + bx + c = 0, donde a es el coeficiente del término cuadrático, b es el coeficiente del término del primer grado y c es la constante.\n\n
     Podemos deducir la fórmula cuadrática empezando con una ecuación cuadrática dada en la fórmula general y completando el cuadrado.\n</string>
     <string name="layout10Ecuaciones">1.- Escriba la ecuación cuadrática en la fórmula general, ax^2+bx+c=0, y determine los valores numéricos, de a b y c.\n\n
-2.- Sustituya a, b y c con los valores correspondientes en la formula general cuadrática, y luego evalué la fórmula para obtener la solución.\n</string>
+2.- Sustituya a, b y c con los valores correspondientes en la fórmula general cuadrática, y luego evalúe la fórmula para obtener la solución.\n</string>
     <string name="layout11Ecuaciones">Ejemplo:  \n\n
 Resuelva la ecuación x^2+2x-8=0 mediante la fórmula cuadrática.\n
 Solución En esta ecuación a = 1, b = 2 y c = -8.\n</string>
     <string name="layout12Ecuaciones">Si realiza una comprobación descubrirá que tanto 2 como -4 son soluciones para la ecuación. Observe que las soluciones para la ecuación son dos números reales.\n\n
 La solución del ejemplo también se puede obtener mediante la factorización, tal y como se muestra a continuación.\n</string>
-    <string name="layout13Ecuaciones">NOTA: Cuando tenga que resolver una ecuación cuadrática sin especificar el método, primero trate, mediante factorización. Si la ecuación no se puede factorizar con facilidad, utilice la formula cuadrática.\n</string>
+    <string name="layout13Ecuaciones">NOTA: Cuando tenga que resolver una ecuación cuadrática sin especificar el método, primero trate, mediante factorización. Si la ecuación no se puede factorizar con facilidad, utilice la fórmula cuadrática.\n</string>
     <string name="layout14Ecuaciones">\nAl resolver una ecuación cuadrática mediante la fórmula cuadrática los cálculos pueden ser más sencillos si el coeficiente principal, a, es positivo, Por lo tanto, si tuviera que resolver una ecuación cuadrática como: 〖-x〗^2+3x-8=0, sería recomendable que la reescribiera como x^2-3x-8=0\n</string>
+
     //Matrices
     <string name="layout1Matrices">Es definido como un conjunto ordenado de n números escritos como se muestra en la figura 4.1, a este vector se le llama vector renglón i o fila:\n</string>
     <string name="layout2Matrices">Conjunto ordenado de n números escritos como se muestra en la figura 4.2, a este vector se le llama columna j:\n</string>
@@ -257,32 +254,28 @@ La solución del ejemplo también se puede obtener mediante la factorización, t
     <string name="layout7Matrices">En las siguientes matrices sombreadas se puede ver que la componente (3, 1) es 7 y la componente (2, 2) es -3:\n</string>
     <string name="layout8Matrices">(El elemento aij de una matriz se localiza en la fila i y en la comuna j.)\n</string>
     <string name="layout9Matrices">Dos matrices A= (aij) y B= (bij) son iguales si (1) son del mismo tamaño y (2) las componentes correspondientes son iguales.\n</string>
+
     //Estadistica
     <string name="layout1Estadistica">Definiciones\n\n
 Una variable es una característica que cambia o varía con el tiempo o para diferentes personas u objetos.\n\n
 Una unidad experimental es el individuo u objeto en el que se mide una variable. Resulta una sola medición o datos cuando una variable se mide en realidad en  una unidad experimental.\n</string>
     <string name="layout2Estadistica">Una población es el conjunto de mediciones de interés para el investigador.\n\n
 Una muestra es un subconjunto de mediciones seleccionado de la población.\n</string>
-    <string name="layout3Estadistica">Las variables cualitativas miden una cualidad o característica en cada unidad experimental. Las variables cuantitativas miden una cantidad numérica en cada unidad experimental.\n\n
-Las variables cualitativas producen datos que se clasifican de acuerdo a similitudes o diferencias en clase; por lo tanto con frecuencias se denominan datos categóricos. Las variables con género, año y especialidad son variables cualitativas que producen datos categóricos.\n\n
-Las variables cuantitativas, con frecuencia representadas por la letra x, producen datos numéricos.\n\n
-Una variable discreta toma sólo un número finito o contable de valores. Una variable continual puede tomar infinitamente muchos valores correspondientes a los puntos en un intervalo de recta.\n\n</string>
-    <string name="layout4Estadistica">Definiciones\n\n
-        La media aritmética o romedio de un conjunto de n mediciones es igual a la suma de las mediciones dividida entre n.\n\n</string>
-    <string name="layout5Estadistica">\nLa mediana m de un conjunto de n mediciones es el valor de x que cae en la posición cuando las mediciones son ordenadas de menor a mayor.\n\n
-La moda es la categoría o el valor de x que se presenta con más frecuencia. Cuando las mediciones en una variable continua se han agrupado como histograma de frecuencia o de frecuencia relativa, la clase con el pico más alto o frecuencia se llama clase modal, y el punto medio de esa clase se toma como la moda.\n\n</string>
-    <string name="layout6Estadistica">Definiciones\n\n
-El rando, R, de un conjunto de n mediciones se define como la diferencia entre la medición más grande y la más pequeña.\n\n
-La varianza de una población de N mediciones es el promedio de los cuadrados de las desviaciones de las mediciones alrededor de su media µ. La varianza poblacional se denota con σ^2 y está dada por la fórmula\n</string>
-    <string name="layout7Estadistica">La varianza de una muestra de n mediciones es la suma de las desviaciones cuadradas de las mediciones alrededor de la media x ̅ dividida entre (n - 1). La varianza muestral se denota con s^2 y está dada por la fórmula \n</string>
+    <string name="layout3Estadistica">Las variables cualitativas miden una cualidad o característica en cada unidad experimental. Las variables cuantitativas miden una cantidad numérica en cada unidad experimental.\n\nLas variables cualitativas producen datos que se clasifican de acuerdo a similitudes o diferencias en clase; por lo tanto con frecuencias se denominan datos categóricos. Las variables con género, año y especialidad son variables cualitativas que producen datos categóricos.\n\nLas variables cuantitativas, con frecuencia representadas por la letra x, producen datos numéricos.\n\n</string>
+    <string name="layout3Estadistica1.1">Una variable discreta toma sólo un número finito o contable de valores. Una variable continua puede tomar infinitamente muchos valores correspondientes a los puntos en un intervalo de recta.\n</string>
+    <string name="layout4Estadistica">Definiciones\n\nLa media aritmética o promedio de un conjunto de n mediciones es igual a la suma de las mediciones dividida entre n.\n</string>
+    <string name="layout5Estadistica">\nLa mediana m de un conjunto de n mediciones es el valor de x que cae en la posición cuando las mediciones son ordenadas de menor a mayor.\n</string>
+    <string name="layout5Estadistica1.1">La moda es la categoría o el valor de x que se presenta con más frecuencia. Cuando las mediciones en una variable continua se han agrupado como histograma de frecuencia o de frecuencia relativa, la clase con el pico más alto o frecuencia se llama clase modal, y el punto medio de esa clase se toma como la moda.\n</string>
+    <string name="layout6Estadistica">Definiciones\n\nEl rango, R, de un conjunto de n mediciones se define como la diferencia entre la medición más grande y la más pequeña.\n\nLa varianza de una población de N mediciones es el promedio de los cuadrados de las desviaciones de las mediciones alrededor de su media µ. La varianza poblacional se denota con σ^2 y está dada por la fórmula:\n</string>
+    <string name="layout7Estadistica">La varianza de una muestra de n mediciones es la suma de las desviaciones cuadradas de las mediciones alrededor de la media x ̅ dividida entre (n - 1). La varianza muestral se denota con s^2 y está dada por la fórmula: \n</string>
     <string name="layout8Estadistica">\nLa desviación estándar de un conjunto de mediciones es igual a la raíz cuadrada positiva de la varianza.\n\n</string>
 
     //Inicio
-    <string name="teoriaC"><u>Teoría de conjuntos\n</u></string>
-    <string name="funcion"><u>Relaciones y funciones\n</u></string>
-    <string name="ecuaciones"><u>Sistema de ecuaciones\nlineales</u></string>
-    <string name="matrices"><u>Matrices\n</u></string>
-    <string name="estadisticaD"><u>Estadística descriptiva\n</u></string>
+    <string name="teoriaC">Teoría de conjuntos\n</string>
+    <string name="funcion">Relaciones y funciones\n</string>
+    <string name="ecuaciones">Sistema de ecuaciones\nlineales</string>
+    <string name="matrices">Matrices\n</string>
+    <string name="estadisticaD">Estadística descriptiva\n</string>
 
 
     // AMADEHA A
@@ -306,7 +299,7 @@ La varianza de una población de N mediciones es el promedio de los cuadrados de
 
     <!--Losing lifes level 1 -->
     <string name="lose_life_title">¡Se terminaron tus vidas!</string>
-    <string name="lose_life_text">¿intentar de nuevo?</string>
+    <string name="lose_life_text">¿Intentar de nuevo?</string>
     <string name="lose_life_yes">Sí</string>
     <string name="lose_life_no">No</string>
 
@@ -333,4 +326,7 @@ La varianza de una población de N mediciones es el promedio de los cuadrados de
     <!-- Copyright strings -->
     <string name="copyright">2017. Derechos Reservados.</string>
     <string name="instrucction_text">Instrucciones</string>
+    <string name="ver">Ver</string>
+    <string name="fragmentVideosInicio2">¿Eres de las personas que detestan leer?</string>
+    <string name="fragmentVideosInico1">¿Qué hay?</string>
 </resources>

@@ -15,18 +15,18 @@
         <TableRow>
 
             <TextView android:layout_width="15dp" />
+
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:src="@drawable/funciones1"
-                android:layout_marginTop="62dp"
+                android:layout_width="100dp"
+                android:layout_height="300dp"
                 android:layout_below="@+id/tableLayout"
-                android:layout_toRightOf="@+id/tableLayout" />
+                android:layout_marginTop="62dp"
+                android:layout_toRightOf="@+id/tableLayout"
+                android:paddingEnd="50dp"
+                android:paddingRight="15dp"
+                android:paddingTop="0dp"
+                android:src="@drawable/funciones1" />
         </TableRow>
         <TableRow>
 
@@ -36,10 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:text="@string/layout2Funciones"
                 android:textColor="@color/bg_screen3"/>
         </TableRow>

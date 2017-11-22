@@ -21,12 +21,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:text="@string/layout6Ecuaciones"
                 android:textColor="@color/bg_screen3"
-                android:text="@string/layout6Ecuaciones" />
+                android:textSize="16sp" />
         </TableRow>
         <TableRow>
 
@@ -36,10 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/bg_screen3"
                 android:textStyle="bold"
                 android:text="@string/layout6Ecuaciones1.1" />
@@ -52,9 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
                 android:textSize="15sp"
                 android:textColor="@color/bg_screen3"
                 android:text="@string/layout6Ecuaciones1.2" />

@@ -21,9 +21,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
-                android:paddingLeft="5dp"
                 android:paddingRight="10dp"
-                android:paddingTop="1dp"
+                android:textColor="@color/bg_screen3"
+                android:textSize="16sp"
                 android:text="@string/layout2Estadistica" />
         </TableRow>
 
@@ -35,9 +35,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
-                android:paddingLeft="5dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
+                android:textColor="@color/bg_screen3"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:text="@string/subtitulo2Estadistica" />
         </TableRow>
 
@@ -49,9 +50,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
-                android:paddingLeft="5dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
+                android:textColor="@color/bg_screen3"
+                android:textSize="16sp"
                 android:text="@string/layout3Estadistica" />
         </TableRow>
     </TableLayout>

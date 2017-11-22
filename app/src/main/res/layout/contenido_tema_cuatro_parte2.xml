@@ -18,8 +18,8 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:paddingEnd="20dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
@@ -34,11 +34,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
                 android:text="@string/titulo3Matrices"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/bg_screen3" />
         </TableRow>
@@ -50,10 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:text="@string/layout3Matrices"
                 android:textColor="@color/bg_screen3" />
         </TableRow>
@@ -62,8 +58,8 @@
             <TextView android:layout_width="15dp" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:paddingEnd="20dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
@@ -78,10 +74,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:text="@string/layout4Matrices"
                 android:textColor="@color/bg_screen3"/>
         </TableRow>

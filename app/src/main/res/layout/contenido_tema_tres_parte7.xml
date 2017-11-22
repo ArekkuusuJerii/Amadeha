@@ -8,9 +8,23 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="45dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
+
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/bg_screen3"
+                android:text="@string/layout9Ecuaciones1.1" />
+        </TableRow>
 
         <TableRow>
 
@@ -21,10 +35,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/bg_screen3"
                 android:textStyle="bold"
                 android:text="@string/subtitulo2Ecuaciones" />
@@ -38,10 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/bg_screen3"
                 android:text="@string/layout10Ecuaciones" />
         </TableRow>
@@ -51,8 +61,8 @@
             <TextView android:layout_width="15dp" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@drawable/ecuaciones4" />
         </TableRow>
     </TableLayout>

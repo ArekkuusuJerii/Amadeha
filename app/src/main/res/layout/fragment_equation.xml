@@ -59,7 +59,6 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
                 <View
                     style="@style/Divider"
                     android:layout_margin="10sp"

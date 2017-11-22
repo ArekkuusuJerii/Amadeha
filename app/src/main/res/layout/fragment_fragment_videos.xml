@@ -27,7 +27,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:padding="10dip"
-            android:paddingTop="250dp" />
+            android:paddingTop="250dp"
+            app:fillColor="@color/colorPrimaryDark"
+            app:pageColor="#fff"
+            app:snap="false" />
 
         <TextView
             android:layout_width="match_parent"
@@ -35,7 +38,7 @@
             android:paddingLeft="15dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp"
-            android:text="¿Qué hay?" />
+            android:text="@string/fragmentVideosInico1" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +47,7 @@
             android:paddingLeft="15dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp"
-            android:text="¿Eres de las personas que detestan leer?\n" />
+            android:text="@string/fragmentVideosInicio2" />
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -69,11 +72,9 @@
             android:id="@+id/btn_slider_videos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView8"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:background="@color/colorPrimaryDark"
-            android:text="Ver"
+            android:text="@string/ver"
             android:textColor="@color/bg_screen3" />
 
         <TextView

@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:label="Inicio"
     tools:context="com.codejam.amadeha.main.inicio.FragmentInicio">
 
@@ -40,10 +39,9 @@
                     android:paddingLeft="15dp"
                     android:paddingTop="17dp"
                     android:text="@string/teoriaC"
-                    android:textAllCaps="false"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16dp"
-                    />
+                    android:textAllCaps="false"
+                    android:textSize="16dp" />
 
                 <ImageView
                     android:id="@+id/_game0"

@@ -19,10 +19,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
-                android:textSize="15sp"
-                android:paddingLeft="5dp"
+                android:textSize="16sp"
                 android:paddingRight="10dp"
-                android:paddingTop="1dp"
                 android:textColor="@color/bg_screen3"
                 android:text="@string/layout1.1Conjuntos" />
         </TableRow>
@@ -32,14 +30,12 @@
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="152dp"
                 android:paddingEnd="10dp"
-                android:textSize="15sp"
-                android:paddingLeft="5dp"
                 android:paddingRight="10dp"
-                android:paddingTop="1dp"
+                android:text="@string/layout2Conjuntos"
                 android:textColor="@color/bg_screen3"
-                android:text="@string/layout2Conjuntos" />
+                android:textSize="16sp" />
         </TableRow>
         <TableRow>
 

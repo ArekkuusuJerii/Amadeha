@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg_screen3">
 
     <LinearLayout
@@ -24,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/titulo4"
-            android:textColor="@color/bg_screen1"
+            android:textColor="@color/bg_screen2"
             android:textSize="@dimen/slide_title"
             android:textStyle="bold" />
 
@@ -36,7 +35,7 @@
             android:paddingRight="@dimen/desc_padding"
             android:text="@string/objetivoUnidadCuatroVídeos"
             android:textAlignment="center"
-            android:textColor="@color/bg_screen1"
+            android:textColor="@color/bg_screen2"
             android:textSize="@dimen/slide_desc" />
 
     </LinearLayout>

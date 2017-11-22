@@ -21,11 +21,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
                 android:text="@string/layout7Matrices"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/bg_screen3"/>
         </TableRow>
         <TableRow>
@@ -33,12 +31,13 @@
             <TextView android:layout_width="15dp" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingEnd="20dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:paddingEnd="80dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
+                android:paddingTop="30dp"
                 android:src="@drawable/matrices6" />
         </TableRow>
         <TableRow>
@@ -47,12 +46,12 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingEnd="20dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:paddingEnd="80dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
+                android:paddingTop="30dp"
                 android:src="@drawable/matrices7" />
         </TableRow>
     </TableLayout>

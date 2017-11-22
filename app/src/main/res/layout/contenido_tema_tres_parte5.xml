@@ -8,7 +8,7 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="45dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
@@ -20,13 +20,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
-                android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:text="@string/layout6Ecuaciones1.3"
                 android:textColor="@color/bg_screen3"
-                android:textStyle="bold"
-                android:text="@string/layout7Ecuaciones" />
+                android:textSize="16sp" />
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="15dp" />
+
+            <com.codejam.amadeha.main.JustifyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="10dp"
+                android:text="@string/layout7Ecuaciones"
+                android:textColor="@color/bg_screen3"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </TableRow>
         <TableRow>
 
@@ -39,7 +50,7 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:textColor="@color/bg_screen3"
                 android:text="@string/layout7Ecuaciones1.1" />
         </TableRow>

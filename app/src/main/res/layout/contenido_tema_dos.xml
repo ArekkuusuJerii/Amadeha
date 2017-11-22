@@ -17,14 +17,14 @@
         <ImageView
             android:id="@+id/cover_bg_details"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="120dp"
             android:src="@drawable/function"
             android:scaleType="centerCrop"
             android:transitionName="selectedMovie" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="120dp"
             android:alpha="0.3"
             android:background="#000000" />
 
@@ -32,9 +32,9 @@
             android:id="@+id/cover_details"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="157dp"
-            android:background="@drawable/function"
+            android:layout_alignBottom="@+id/txt_plot_details"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/function"
             android:scaleType="centerCrop"
             app:riv_border_color="#ffffff"
             app:riv_border_width="2dip" />
@@ -53,7 +53,7 @@
             android:text="@string/titulo2"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#ffffff"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/txt_plot_details"
@@ -69,7 +69,8 @@
             android:textColor="@color/bg_screen3"
             android:text="@string/objetivoUnidadDosTeoria"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
+
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,10 +88,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingEnd="20dp"
-                    android:paddingLeft="15dp"
                     android:paddingRight="10dp"
-                    android:paddingTop="10dp"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:text="@string/titulo1Funciones"
                     android:textColor="@color/bg_screen3"/>
@@ -104,10 +103,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingEnd="20dp"
-                    android:paddingLeft="15dp"
                     android:paddingRight="10dp"
-                    android:textSize="15sp"
-                    android:paddingTop="10dp"
+                    android:textSize="16sp"
                     android:text="@string/layout1Funciones"
                     android:textColor="@color/bg_screen3"/>
             </TableRow>

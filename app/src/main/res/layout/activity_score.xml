@@ -39,8 +39,7 @@
             android:layout_marginStart="10sp"
             android:background="#BFFFFFFF"
             android:divider="@android:color/transparent"
-            android:dividerHeight="10.0sp"
-            android:layout_below="@id/top"/>
+            android:dividerHeight="10.0sp"/>
     </RelativeLayout>
 
 </LinearLayout>
