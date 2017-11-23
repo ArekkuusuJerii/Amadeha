@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fondo"
+                android:orientation="vertical">
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="76dp">
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:id="@+id/justifyTextView7"
@@ -23,19 +23,20 @@
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
                 android:paddingRight="10dp"
-                android:textSize="16sp"
+                android:text="@string/layout11Ecuaciones"
                 android:textColor="@color/bg_screen3"
-                android:text="@string/layout11Ecuaciones" />
+                android:textSize="16sp"/>
         </TableRow>
+
         <TableRow>
 
-            <TextView android:layout_width="1dp" />
+            <TextView android:layout_width="1dp"/>
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ecuaciones5" />
+                android:src="@drawable/ecuaciones5"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>

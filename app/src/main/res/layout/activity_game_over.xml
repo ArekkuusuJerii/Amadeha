@@ -18,15 +18,15 @@
                 android:id="@+id/over_replay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/retry"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:text="@string/retry"/>
 
             <Button
                 android:id="@+id/over_exit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/exit_button"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:text="@string/exit_button"/>
         </TableRow>
 
         <TableRow
@@ -39,9 +39,9 @@
                 android:id="@+id/over_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:text="@string/score"
-                android:textAlignment="center"
-                android:layout_margin="10dp"/>
+                android:textAlignment="center"/>
         </TableRow>
 
     </TableLayout>

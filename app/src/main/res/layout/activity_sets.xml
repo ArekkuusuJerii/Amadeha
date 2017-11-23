@@ -80,11 +80,11 @@
             android:id="@+id/_affirmation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#40FFFFFF"
             android:gravity="center"
             android:maxLines="2"
             android:textSize="30sp"
-            android:textStyle="normal|italic"
-            android:background="#40FFFFFF"/>
+            android:textStyle="normal|italic"/>
 
     </LinearLayout>
 

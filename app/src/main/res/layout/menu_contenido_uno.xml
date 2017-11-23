@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_screen3">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_screen3"
+                android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -38,7 +38,7 @@
             android:text="@string/objetivoUnidadUnoTeoria"
             android:textAlignment="center"
             android:textColor="@color/bg_screen2"
-            android:textSize="@dimen/slide_desc" />
+            android:textSize="@dimen/slide_desc"/>
 
     </LinearLayout>
 </RelativeLayout>

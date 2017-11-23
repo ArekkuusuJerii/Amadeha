@@ -1,85 +1,86 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:label="Vídeos"
-    tools:context="com.codejam.amadeha.main.videos.FragmentVideos">
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:label="Vídeos"
+             tools:context="com.codejam.amadeha.main.videos.FragmentVideos">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager_videos"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:paddingTop="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"/>
 
-        <com.viewpagerindicator.CirclePageIndicator
-            android:id="@+id/indicador_videos"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:padding="10dip"
-            android:paddingTop="250dp"
-            app:fillColor="@color/colorPrimaryDark"
-            app:pageColor="#fff"
-            app:snap="false" />
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager_videos"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:paddingTop="20dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:text="@string/fragmentVideosInico1" />
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/indicador_videos"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="10dip"
+                android:paddingTop="250dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="20dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:text="@string/fragmentVideosInicio2" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/fragmentVideosInico1"/>
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/fragmentVideosInicio2"/>
 
-            <TableRow>
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                <TextView android:layout_width="15dp" />
+                <TableRow>
 
-                <com.codejam.amadeha.main.JustifyTextView
-                    android:id="@+id/justifyTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="10dp"
-                    android:text="@string/videosFragment" />
-            </TableRow>
-        </TableLayout>
+                    <TextView android:layout_width="15dp"/>
 
-        <Button
-            android:id="@+id/btn_slider_videos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/colorPrimaryDark"
-            android:text="@string/ver"
-            android:textColor="@color/bg_screen3" />
+                    <com.codejam.amadeha.main.JustifyTextView
+                        android:id="@+id/justifyTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/videosFragment"/>
+                </TableRow>
+            </TableLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="8dp" />
+            <Button
+                android:id="@+id/btn_slider_videos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/ver"
+                android:textColor="@color/bg_screen3"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

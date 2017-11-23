@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:gravity="center"
+              android:layout_alignParentTop="true"
+              android:gravity="top"
               android:orientation="vertical">
 
     <LinearLayout
@@ -12,49 +13,34 @@
         android:layout_margin="10sp"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/profile_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/new_user"
-            android:inputType="textPersonName"/>
-
         <Button
             android:id="@+id/profile_add_button"
             style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="@string/add_user"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/profile_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10sp"
             android:layout_weight="1"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="5sp"/>
+            android:background="@android:color/white"
+            android:text="@string/add_user"/>
 
         <Button
             android:id="@+id/profile_guest_button"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:background="@android:color/white"
-            android:text="@string/play_guest"
-            android:textColor="@android:color/holo_red_light"/>
+            android:text="@string/play_guest"/>
+
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/profile_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10sp"
+        android:layout_weight="1"
+        android:background="#BFFFFFFF"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5sp"/>
 
 </LinearLayout>

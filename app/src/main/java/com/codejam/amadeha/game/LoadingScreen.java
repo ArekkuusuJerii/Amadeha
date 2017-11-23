@@ -5,8 +5,10 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.InputType;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -48,20 +50,48 @@ public class LoadingScreen extends Activity {
 
     private void showProfiles() {
         wrapper = new DialogWrapper(this, R.layout.activity_profiles)
+                .setStyle(R.style.transparentDialog)
                 .setFeature(Window.FEATURE_NO_TITLE)
-                .setCancelable(false)
+                .setMinimizable(false)
+                .setCancelable(true)
                 .build(0.85F, 0.85F);
-
+        wrapper.setCanceledOnTouchOutside(false);
         wrapper.findViewById(R.id.profile_add_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText inputText = ((EditText) wrapper.findViewById(R.id.profile_text));
-                String name = inputText.getText().toString();
-                if (!name.isEmpty()) {
-                    GameInfo.addUser(getBaseContext(), name);
-                    inputText.setText("");
-                    listUsers();
-                }
+                AlertDialog.Builder builder = new AlertDialog.Builder(LoadingScreen.this).setTitle(getText(R.string.new_user));
+                //Create input
+                final EditText input = new EditText(getBaseContext());
+                input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
+                input.setTextColor(Color.BLACK);
+                //Add input
+                builder.setView(input);
+                builder.setPositiveButton(R.string.play, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String name = input.getText().toString();
+                        if (!name.isEmpty()) {
+                            input.setText("");
+                            GameInfo.addUser(getBaseContext(), name);
+                            setUser(GameInfo.getUsers().get(GameInfo.getUsers().size() - 1));
+                            dialog.cancel();
+                        }
+                    }
+                });
+                builder.setNegativeButton(R.string.close_, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.show();
+            }
+        });
+        wrapper.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                dialog.cancel();
+                finish();
             }
         });
         ((ListView) wrapper.findViewById(R.id.profile_list)).setOnItemClickListener(new AdapterView.OnItemClickListener() {

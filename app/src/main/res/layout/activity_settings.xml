@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical"
-             android:background="@drawable/menu_background">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:drawable/screen_background_light_transparent"
+              android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/settings"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="@string/volume_musics"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#40FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/volume_music"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_margin="5sp"
-            android:text="@string/volume_musics"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"/>
+            android:layout_weight="1"
+            android:max="100"
+            android:thumb="@drawable/seekbar_big"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#40FFFFFF"
-            android:gravity="center"
-            android:orientation="horizontal">
+    </LinearLayout>
 
-            <SeekBar
-                android:id="@+id/volume_music"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5sp"
-                android:layout_weight="1"
-                android:max="100"
-                android:thumb="@drawable/seekbar_big"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="@string/volume_effects"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"/>
 
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#40FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <SeekBar
+            android:id="@+id/volume_effect"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_margin="5sp"
-            android:text="@string/volume_effects"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"/>
+            android:layout_weight="1"
+            android:max="100"
+            android:thumb="@drawable/seekbar_big"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#40FFFFFF"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <SeekBar
-                android:id="@+id/volume_effect"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5sp"
-                android:layout_weight="1"
-                android:max="100"
-                android:thumb="@drawable/seekbar_big"/>
-
-        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

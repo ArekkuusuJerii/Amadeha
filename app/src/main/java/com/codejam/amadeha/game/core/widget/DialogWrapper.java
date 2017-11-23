@@ -11,7 +11,9 @@ import android.content.Context;
 public class DialogWrapper {
 
     private final Context context;
+    private boolean minimizable;
     private boolean cancelable;
+    private int style = -1;
     private int feature;
     private int id;
 
@@ -20,8 +22,18 @@ public class DialogWrapper {
         this.id = id;
     }
 
+    public DialogWrapper setStyle(int style) {
+        this.style = style;
+        return this;
+    }
+
     public DialogWrapper setFeature(int feature) {
         this.feature = feature;
+        return this;
+    }
+
+    public DialogWrapper setMinimizable(boolean minimizable) {
+        this.minimizable = minimizable;
         return this;
     }
 
@@ -31,12 +43,13 @@ public class DialogWrapper {
     }
 
     public Dialog build(float x, float y) {
-        Dialog dialog = new Dialog(context);
+        Dialog dialog = style == -1 ? new Dialog(context) : new Dialog(context, style);
         if (feature != 0) {
             dialog.requestWindowFeature(feature);
         }
         dialog.setContentView(id);
         dialog.setCancelable(cancelable);
+        dialog.setCanceledOnTouchOutside(minimizable);
         int width = (int) (context.getResources().getDisplayMetrics().widthPixels * x);
         int height = (int) (context.getResources().getDisplayMetrics().heightPixels * y);
         if (dialog.getWindow() != null)

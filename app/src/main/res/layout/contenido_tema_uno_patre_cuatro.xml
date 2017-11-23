@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fondo"
+                android:orientation="vertical">
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="10dp">
 
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:layout_width="wrap_content"
@@ -24,26 +24,26 @@
                 android:paddingRight="10dp"
                 android:text="@string/layout3Conjuntos1.1"
                 android:textColor="@color/bg_screen3"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
         </TableRow>
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
                 android:paddingRight="10dp"
-                android:textSize="16sp"
+                android:text="@string/layout4Conjuntos"
                 android:textColor="@color/bg_screen3"
-                android:text="@string/layout4Conjuntos" />
+                android:textSize="16sp"/>
         </TableRow>
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:id="@+id/justifyTextView3"
@@ -51,14 +51,15 @@
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
                 android:paddingRight="10dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:text="@string/subtitulo1Conjuntos"
                 android:textColor="@color/bg_screen3"
-                android:text="@string/subtitulo1Conjuntos" />
+                android:textSize="16sp"
+                android:textStyle="bold"/>
         </TableRow>
+
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:id="@+id/justifyTextView4"
@@ -66,19 +67,20 @@
                 android:layout_height="wrap_content"
                 android:paddingEnd="20dp"
                 android:paddingRight="10dp"
-                android:textSize="16sp"
+                android:text="@string/layout5Conjuntos"
                 android:textColor="@color/bg_screen3"
-                android:text="@string/layout5Conjuntos" />
+                android:textSize="16sp"/>
         </TableRow>
+
         <TableRow>
 
-            <TextView android:layout_width="1dp" />
+            <TextView android:layout_width="1dp"/>
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/teoriaconjuntos2" />
+                android:src="@drawable/teoriaconjuntos2"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>

@@ -12,7 +12,7 @@ import android.view.View;
 public class SimpleTouchListener implements View.OnTouchListener {
 
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
+    public final boolean onTouch(View v, MotionEvent event) {
         v.performClick();
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP:

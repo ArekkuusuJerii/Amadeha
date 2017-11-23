@@ -88,6 +88,7 @@
     <string name="_true">Verdadero</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
+    <string name="none_of_the_above">Ninguna de las anteriores</string>
     <string name="equation_solve">Resuelve la: %s</string>
     <string name="equation_first_grade">"Ecuación de primer grado"</string>
     <string name="equation_second_grade">"Ecuación de segundo grado"</string>
@@ -130,9 +131,9 @@
     <string name="objetivoUnidadCuatroVídeos">Objetivo: Deducir los conceptos básicos de las matrices y sus variadas operaciones.</string>
     <string name="objetivoUnidadCincoVídeos">Objetivo: Asociar la información para establecer el comportamiento de los datos que se le presenten en su día a día.</string>
 
-    <string name="videosFragment">Entonces... ¡Te encuentras en el lugar indicado!, aquí encontrarás diferentes vídeos explicativos referente a cada unidad de la materia que te ayudarán a estudiar de una manera más divertida.\n</string>
+    <string name="videosFragment">Entonces… ¡Te encuentras en el lugar indicado!, aquí encontrarás diferentes vídeos explicativos referente a cada unidad de la materia que te ayudarán a estudiar de una manera más divertida.\n</string>
     <string name="contenido1Fragment">Bienvenidos (as) al apartado del contenido teórico que AMADEHA te tiene preparado para ayudarte de una forma concreta y rápida en tus clases.\n</string>
-    <string name="contenido2Fragment">Aquí encontrarán contenido básico de cada una de las unidades que abarca la materia de \nDesarrollo de habilidades del pensamiento matemático.</string>
+    <string name="contenido2Fragment">Aquí encontrarán contenido básico de cada una de las unidades que abarca la materia de Desarrollo de habilidades del pensamiento matemático.</string>
     <string name="fragmentJuegos">Bien, entonces les deseamos mucha suerte porque aquí encontrarán ejercicios que los pondrá a pensar.\n</string>
 
     //Teoría
@@ -242,7 +243,7 @@ Solución En esta ecuación a = 1, b = 2 y c = -8.\n</string>
     <string name="layout12Ecuaciones">Si realiza una comprobación descubrirá que tanto 2 como -4 son soluciones para la ecuación. Observe que las soluciones para la ecuación son dos números reales.\n\n
 La solución del ejemplo también se puede obtener mediante la factorización, tal y como se muestra a continuación.\n</string>
     <string name="layout13Ecuaciones">NOTA: Cuando tenga que resolver una ecuación cuadrática sin especificar el método, primero trate, mediante factorización. Si la ecuación no se puede factorizar con facilidad, utilice la fórmula cuadrática.\n</string>
-    <string name="layout14Ecuaciones">\nAl resolver una ecuación cuadrática mediante la fórmula cuadrática los cálculos pueden ser más sencillos si el coeficiente principal, a, es positivo, Por lo tanto, si tuviera que resolver una ecuación cuadrática como: 〖-x〗^2+3x-8=0, sería recomendable que la reescribiera como x^2-3x-8=0\n</string>
+    <string name="layout14Ecuaciones">\nAl resolver una ecuación cuadrática mediante la fórmula cuadrática los cálculos pueden ser más sencillos si el coeficiente principal, a, es positivo, Por lo tanto, si tuviera que resolver una ecuación cuadrática como: 〖–x〗^2+3x–8=0, sería recomendable que la reescribiera como x^2–3x-8=0\n</string>
 
     //Matrices
     <string name="layout1Matrices">Es definido como un conjunto ordenado de n números escritos como se muestra en la figura 4.1, a este vector se le llama vector renglón i o fila:\n</string>
@@ -280,7 +281,7 @@ Una muestra es un subconjunto de mediciones seleccionado de la población.\n</st
 
     // AMADEHA A
 
-    <string name="load_text">Cargando...</string>
+    <string name="load_text">Cargando…</string>
 
     <!-- Menu titles -->
     <string name="menu_play">Jugar</string>

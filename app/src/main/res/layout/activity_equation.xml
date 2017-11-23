@@ -85,10 +85,11 @@
         android:id="@+id/equation_type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20sp"
         android:layout_margin="5dp"
-        android:text="@string/equation_solve"/>
+        android:gravity="center"
+        android:text="@string/equation_solve"
+        android:textColor="@color/fontBlack"
+        android:textSize="20sp"/>
 
     <LinearLayout
         android:id="@+id/_equation_layout"

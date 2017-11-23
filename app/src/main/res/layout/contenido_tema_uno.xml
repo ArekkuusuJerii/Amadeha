@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondo">
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:background="@drawable/fondo">
 
     <!--Contenido desplazable -->
     <RelativeLayout
@@ -19,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
             android:src="@drawable/conjuntos"
-            android:transitionName="selectedMovie" />
+            android:transitionName="selectedMovie"/>
 
         <View
             android:layout_width="match_parent"
@@ -27,7 +26,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:alpha="0.3"
-            android:background="#000000" />
+            android:background="#000000"/>
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/cover_details"
@@ -38,7 +37,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/conjuntos"
             app:riv_border_color="#ffffff"
-            app:riv_border_width="2dip" />
+            app:riv_border_width="2dip"/>
 
         <TextView
             android:id="@+id/txt_movie_details"
@@ -54,7 +53,7 @@
             android:text="@string/titulo1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#ffffff"
-            android:textSize="22sp" />
+            android:textSize="22sp"/>
 
         <TextView
             android:id="@+id/txt_plot_details"
@@ -70,7 +69,7 @@
             android:text="@string/objetivoUnidadUnoTeoria"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/bg_screen3"
-            android:textSize="15sp" />
+            android:textSize="15sp"/>
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -82,7 +81,7 @@
 
             <TableRow>
 
-                <TextView android:layout_width="15dp" />
+                <TextView android:layout_width="15dp"/>
 
                 <com.codejam.amadeha.main.JustifyTextView
                     android:id="@+id/justifyTextView2"
@@ -93,12 +92,12 @@
                     android:text="@string/titulo1Cojuntos"
                     android:textColor="@color/bg_screen3"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
             </TableRow>
 
             <TableRow>
 
-                <TextView android:layout_width="15dp" />
+                <TextView android:layout_width="15dp"/>
 
                 <com.codejam.amadeha.main.JustifyTextView
                     android:id="@+id/justifyTextView3"
@@ -108,7 +107,7 @@
                     android:paddingRight="10dp"
                     android:text="@string/layout1Conjuntos"
                     android:textColor="@color/bg_screen3"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"/>
             </TableRow>
         </TableLayout>
     </RelativeLayout>

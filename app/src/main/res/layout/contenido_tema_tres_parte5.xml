@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fondo"
+                android:orientation="vertical">
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_marginTop="45dp">
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:layout_width="wrap_content"
@@ -23,11 +23,12 @@
                 android:paddingRight="10dp"
                 android:text="@string/layout6Ecuaciones1.3"
                 android:textColor="@color/bg_screen3"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
         </TableRow>
+
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:layout_width="wrap_content"
@@ -37,11 +38,12 @@
                 android:text="@string/layout7Ecuaciones"
                 android:textColor="@color/bg_screen3"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </TableRow>
+
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:layout_width="wrap_content"
@@ -50,9 +52,9 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
-                android:textSize="16sp"
+                android:text="@string/layout7Ecuaciones1.1"
                 android:textColor="@color/bg_screen3"
-                android:text="@string/layout7Ecuaciones1.1" />
+                android:textSize="16sp"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>

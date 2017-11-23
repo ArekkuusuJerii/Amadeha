@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:id="@+id/textView5" />
+            android:layout_height="70dp"/>
 
         <view
+            android:id="@+id/youtubePlayer"
             class="com.google.android.youtube.player.YouTubePlayerView"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp"
-            android:id="@+id/youtubePlayer"
             android:layout_below="@+id/textView5"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp"/>
 
         <!-- App Bar -->
         <android.support.design.widget.AppBarLayout
@@ -51,7 +51,7 @@
                     app:layout_collapseMode="pin"
                     app:navigationIcon="?attr/homeAsUpIndicator"
                     app:popupTheme="@style/AppTheme.AppBarOverlay"
-                    tools:ignore="UnusedAttribute" />
+                    tools:ignore="UnusedAttribute"/>
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
@@ -64,6 +64,6 @@
             android:layout_marginTop="19dp"
             android:background="@color/bg_screen2"
             android:text="Reproducir"
-            android:textColor="@color/bg_screen3" />
+            android:textColor="@color/bg_screen3"/>
     </RelativeLayout>
 </RelativeLayout>

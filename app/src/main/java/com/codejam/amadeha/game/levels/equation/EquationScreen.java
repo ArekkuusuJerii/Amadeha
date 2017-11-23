@@ -40,7 +40,10 @@ import java.util.Set;
 
 public class EquationScreen extends LevelBase implements ITickable, IDragListener<Button>, IDropListener<TextView, Button> {
 
-    private final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+    private final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+    );
     private final List<Equation> equations = LevelRegistry.getShuffledRegistry(getGame());
     private LinearLayout equationLayout;
     private MusicHelper.Sound drag;
@@ -49,7 +52,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
     private Animation explode;
 
     private Map<String, Pair<String, String>> answerMap;
-    private List<TextView> unknowns = Lists.newArrayList();
+    private List<TextView> unknowns;
     private List<TextView> views;
     private Equation equation;
     private boolean canMove;
@@ -152,7 +155,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         //Setup equation string
         List<String> mappedText = equation.getMappedString();
         views = Lists.newArrayList();
-        unknowns.clear();
+        unknowns = Lists.newArrayList();
         for (String map : mappedText) {
             if (answerMap.containsKey(map)) {
                 TextView view = addSimpleText(answerMap.get(map).first);

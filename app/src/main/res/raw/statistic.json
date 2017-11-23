@@ -1,32 +1,104 @@
 [
   {
-
+    "question": "¿Cuál es el promedio de los siguientes números [9,10,10,10]?",
+    "answers": [
+      "9.24",
+      "8.75",
+      "9.99",
+      "9,4",
+      "9.5"
+    ],
+    "answer": "9.75",
+    "random": true
   },
   {
-
+    "question": "La sumatoria de n números entre la cantidad de n números se refiere a:",
+    "answers": [
+      "n + n + n + ...",
+      "Cálculo de la moda",
+      "Cifra"
+    ],
+    "answer": "La media aritmética",
+    "random": true
   },
   {
-
+    "question": "Es la cifra en medio de un vector de números ordenados",
+    "answers": [
+      "V/N",
+      "Medida",
+      "Diferencia modal"
+    ],
+    "answer": "Mediana",
+    "random": true
   },
   {
-
+    "question": "Es el número que más se repite en un conjunto de números",
+    "answers": [
+      "Diferencia Modal",
+      "#N",
+      "10"
+    ],
+    "answer": "Moda",
+    "random": true
   },
   {
-
+    "question": "Es un estadístico de dispersión",
+    "answers": [
+      "Modo",
+      "Relación",
+      "Honda"
+    ],
+    "answer": "Rango",
+    "random": true
   },
   {
-
+    "question": "Es un índice muy sensible a las puntuaciones extremas.",
+    "answers": [
+      "Balanza",
+      "Moda",
+      "Variable"
+    ],
+    "answer": "Varianza",
+    "random": true
   },
   {
-
+    "question": "Es un índice de dispersión:",
+    "answers": [
+      "Dispersión",
+      "Índice",
+      "50"
+    ],
+    "answer": "Desviación estándar",
+    "random": true
   },
   {
-
+    "question": "Ejemplo variable cualitativa",
+    "answers": [
+      "10",
+      "Monedas",
+      "Fuego"
+    ],
+    "answer": "Sentimientos",
+    "random": true
   },
   {
-
+    "question": "Ejemplo de variables cuantitativas discretas",
+    "answers": [
+      "Si",
+      "No se",
+      "No"
+    ],
+    "answer": "Número de hijos de una familia",
+    "random": true
   },
   {
-
+    "question": "El histograma se usa para representar variables",
+    "answers": [
+      "Equitativas",
+      "Semejantes",
+      "Diferentes"
+    ],
+    "answer": "Cualitativas y cuantitativas",
+    "random": true
   }
 ]

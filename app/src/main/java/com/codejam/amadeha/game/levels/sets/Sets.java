@@ -5,5 +5,6 @@ package com.codejam.amadeha.game.levels.sets;
  * Get the source code in GitHub: https://github.com/ArekkuusuJerii/Amadeha
  * Amadeha is open source, and is distributed under the MIT licence.
  */
+
 public class Sets {
 }

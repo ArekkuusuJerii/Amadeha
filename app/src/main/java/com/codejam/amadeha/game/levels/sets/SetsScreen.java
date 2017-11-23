@@ -1,7 +1,5 @@
 package com.codejam.amadeha.game.levels.sets;
 
-import android.widget.Chronometer;
-
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
 import com.codejam.amadeha.game.data.registry.Game;
@@ -12,6 +10,7 @@ import com.codejam.amadeha.game.levels.LevelBase;
  * Get the source code in GitHub: https://github.com/ArekkuusuJerii/Amadeha
  * Amadeha is open source, and is distributed under the MIT licence.
  */
+
 public class SetsScreen extends LevelBase implements ITickable {
 
     @Override

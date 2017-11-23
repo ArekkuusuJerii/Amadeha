@@ -37,27 +37,27 @@
         <activity
             android:name="com.codejam.amadeha.game.levels.equation.EquationScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:noHistory="true"
+            android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
         <activity
             android:name="com.codejam.amadeha.game.levels.function.FunctionScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:noHistory="true"
+            android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
         <activity
             android:name="com.codejam.amadeha.game.levels.matrix.MatrixScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:noHistory="true"
+            android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
         <activity
             android:name="com.codejam.amadeha.game.levels.sets.SetsScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:noHistory="true"
+            android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
         <activity
             android:name="com.codejam.amadeha.game.levels.statistic.StatisticScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:noHistory="true"
+            android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
         <!--Amadeha service-->
         <service

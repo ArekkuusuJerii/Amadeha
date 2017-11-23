@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondo">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fondo"
+                android:orientation="vertical">
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="147dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="147dp">
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:id="@+id/justifyTextView2"
@@ -23,12 +24,13 @@
                 android:paddingEnd="20dp"
                 android:paddingRight="10dp"
                 android:text="@string/layout7Matrices"
-                android:textSize="16sp"
-                android:textColor="@color/bg_screen3"/>
+                android:textColor="@color/bg_screen3"
+                android:textSize="16sp"/>
         </TableRow>
+
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <ImageView
                 android:layout_width="140dp"
@@ -38,11 +40,12 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
                 android:paddingTop="30dp"
-                android:src="@drawable/matrices6" />
+                android:src="@drawable/matrices6"/>
         </TableRow>
+
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -52,7 +55,7 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
                 android:paddingTop="30dp"
-                android:src="@drawable/matrices7" />
+                android:src="@drawable/matrices7"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>

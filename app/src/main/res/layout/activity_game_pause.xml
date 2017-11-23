@@ -18,15 +18,15 @@
                 android:id="@+id/pause_continue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/continue_game"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:text="@string/continue_game"/>
 
             <Button
                 android:id="@+id/pause_exit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/exit_button"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:text="@string/exit_button"/>
         </TableRow>
 
     </TableLayout>

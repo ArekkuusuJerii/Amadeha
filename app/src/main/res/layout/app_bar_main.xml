@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.codejam.amadhea.AMADEHACM.MainActivity">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.codejam.amadeha.main.MainActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        android:id="@+id/appBarLayout">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
     </android.support.design.widget.AppBarLayout>
 
@@ -18,35 +18,30 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
-        app:popupTheme="@style/AppTheme.AppBarOverlay"
-        app:theme="@style/AppTheme.AppBarOverlay"
-        android:layout_below="@+id/appBarLayout"
-        android:titleTextColor="#FFFFFFFF"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_below="@+id/appBarLayout"
+        android:background="@color/colorPrimaryDark"
+        android:titleTextColor="#FFFFFFFF"
+        app:popupTheme="@style/AppTheme.AppBarOverlay"
+        app:theme="@style/AppTheme.AppBarOverlay"/>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_main"/>
 
-    <android.support.v7.widget.Toolbar
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/pleca"/>
+
+    <!--<android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_Territorio_de_calidad"
-        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/pleca"
-        app:popupTheme="@style/AppTheme.AppBarOverlay"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
-
-    <!-- <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" /> -->
-
-          
-
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:background="@drawable/pleca"
+        app:popupTheme="@style/AppTheme.AppBarOverlay"/>-->
 </RelativeLayout>

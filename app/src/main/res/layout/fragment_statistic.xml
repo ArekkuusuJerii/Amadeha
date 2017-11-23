@@ -93,6 +93,7 @@
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
+
     <ImageView
         android:id="@+id/screen_block"
         android:layout_width="wrap_content"
@@ -100,6 +101,7 @@
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
         android:src="@drawable/game_blocked"/>
+
     <TextView
         android:id="@+id/screen_check"
         android:layout_width="wrap_content"

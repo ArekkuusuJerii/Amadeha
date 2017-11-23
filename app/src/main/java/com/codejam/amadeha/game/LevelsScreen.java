@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -86,9 +87,11 @@ public class LevelsScreen extends AppCompatActivity {
             }
         };
         Dialog wrapper = new DialogWrapper(this, R.layout.activity_settings)
+                .setStyle(R.style.transparentDialog)
                 .setFeature(Window.FEATURE_NO_TITLE)
+                .setMinimizable(true)
                 .setCancelable(true)
-                .build(0.75F, 0.75F);
+                .build(0.75F, 0.6F);
         SeekBar music = ((SeekBar) wrapper.findViewById(R.id.volume_music));
         music.setProgress((int) (MusicHelper.getVolumes().get(SoundType.MUSIC) * (float) music.getMax()));
         music.setOnSeekBarChangeListener(listener);
@@ -123,16 +126,37 @@ public class LevelsScreen extends AppCompatActivity {
 
     public void showScores(View view) {
         final Dialog wrapper = new DialogWrapper(this, R.layout.activity_score)
+                .setStyle(R.style.transparentDialog)
                 .setFeature(Window.FEATURE_NO_TITLE)
+                .setMinimizable(true)
                 .setCancelable(true)
-                .build(0.95F, 0.65F);
+                .build(0.95F, 0.55F);
         wrapper.findViewById(R.id.score_delete).setOnTouchListener(new SimpleTouchListener() {
             @Override
             public void touchLift(View v) {
-                deleteScores();
-                wrapper.cancel();
+                deleteScores(wrapper);
             }
         });
+        updateScores(wrapper);
+    }
+
+    public void deleteScores(final Dialog wrapper) {
+        new AlertDialog.Builder(LevelsScreen.this)
+                .setTitle(getText(R.string.delete_highscores))
+                .setMessage(getText(R.string.delete_highscores_question))
+                .setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ScoreHandler.deleteScore(LevelsScreen.this, getCurrentGame());
+                        updateScores(wrapper);
+                        showMaxScore();
+                    }
+                })
+                .setNegativeButton(getText(R.string.no), null)
+                .show();
+    }
+
+    private void updateScores(Dialog wrapper) {
         ColumnListAdapter.Builder adapter = new ColumnListAdapter.Builder(this)
                 .addRow()
                 .addColumn(createView(getText(R.string.player)))
@@ -152,21 +176,6 @@ public class LevelsScreen extends AppCompatActivity {
 
         ((ListView) wrapper.findViewById(R.id.score_list)).setAdapter(adapter.build());
         wrapper.show();
-    }
-
-    public void deleteScores() {
-        new AlertDialog.Builder(LevelsScreen.this)
-                .setTitle(getText(R.string.delete_highscores))
-                .setMessage(getText(R.string.delete_highscores_question))
-                .setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        ScoreHandler.deleteScore(LevelsScreen.this, getCurrentGame());
-                        showMaxScore();
-                    }
-                })
-                .setNegativeButton(getText(R.string.no), null)
-                .show();
     }
 
     private View createView(Object o) {

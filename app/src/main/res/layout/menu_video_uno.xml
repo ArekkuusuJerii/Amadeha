@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:background="@color/bg_screen3"
-    android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_screen3"
+                android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout">
+        android:orientation="vertical">
 
         <GridLayout
             android:id="@+id/grid_dos"
@@ -27,7 +27,7 @@
             android:text="@string/titulo1"
             android:textColor="@color/bg_screen2"
             android:textSize="@dimen/slide_title"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             android:text="@string/objetivoUnidadUnoVídeos"
             android:textAlignment="center"
             android:textColor="@color/bg_screen2"
-            android:textSize="@dimen/slide_desc" />
+            android:textSize="@dimen/slide_desc"/>
 
     </LinearLayout>
 </RelativeLayout>

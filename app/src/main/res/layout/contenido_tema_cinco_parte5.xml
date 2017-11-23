@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fondo"
+                android:orientation="vertical">
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -16,52 +16,52 @@
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:paddingEnd="20dp"
                 android:paddingRight="10dp"
-                android:src="@drawable/estadistica2" />
+                android:src="@drawable/estadistica2"/>
         </TableRow>
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
-                android:textColor="@color/bg_screen3"
-                android:text="@string/layout7Estadistica" />
+                android:text="@string/layout7Estadistica"
+                android:textColor="@color/bg_screen3"/>
         </TableRow>
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:paddingEnd="20dp"
                 android:paddingRight="10dp"
-                android:src="@drawable/estadistica3" />
+                android:src="@drawable/estadistica3"/>
         </TableRow>
 
         <TableRow>
 
-            <TextView android:layout_width="15dp" />
+            <TextView android:layout_width="15dp"/>
 
             <com.codejam.amadeha.main.JustifyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
-                android:textColor="@color/bg_screen3"
-                android:text="@string/layout8Estadistica" />
+                android:text="@string/layout8Estadistica"
+                android:textColor="@color/bg_screen3"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>
