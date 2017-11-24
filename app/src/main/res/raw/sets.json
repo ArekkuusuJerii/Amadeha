@@ -1,32 +1,79 @@
 [
   {
-
+    "image": "sets_0",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_1",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_2",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_3",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_4",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_0",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_1",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_2",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_3",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   },
   {
-
+    "image": "sets_4",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
+  },
+  {
+    "image": "sets_0",
+    "answers": {
+      "A ? B :\n{5, 4, 1}": "none",
+      "A ? B :\n{20}": "intersection"
+    }
   }
 ]

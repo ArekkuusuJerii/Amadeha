@@ -2,9 +2,9 @@ package com.codejam.amadeha.game.levels.equation;
 
 import android.support.test.espresso.core.internal.deps.guava.collect.Lists;
 import android.support.test.espresso.core.internal.deps.guava.collect.Maps;
-import android.util.Pair;
 
 import com.codejam.amadeha.R;
+import com.codejam.amadeha.game.core.Triplet;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.google.gson.annotations.SerializedName;
 
@@ -20,51 +20,11 @@ import java.util.Map;
 public class Equation {
 
     @SerializedName("type")
-    private Type type;
-    private String equation;
-    private String[][] answers;
-    private int score;
-    private int time;
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
-    public String getEquation() {
-        return equation;
-    }
-
-    public void setEquation(String equation) {
-        this.equation = equation;
-    }
-
-    public String[][] getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(String[][] answers) {
-        this.answers = answers;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public int getTime() {
-        return time;
-    }
-
-    public void setTime(int time) {
-        this.time = time;
-    }
+    public Type type;
+    public String equation;
+    public String[][] answers;
+    public int score;
+    public int time;
 
     public List<String> getMappedString() {
         List<String> splits = Lists.newArrayList(equation);
@@ -88,10 +48,10 @@ public class Equation {
         return splits;
     }
 
-    public Map<String, Pair<String, String>> getAnswerMap() {
-        Map<String, Pair<String, String>> map = Maps.newHashMap();
+    public Map<String, Triplet<String, String, String>> getAnswerMap() {
+        Map<String, Triplet<String, String, String>> map = Maps.newHashMap();
         for (String[] row : answers) {
-            Pair<String, String> pair = new Pair<>(row[1], row[2]);
+            Triplet<String, String, String> pair = Triplet.create(row[1], row[2], row[3]);
             map.put(row[0], pair);
         }
         return map;

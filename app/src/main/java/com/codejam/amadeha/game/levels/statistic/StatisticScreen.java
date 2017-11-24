@@ -103,18 +103,18 @@ public class StatisticScreen extends LevelBase implements ITickable {
     }
 
     private void setupStatistic() {
-        question.setText(statistic.getQuestion());
+        question.setText(statistic.question);
         views = Lists.newArrayList();
-        List<String> strings = new ArrayList<>(Arrays.asList(statistic.getAnswers()));
+        List<String> strings = new ArrayList<>(Arrays.asList(statistic.answers));
         Collections.shuffle(strings);
         if (strings.size() > 4) {
             strings = strings.subList(0, 4);
         }
         String none = getString(R.string.none_of_the_above);
-        boolean override = statistic.isRandom() && rand.nextFloat() <= 0.8F;
+        boolean override = statistic.random && rand.nextFloat() <= 0.8F;
         if (override) {
             int index = rand.nextInt(strings.size());
-            strings.set(index, statistic.getAnswer());
+            strings.set(index, statistic.answer);
             if(rand.nextFloat() <= 0.6F) {
                 strings.add(none);
             }
@@ -123,7 +123,7 @@ public class StatisticScreen extends LevelBase implements ITickable {
         }
         for (int i = 0; i < strings.size(); i++) {
             String answer = strings.get(i);
-            addRow(i, answer, !override ? answer.equals(none) : answer.equals(statistic.getAnswer()));
+            addRow(i, answer, !override ? answer.equals(none) : answer.equals(statistic.answer));
         }
     }
 
@@ -170,6 +170,12 @@ public class StatisticScreen extends LevelBase implements ITickable {
     public void onCountdownFinish() {
         canAnswer = false;
         lose.play();
-        gameover();
+        showAnswer();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                gameover();
+            }
+        }, 2000);
     }
 }

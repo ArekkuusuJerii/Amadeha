@@ -24,7 +24,7 @@ import com.codejam.amadeha.main.videos.FragmentVideos;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentInicio.OnFragmentInteractionListener, FragmentContenido.OnFragmentInteractionListener,
-        FragmentVideos.OnFragmentInteractionListener, FragmentJuegos.OnFragmentInteractionListener, BlankFragment.OnFragmentInteractionListener, FragmentCreditos.OnFragmentInteractionListener{
+        FragmentVideos.OnFragmentInteractionListener, FragmentJuegos.OnFragmentInteractionListener, BlankFragment.OnFragmentInteractionListener, FragmentCreditos.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,19 +56,19 @@ public class MainActivity extends AppCompatActivity
         setTitle("AMADEHA");
 
         FragmentInicio fragment = new FragmentInicio();
-        FragmentTransaction fragmentTransaction =  getSupportFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.Vista, fragment, "Inicio");
         fragmentTransaction.commit();
     }
 
     @Override
     public void onBackPressed() {
-      DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-           super.onBackPressed();
-       }
+            super.onBackPressed();
+        }
     }
 
     @Override

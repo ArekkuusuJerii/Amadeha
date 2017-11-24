@@ -16,13 +16,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.codejam.amadeha.R;
 import com.codejam.amadeha.main.MainActivity;
 import com.codejam.amadeha.main.videos.youtube.VideoCinco;
 import com.codejam.amadeha.main.videos.youtube.VideoCuatro;
 import com.codejam.amadeha.main.videos.youtube.VideoDos;
 import com.codejam.amadeha.main.videos.youtube.VideoUno;
 import com.codejam.amadeha.main.videos.youtube.videoTres;
-import com.codejam.amadeha.R;
 
 public class MenuVideos extends Activity {
 
@@ -33,6 +33,36 @@ public class MenuVideos extends Activity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private int currentPage;
+    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+
+        @Override
+        public void onPageSelected(int position) {
+            currentPage = position;
+            addBottomDots(position);
+
+            // changing the next button text 'NEXT' / 'GOT IT'
+            if (position == layouts.length - 1) {
+                // last page. make button text to GOT IT
+                btnNext.setText(getString(R.string.start));
+                btnSkip.setVisibility(View.GONE);
+            } else {
+                // still pages are left
+                btnNext.setText(getString(R.string.next));
+                btnSkip.setVisibility(View.VISIBLE);
+            }
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+
+        }
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,44 +95,41 @@ public class MenuVideos extends Activity {
 
     }
 
-    public void UnoVideo(View view){
+    public void UnoVideo(View view) {
         Intent intent = new Intent(this, VideoUno.class);
         startActivity(intent);
         finish();
     }
 
-    public void DosVideo(View view){
+    public void DosVideo(View view) {
         Intent intent = new Intent(this, VideoDos.class);
         startActivity(intent);
         finish();
     }
 
-    public void TresVideo(View view){
+    public void TresVideo(View view) {
         Intent intent = new Intent(this, videoTres.class);
         startActivity(intent);
         finish();
     }
 
-    public void CuatroVideo(View view){
+    public void CuatroVideo(View view) {
         Intent intent = new Intent(this, VideoCuatro.class);
         startActivity(intent);
         finish();
     }
 
-    public void CincoVideo(View view){
+    public void CincoVideo(View view) {
         Intent intent = new Intent(this, VideoCinco.class);
         startActivity(intent);
         finish();
     }
 
-
-    public  void btnSkipClickVideos(View v)
-    {
+    public void btnSkipClickVideos(View v) {
         launchHomeScreen();
     }
 
-    public  void btnNextClickVideos(View v)
-    {
+    public void btnNextClickVideos(View v) {
         // checking for last page
         // if last page home screen will be launched
         int current = getItem(1);
@@ -113,38 +140,6 @@ public class MenuVideos extends Activity {
             launchHomeScreen();
         }
     }
-
-
-    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageSelected(int position) {
-            currentPage = position;
-            addBottomDots(position);
-
-            // changing the next button text 'NEXT' / 'GOT IT'
-            if (position == layouts.length - 1) {
-                // last page. make button text to GOT IT
-                btnNext.setText(getString(R.string.start));
-                btnSkip.setVisibility(View.GONE);
-            } else {
-                // still pages are left
-                btnNext.setText(getString(R.string.next));
-                btnSkip.setVisibility(View.VISIBLE);
-            }
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-
-        }
-
-    };
 
     public final int getCurrentPage() {
         return currentPage;

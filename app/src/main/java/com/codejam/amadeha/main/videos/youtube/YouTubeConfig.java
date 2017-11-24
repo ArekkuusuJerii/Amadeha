@@ -6,10 +6,10 @@ package com.codejam.amadeha.main.videos.youtube;
 
 public class YouTubeConfig {
 
+    private static final String Api_Key = "AIzaSyCNH5aM7PJ3OYqsfHjPnVffpEEYBTAZZwM";
+
     public YouTubeConfig() {
     }
-
-    private static final String Api_Key = "AIzaSyCNH5aM7PJ3OYqsfHjPnVffpEEYBTAZZwM";
 
     public static String getApi_Key() {
         return Api_Key;

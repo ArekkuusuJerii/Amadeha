@@ -4,19 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.codejam.amadeha.R;
 import com.codejam.amadeha.main.slider.ImageModel;
 import com.codejam.amadeha.main.slider.SlidingImage_Adapter;
-import com.codejam.amadeha.R;
-
-
-import android.os.Handler;
-import android.support.v4.view.ViewPager;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
@@ -34,26 +32,24 @@ import java.util.TimerTask;
  */
 public class FragmentContenido extends Fragment {
 
-    private Context context;
-    private Button btn_slider;
-    private View v;
-
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
+    private Context context;
+    private Button btn_slider;
+    private View v;
     private ArrayList<ImageModel> imageModelArrayList;
 
     private int[] myImageList = new int[]{
-            R.drawable.slider1,R.drawable.slider5
-            ,R.drawable.slider4,R.drawable.slider3,R.drawable.slider2};
+            R.drawable.slider1, R.drawable.slider5
+            , R.drawable.slider4, R.drawable.slider3, R.drawable.slider2};
 
 
     private OnFragmentInteractionListener mListener;
 
-    public FragmentContenido(){
+    public FragmentContenido() {
 
     }
-
 
     public static FragmentContenido newInstance(String param1, String param2) {
         FragmentContenido fragment = new FragmentContenido();
@@ -80,7 +76,7 @@ public class FragmentContenido extends Fragment {
         // init
 
         mPager = (ViewPager) v.findViewById(R.id.pager_contenido);
-        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(),imageModelArrayList));
+        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), imageModelArrayList));
 
         CirclePageIndicator indicator = (CirclePageIndicator)
                 v.findViewById(R.id.indicador_contenido);
@@ -89,10 +85,10 @@ public class FragmentContenido extends Fragment {
 
         final float density = getResources().getDisplayMetrics().density;
 
-        //Set circle indicator radius
+        //SetType circle indicator radius
         indicator.setRadius(5 * density);
 
-        NUM_PAGES =imageModelArrayList.size();
+        NUM_PAGES = imageModelArrayList.size();
 
         // Auto start of viewpager
         // See following code which is responsible for auto sliding of image
@@ -148,12 +144,11 @@ public class FragmentContenido extends Fragment {
 
 
     // Inicio AutoImageSlider
-
-    private ArrayList<ImageModel> populateList(){
+    private ArrayList<ImageModel> populateList() {
 
         ArrayList<ImageModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             ImageModel imageModel = new ImageModel();
             imageModel.setImage_drawable(myImageList[i]);
             list.add(imageModel);

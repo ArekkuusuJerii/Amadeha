@@ -16,11 +16,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.codejam.amadeha.R;
+
 /**
  * Created by Magdalena on 01/08/2017.
  */
-
-import com.codejam.amadeha.R;
 
 public class MenuContenidoTemaTres extends AppCompatActivity {
 
@@ -32,8 +32,36 @@ public class MenuContenidoTemaTres extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private int currentPage;
+    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
+        @Override
+        public void onPageSelected(int position) {
+            currentPage = position;
+            addBottomDots(position);
 
+            // changing the next button text 'NEXT' / 'GOT IT'
+            if (position == layouts.length - 1) {
+                // last page. make button text to GOT IT
+                btnNext.setText(getString(R.string.start));
+                btnSkip.setVisibility(View.GONE);
+            } else {
+                // still pages are left
+                btnNext.setText(getString(R.string.next));
+                btnSkip.setVisibility(View.VISIBLE);
+            }
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+
+        }
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,13 +97,11 @@ public class MenuContenidoTemaTres extends AppCompatActivity {
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
     }
 
-    public  void btnSkipClick(View v)
-    {
+    public void btnSkipClick(View v) {
         launchHomeScreen();
     }
 
-    public  void btnNextClick(View v)
-    {
+    public void btnNextClick(View v) {
         // checking for last page
         // if last page home screen will be launched
         int current = getItem(1);
@@ -86,38 +112,6 @@ public class MenuContenidoTemaTres extends AppCompatActivity {
             launchHomeScreen();
         }
     }
-
-
-    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageSelected(int position) {
-            currentPage = position;
-            addBottomDots(position);
-
-            // changing the next button text 'NEXT' / 'GOT IT'
-            if (position == layouts.length - 1) {
-                // last page. make button text to GOT IT
-                btnNext.setText(getString(R.string.start));
-                btnSkip.setVisibility(View.GONE);
-            } else {
-                // still pages are left
-                btnNext.setText(getString(R.string.next));
-                btnSkip.setVisibility(View.VISIBLE);
-            }
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-
-        }
-
-    };
 
     public final int getCurrentPage() {
         return currentPage;

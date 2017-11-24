@@ -11,24 +11,8 @@ import android.content.res.Resources;
 
 public class Function {
 
-    private String card_left;
-    private String card_right;
-
-    public String getCard_left() {
-        return card_left;
-    }
-
-    public void setCard_left(String card_left) {
-        this.card_left = card_left;
-    }
-
-    public String getCard_right() {
-        return card_right;
-    }
-
-    public void setCard_right(String card_right) {
-        this.card_right = card_right;
-    }
+    public String card_left;
+    public String card_right;
 
     public Card[] getCards(Context context) {
         Resources resources = context.getResources();

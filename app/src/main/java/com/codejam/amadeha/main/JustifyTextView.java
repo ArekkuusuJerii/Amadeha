@@ -2,6 +2,7 @@ package com.codejam.amadeha.main;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.support.v7.widget.AppCompatTextView;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -12,7 +13,7 @@ import android.widget.TextView;
  * Created by Magdalena on 11/08/2017.
  */
 
-public class JustifyTextView extends TextView {
+public class JustifyTextView extends AppCompatTextView {
 
     private int mLineY;
     private int mViewWidth;

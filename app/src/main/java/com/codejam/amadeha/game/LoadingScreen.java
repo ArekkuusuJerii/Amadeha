@@ -54,7 +54,7 @@ public class LoadingScreen extends Activity {
                 .setFeature(Window.FEATURE_NO_TITLE)
                 .setMinimizable(false)
                 .setCancelable(true)
-                .build(0.85F, 0.85F);
+                .build(0.85F, 0.65F);
         wrapper.setCanceledOnTouchOutside(false);
         wrapper.findViewById(R.id.profile_add_button).setOnClickListener(new View.OnClickListener() {
             @Override

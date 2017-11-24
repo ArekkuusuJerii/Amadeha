@@ -6,7 +6,6 @@ import android.graphics.Point;
 import android.os.Handler;
 import android.support.test.espresso.core.internal.deps.guava.collect.ImmutableSet;
 import android.support.test.espresso.core.internal.deps.guava.collect.Lists;
-import android.util.Pair;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
@@ -18,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.codejam.amadeha.R;
+import com.codejam.amadeha.game.core.Triplet;
 import com.codejam.amadeha.game.core.intefaze.IDragListener;
 import com.codejam.amadeha.game.core.intefaze.IDropListener;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
@@ -51,7 +51,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
     private Set<Button> buttons;
     private Animation explode;
 
-    private Map<String, Pair<String, String>> answerMap;
+    private Map<String, Triplet<String, String, String>> answerData;
     private List<TextView> unknowns;
     private List<TextView> views;
     private Equation equation;
@@ -65,10 +65,10 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         drag = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.drag_op);
         drop = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.drop_op);
         explode = AnimationUtils.loadAnimation(getBaseContext(), R.anim.vaporise_out);
-        explode.setDuration(500);
+        explode.setDuration(2000);
         ImmutableSet.Builder<Button> builder = new ImmutableSet.Builder<>();
         for (int i = 0; i < 5; i++) {
-            int id = getResources().getIdentifier("_button_" + i, "id", getPackageName());
+            int id = getResources().getIdentifier("answer_" + i, "id", getPackageName());
             View view = findViewById(id);
             view.setOnTouchListener(new DragListener(this));
             builder.add((Button) view);
@@ -87,32 +87,29 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         drop.startAnimation(explode);
         this.drop.play();
         String tag = (String) target.getTag();
-        Pair<String, String> box = answerMap.get(tag);
         String key = drop.getText().toString();
-        if (key.equals(box.second)) {
+        if (key.equals(answerData.get(tag).second)) {
             correct.play();
-            answerAllDrops(tag, true);
+            answerAllDrops(tag);
             if (answered >= unknowns.size()) {
-                score += equation.getScore();
+                score += equation.score;
                 nextEquation();
             }
         } else {
-            for (String s : answerMap.keySet()) {
-                answerAllDrops(s, false);
+            for (String s : answerData.keySet()) {
+                answerAllDrops(s);
             }
             incorrect.play();
             nextEquation();
         }
     }
 
-    private void answerAllDrops(String key, boolean correct) {
-        Pair<String, String> box = answerMap.get(key);
+    private void answerAllDrops(String key) {
+        Triplet<String, String, String> triplet = answerData.get(key);
         for (TextView view : unknowns) {
             String tag = (String) view.getTag();
-            if (tag.equals(key) && !view.getText().equals(box.second)) {
-                String format = getString(R.string.bracket_placeholder);
-                view.setText(String.format(format, box.second));
-                //view.setTextColor(correct ? Color.GREEN : Color.RED);
+            if (tag.equals(key) && !view.getText().equals(triplet.second)) {
+                view.setText(String.format(triplet.third, triplet.second));
                 answered++;
             }
         }
@@ -127,7 +124,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
             public void run() {
                 iterate();
             }
-        }, 2500);
+        }, 2000);
     }
 
     @Override
@@ -137,7 +134,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         equationLayout.removeAllViewsInLayout();
         if(level < 10) {
             equation = equations.get(level);
-            startCountdown((long) equation.getTime() * 1000L);
+            startCountdown((long) equation.time * 1000L);
             setupEquation();
             level++;
         } else {
@@ -149,28 +146,27 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
 
     private void setupEquation() {
         String format = getText(R.string.equation_solve).toString();
-        String type = getText(equation.getType().name).toString();
+        String type = getText(equation.type.name).toString();
         ((TextView) findViewById(R.id.equation_type)).setText(String.format(format, type));
-        answerMap = equation.getAnswerMap();
+        answerData = equation.getAnswerMap();
         //Setup equation string
         List<String> mappedText = equation.getMappedString();
         views = Lists.newArrayList();
         unknowns = Lists.newArrayList();
         for (String map : mappedText) {
-            if (answerMap.containsKey(map)) {
-                TextView view = addSimpleText(answerMap.get(map).first);
+            if (answerData.containsKey(map)) {
+                TextView view = addSimpleText(answerData.get(map).first);
                 view.setOnDragListener(new DropListener(this));
                 view.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
                 view.setTextColor(Color.DKGRAY);
                 view.setGravity(Gravity.CENTER);
                 view.setTag(map);
                 unknowns.add(view);
-            } else {
-                TextView view = addSimpleText(map);
                 views.add(view);
+            } else {
+                views.add(addSimpleText(map));
             }
         }
-
         //Scale equation to screen
         scaleEquation();
         //Setup answers
@@ -186,23 +182,20 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        int pixels = 0;
-        for (TextView view : views) {
-            pixels += view.getWidth();
+        while (getWidthEquation() >= size.x) {
+            for (TextView view : views) {
+                view.setTextSize(view.getTextSize() * 0.6F);
+            }
         }
-        resizeViews(pixels, size.x);
     }
 
-    private void resizeViews(int px, int max) {
-        if(px > max) {
-            int pixels = 0;
-            for (TextView view : views) {
-                int width = view.getWidth();
-                view.setTextSize(width * (max / px));
-                pixels += view.getWidth();
-            }
-            resizeViews(pixels, max);
+    private int getWidthEquation() {
+        int pixels = 0;
+        for (TextView view : views) {
+            view.measure(0, 0);
+            pixels += view.getMeasuredWidth();
         }
+        return pixels;
     }
 
     private TextView addSimpleText(String line) {
@@ -210,6 +203,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         view.setGravity(Gravity.CENTER);
         view.setText(line);
         view.setTextSize(40);
+        view.setMaxLines(1);
         equationLayout.addView(view, params);
 
         return view;
@@ -245,13 +239,17 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         if(!isGameOver()) {
             canMove = false;
             incorrect.play();
-            for (String key : answerMap.keySet()) {
-                answerAllDrops(key, false);
+            for (String key : answerData.keySet()) {
+                answerAllDrops(key);
             }
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    iterate();
+                    if(isGameOver()) {
+                        gameover();
+                    } else {
+                        iterate();
+                    }
                 }
             }, 5000);
         }

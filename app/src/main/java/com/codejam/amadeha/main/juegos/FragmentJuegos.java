@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,22 +36,20 @@ public class FragmentJuegos extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private static ViewPager mPager;
+    private static int currentPage = 0;
+    private static int NUM_PAGES = 0;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private Context context;
     private Button btn_jugar;
-
     private View v;
-    private static ViewPager mPager;
-    private static int currentPage = 0;
-    private static int NUM_PAGES = 0;
     private ArrayList<ImageModel> imageModelArrayList;
 
     private int[] myImageListJuegos = new int[]{
-            R.drawable.slider1,R.drawable.slider5
-            ,R.drawable.slider4,R.drawable.slider3,R.drawable.slider2};
+            R.drawable.slider1, R.drawable.slider5
+            , R.drawable.slider4, R.drawable.slider3, R.drawable.slider2};
 
     private OnFragmentInteractionListener mListener;
 
@@ -103,7 +100,7 @@ public class FragmentJuegos extends Fragment {
 
         // init
         mPager = (ViewPager) v.findViewById(R.id.pager_juegos);
-        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(),imageModelArrayList));
+        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), imageModelArrayList));
 
         CirclePageIndicator indicator = (CirclePageIndicator)
                 v.findViewById(R.id.indicador_juegos);
@@ -112,10 +109,10 @@ public class FragmentJuegos extends Fragment {
 
         final float density = getResources().getDisplayMetrics().density;
 
-        //Set circle indicator radius
+        //SetType circle indicator radius
         indicator.setRadius(5 * density);
 
-        NUM_PAGES =imageModelArrayList.size();
+        NUM_PAGES = imageModelArrayList.size();
 
         // Auto start of viewpager
         // See following code which is responsible for auto sliding of image
@@ -158,11 +155,11 @@ public class FragmentJuegos extends Fragment {
     }
 
     // Inicio AutoImageSlider
-    private ArrayList<ImageModel> populateList(){
+    private ArrayList<ImageModel> populateList() {
 
         ArrayList<ImageModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             ImageModel imageModel = new ImageModel();
             imageModel.setImage_drawable(myImageListJuegos[i]);
             list.add(imageModel);

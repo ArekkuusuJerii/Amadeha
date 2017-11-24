@@ -8,14 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
 import com.codejam.amadeha.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by Magdalena on 21/07/2017.
  */
 
-public class SlidingImage_Adapter  extends PagerAdapter {
+public class SlidingImage_Adapter extends PagerAdapter {
 
 
     private ArrayList<ImageModel> imageModelArrayList;
@@ -28,6 +29,7 @@ public class SlidingImage_Adapter  extends PagerAdapter {
         this.imageModelArrayList = imageModelArrayList;
         inflater = LayoutInflater.from(context);
     }
+
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);

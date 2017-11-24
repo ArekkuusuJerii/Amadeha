@@ -140,7 +140,7 @@ public class AutoResizeTextView extends AppCompatTextView {
     }
 
     /**
-     * Set the lower text size limit and invalidate the view
+     * SetType the lower text size limit and invalidate the view
      *
      * @param minTextSize Minimum text size
      */

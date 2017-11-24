@@ -12,9 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.codejam.amadeha.R;
 import com.codejam.amadeha.main.slider.ImageModel;
 import com.codejam.amadeha.main.slider.SlidingImage_Adapter;
-import com.codejam.amadeha.R;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
@@ -35,24 +35,21 @@ public class FragmentVideos extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private Context context;
-    private Button btn_slider;
-    private OnFragmentInteractionListener mListener;
-
-    private View v;
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+    private Context context;
+    private Button btn_slider;
+    private OnFragmentInteractionListener mListener;
+    private View v;
     private ArrayList<ImageModel> imageModelArrayList;
 
     private int[] myImageListVideos = new int[]{
-            R.drawable.slider1,R.drawable.slider5
-            ,R.drawable.slider4,R.drawable.slider3,R.drawable.slider2};
+            R.drawable.slider1, R.drawable.slider5
+            , R.drawable.slider4, R.drawable.slider3, R.drawable.slider2};
 
     public FragmentVideos() {
         // Required empty public constructor
@@ -109,7 +106,7 @@ public class FragmentVideos extends Fragment {
 
         // init
         mPager = (ViewPager) v.findViewById(R.id.pager_videos);
-        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(),imageModelArrayList));
+        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), imageModelArrayList));
 
         CirclePageIndicator indicator = (CirclePageIndicator)
                 v.findViewById(R.id.indicador_videos);
@@ -118,10 +115,10 @@ public class FragmentVideos extends Fragment {
 
         final float density = getResources().getDisplayMetrics().density;
 
-        //Set circle indicator radius
+        //SetType circle indicator radius
         indicator.setRadius(5 * density);
 
-        NUM_PAGES =imageModelArrayList.size();
+        NUM_PAGES = imageModelArrayList.size();
 
         // Auto start of viewpager
         // See following code which is responsible for auto sliding of image
@@ -166,11 +163,11 @@ public class FragmentVideos extends Fragment {
 
     // Inicio AutoImageSlider
 
-    private ArrayList<ImageModel> populateList(){
+    private ArrayList<ImageModel> populateList() {
 
         ArrayList<ImageModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             ImageModel imageModel = new ImageModel();
             imageModel.setImage_drawable(myImageListVideos[i]);
             list.add(imageModel);

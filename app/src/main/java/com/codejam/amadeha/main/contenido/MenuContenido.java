@@ -16,8 +16,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.codejam.amadeha.main.MainActivity;
 import com.codejam.amadeha.R;
+import com.codejam.amadeha.main.MainActivity;
 
 public class MenuContenido extends Activity {
 
@@ -28,7 +28,36 @@ public class MenuContenido extends Activity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private int currentPage;
+    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
+        @Override
+        public void onPageSelected(int position) {
+            currentPage = position;
+            addBottomDots(position);
+
+            // changing the next button text 'NEXT' / 'GOT IT'
+            if (position == layouts.length - 1) {
+                // last page. make button text to GOT IT
+                btnNext.setText(getString(R.string.start));
+                btnSkip.setVisibility(View.GONE);
+            } else {
+                // still pages are left
+                btnNext.setText(getString(R.string.next));
+                btnSkip.setVisibility(View.VISIBLE);
+            }
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+
+        }
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,44 +90,41 @@ public class MenuContenido extends Activity {
 
     }
 
-    public void Uno(View view){
+    public void Uno(View view) {
         Intent intent = new Intent(MenuContenido.this, MenuContenidoTemaUno.class);
         startActivity(intent);
         finish();
     }
 
-    public void Dos(View view){
+    public void Dos(View view) {
         Intent intent = new Intent(MenuContenido.this, MenuContenidoTemaDos.class);
         startActivity(intent);
         finish();
     }
 
-    public void Tres(View view){
+    public void Tres(View view) {
         Intent intent = new Intent(MenuContenido.this, MenuContenidoTemaTres.class);
         startActivity(intent);
         finish();
     }
 
-    public void Cuatro(View view){
+    public void Cuatro(View view) {
         Intent intent = new Intent(MenuContenido.this, MenuContenidoTemaCuatro.class);
         startActivity(intent);
         finish();
     }
 
-    public void Cinco(View view){
+    public void Cinco(View view) {
         Intent intent = new Intent(MenuContenido.this, MenuContenidoTemaCinco.class);
         startActivity(intent);
         finish();
     }
 
-
-    public  void btnSkipClick(View v)
-    {
+    public void btnSkipClick(View v) {
         launchHomeScreen();
     }
 
-    public  void btnNextClick(View v)
-    {
+    public void btnNextClick(View v) {
         // checking for last page
         // if last page home screen will be launched
         int current = getItem(1);
@@ -110,40 +136,8 @@ public class MenuContenido extends Activity {
         }
     }
 
-
-    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageSelected(int position) {
-            currentPage = position;
-            addBottomDots(position);
-
-            // changing the next button text 'NEXT' / 'GOT IT'
-            if (position == layouts.length - 1) {
-                // last page. make button text to GOT IT
-                btnNext.setText(getString(R.string.start));
-                btnSkip.setVisibility(View.GONE);
-            } else {
-                // still pages are left
-                btnNext.setText(getString(R.string.next));
-                btnSkip.setVisibility(View.VISIBLE);
-            }
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-
-        }
-
-    };
-
     public final int getCurrentPage() {
-            return currentPage;
+        return currentPage;
     }
 
 

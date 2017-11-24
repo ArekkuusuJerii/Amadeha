@@ -3,11 +3,11 @@ package com.codejam.amadeha.main.contenido;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,60 +29,6 @@ public class MenuContenidoTemaDos extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private int currentPage;
-
-
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-        // Ocupa toda la pantalla... escondiento la barra de notificaciones
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        setContentView(R.layout.activity_menu_contenido_tema_dos);
-
-
-
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-        btnSkip = (Button) findViewById(R.id.btn_skip);
-        btnNext = (Button) findViewById(R.id.btn_next);
-
-        layouts = new int[]{
-                R.layout.contenido_tema_dos,
-                R.layout.contenido_tema_dos_parte2,
-                R.layout.contenido_tema_dos_parte3};
-
-        // adding bottom dots
-        addBottomDots(0);
-
-        viewPagerAdapter = new MenuContenidoTemaDos.ViewPagerAdapter();
-        viewPager.setAdapter(viewPagerAdapter);
-        viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-    }
-
-    public  void btnSkipClick(View v)
-    {
-        launchHomeScreen();
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
-    public  void btnNextClick(View v)
-    {
-        // checking for last page
-        // if last page home screen will be launched
-        int current = getItem(1);
-        if (current < layouts.length) {
-            // move to next screen
-            viewPager.setCurrentItem(current);
-        } else {
-            launchHomeScreen();
-        }
-    }
-
-
     public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
         @Override
@@ -113,6 +59,54 @@ public class MenuContenidoTemaDos extends AppCompatActivity {
         }
 
     };
+
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        // Ocupa toda la pantalla... escondiento la barra de notificaciones
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setContentView(R.layout.activity_menu_contenido_tema_dos);
+
+
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
+        btnSkip = (Button) findViewById(R.id.btn_skip);
+        btnNext = (Button) findViewById(R.id.btn_next);
+
+        layouts = new int[]{
+                R.layout.contenido_tema_dos,
+                R.layout.contenido_tema_dos_parte2,
+                R.layout.contenido_tema_dos_parte3};
+
+        // adding bottom dots
+        addBottomDots(0);
+
+        viewPagerAdapter = new MenuContenidoTemaDos.ViewPagerAdapter();
+        viewPager.setAdapter(viewPagerAdapter);
+        viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+    }
+
+    public void btnSkipClick(View v) {
+        launchHomeScreen();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
+    public void btnNextClick(View v) {
+        // checking for last page
+        // if last page home screen will be launched
+        int current = getItem(1);
+        if (current < layouts.length) {
+            // move to next screen
+            viewPager.setCurrentItem(current);
+        } else {
+            launchHomeScreen();
+        }
+    }
 
     public final int getCurrentPage() {
         return currentPage;

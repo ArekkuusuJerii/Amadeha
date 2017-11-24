@@ -73,7 +73,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
         String tag = (String) target.getTag();
         if (isMatrixCorrect()) {
             this.win.play();
-            score += matrix.getScore();
+            score += matrix.score;
             for (TextView view : views) {
                 view.setOnClickListener(null);
                 view.setOnDragListener(null);
@@ -105,7 +105,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
         answerLayout.removeAllViewsInLayout();
         if(level < 10) {
             matrix = matrices.get(level);
-            startCountdown(matrix.getTime() * 1000L);
+            startCountdown(matrix.time * 1000L);
             setupMatrix();
             level++;
         } else {
@@ -116,12 +116,12 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
     }
 
     private void setupMatrix() {
-        ((TextView) findViewById(R.id._operation)).setText(matrix.getOperation());
-        xField.setMatrixArray(matrix.getX());
-        yField.setMatrixArray(matrix.getY());
+        ((TextView) findViewById(R.id._operation)).setText(matrix.operation);
+        xField.setMatrixArray(matrix.x);
+        yField.setMatrixArray(matrix.y);
         List<String> strings = Lists.newArrayList();
         //Setup views
-        for (int[] row : matrix.getAnswer()) {
+        for (int[] row : matrix.answer) {
             for (int i : row) {
                 strings.add(String.valueOf(i));
             }
@@ -212,7 +212,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    iterate();
+                    gameover();
                 }
             }, 5000);
         }

@@ -9,8 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.codejam.amadeha.main.videos.MenuVideos;
 import com.codejam.amadeha.R;
+import com.codejam.amadeha.main.videos.MenuVideos;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -26,6 +26,7 @@ public class VideoUno extends YouTubeBaseActivity {
     YouTubePlayerView mYouTubePlayerView;
     Button buttonPlay;
     YouTubePlayer.OnInitializedListener mOnInicializedListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +63,7 @@ public class VideoUno extends YouTubeBaseActivity {
                 Log.d(TAG, "onClick: Done initializing.");
 
                 Log.d(TAG, "onClick: Done initializing.");
-                List<String> videoList =new ArrayList<>();
+                List<String> videoList = new ArrayList<>();
                 videoList.add("Q3_xxe0qyro");
                 videoList.add("sbIAVGH1SXg");
                 youTubePlayer.loadVideos(videoList);

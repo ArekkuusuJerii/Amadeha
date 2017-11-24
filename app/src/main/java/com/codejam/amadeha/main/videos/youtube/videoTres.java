@@ -9,8 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.codejam.amadeha.main.videos.MenuVideos;
 import com.codejam.amadeha.R;
+import com.codejam.amadeha.main.videos.MenuVideos;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -63,7 +63,7 @@ public class videoTres extends YouTubeBaseActivity {
                 Log.d(TAG, "onClick: Done initializing.");
 
                 Log.d(TAG, "onClick: Done initializing.");
-                List<String> videoList =new ArrayList<>();
+                List<String> videoList = new ArrayList<>();
                 videoList.add("0B0fYp0m-zQ");
                 videoList.add("8lwM4Qh-AtA");
                 youTubePlayer.loadVideos(videoList);

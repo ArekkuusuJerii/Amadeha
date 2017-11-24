@@ -77,7 +77,6 @@
 
     <!--Amadeha misc-->
     <string name="chronometer_placeholder">%02d:%02d</string>
-    <string name="bracket_placeholder">(%s)</string>
     <string name="chronometer">00:00</string>
     <string name="default_points">00</string>
     <string name="question_mark">\?</string>

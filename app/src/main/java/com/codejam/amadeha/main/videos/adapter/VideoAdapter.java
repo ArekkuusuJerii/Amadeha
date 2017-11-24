@@ -29,7 +29,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
     @Override
     public VideoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from( parent.getContext()  ).inflate(R.layout.card_video, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_video, parent, false);
         return new VideoViewHolder(view);
     }
 
@@ -44,12 +44,12 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         return youtubeVideoList.size();
     }
 
-    public  class VideoViewHolder extends RecyclerView.ViewHolder {
+    public class VideoViewHolder extends RecyclerView.ViewHolder {
 
         WebView videoWeb;
 
         public VideoViewHolder(View itemView) {
-             super(itemView);
+            super(itemView);
 
             videoWeb = (WebView) itemView.findViewById(R.id.webVideoView);
             videoWeb.getSettings().setJavaScriptEnabled(true);
