@@ -53,9 +53,8 @@ public class LevelsScreen extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
-
         LevelAdapter adapter = new LevelAdapter(getSupportFragmentManager());
-        pager = (ViewPager) findViewById(R.id.container);
+        pager = findViewById(R.id.container);
         pager.setAdapter(adapter);
         pager.setOffscreenPageLimit(Game.values().length);
         pager.addOnPageChangeListener(new LevelBlocking());

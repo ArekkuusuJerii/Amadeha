@@ -1,6 +1,6 @@
 <resources>
     <!--Amadeha-->
-    <string name="app_name">AMADHEA</string>
+    <string name="app_name">AMADEHA</string>
 
     <!--Amadeha game-->
     <string name="equation_game">Ecuaciones</string>
@@ -92,6 +92,7 @@
     <string name="equation_first_grade">"Ecuación de primer grado"</string>
     <string name="equation_second_grade">"Ecuación de segundo grado"</string>
     <string name="equation_bi_unknown">"Ecuación de dos incógnitas"</string>
+    <string name="crash_toast_text">Reportar error en la Aplicación…</string>
 
     <!--Amadeha treats-->
     <string name="incorrect">¡INCORRECTO!</string>

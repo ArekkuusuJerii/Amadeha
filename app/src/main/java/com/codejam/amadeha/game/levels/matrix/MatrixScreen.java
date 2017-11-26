@@ -52,9 +52,9 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
         endParams.setMarginEnd(15);
         drag = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.drag_op);
         drop = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.drop_op);
-        answerLayout = (TableLayout) findViewById(R.id.matrix_answer);
-        xField = (TextMatrix) findViewById(R.id.matrix_x);
-        yField = (TextMatrix) findViewById(R.id.matrix_y);
+        answerLayout = findViewById(R.id.matrix_answer);
+        xField = findViewById(R.id.matrix_x);
+        yField = findViewById(R.id.matrix_y);
     }
 
     @Override
@@ -185,7 +185,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
 
     @Override
     public int getScore() {
-        return score;
+        return !isGameOver() ? score : ((score > 0) ? score : 0);
     }
 
     @Override
@@ -212,7 +212,11 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    gameover();
+                    if (level >= 10) {
+                        gameover();
+                    } else {
+                        iterate();
+                    }
                 }
             }, 5000);
         }

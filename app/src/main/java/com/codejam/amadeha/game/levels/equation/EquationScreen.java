@@ -61,7 +61,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
 
     @Override
     public void init() {
-        equationLayout = (LinearLayout) findViewById(R.id._equation_layout);
+        equationLayout = findViewById(R.id._equation_layout);
         drag = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.drag_op);
         drop = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.drop_op);
         explode = AnimationUtils.loadAnimation(getBaseContext(), R.anim.vaporise_out);
@@ -245,7 +245,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    if(isGameOver()) {
+                    if (level >= 10) {
                         gameover();
                     } else {
                         iterate();

@@ -47,8 +47,8 @@ public class StatisticScreen extends LevelBase implements ITickable {
     public void init() {
         poof = AnimationUtils.loadAnimation(getBaseContext(), R.anim.vaporise_text);
         poof.setDuration(2000);
-        tableLayout = (TableLayout) findViewById(R.id.answers);
-        question = (TextView) findViewById(R.id.question);
+        tableLayout = findViewById(R.id.answers);
+        question = findViewById(R.id.question);
         startCountdown(100000);
     }
 
@@ -130,7 +130,7 @@ public class StatisticScreen extends LevelBase implements ITickable {
     private void addRow(int row, String answer, boolean isAnswer) {
         TableRow view = (TableRow) getLayoutInflater().inflate(R.layout.statistic_row, null);
         ((TextView) view.findViewById(R.id.number)).setText(String.format("%o.-", row));
-        AutoResizeTextView text = (AutoResizeTextView) view.findViewById(R.id.text);
+        AutoResizeTextView text = view.findViewById(R.id.text);
         ((View) text).setOnTouchListener(new SimpleTouchListener() {
             @Override
             public void touchLift(View v) {

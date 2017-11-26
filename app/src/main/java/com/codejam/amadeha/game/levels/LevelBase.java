@@ -35,6 +35,7 @@ public abstract class LevelBase extends Activity {
     protected MusicHelper.Sound correct;
     protected MusicHelper.Sound lose;
     protected MusicHelper.Sound win;
+    protected MusicHelper.Sound tick;
     protected long countDown = 0L;
     protected int level;
     private CountDownTimer timer;
@@ -74,6 +75,7 @@ public abstract class LevelBase extends Activity {
         correct = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.correct);
         lose = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.lose);
         win = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.win);
+        tick = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.tick);
     }
 
     public void showInstructions() {
@@ -98,6 +100,7 @@ public abstract class LevelBase extends Activity {
                 countDown = remaining;
                 updateBarProgress();
                 updateScore();
+                tick.play();
             }
 
             @Override
@@ -127,12 +130,12 @@ public abstract class LevelBase extends Activity {
     }
 
     public final void updateBarProgress() {
-        ProgressBar bar = ((ProgressBar) findViewById(R.id.progress_bar));
+        ProgressBar bar = findViewById(R.id.progress_bar);
         bar.setProgress(level);
     }
 
     public final void updateScore() {
-        TextView text = (TextView) findViewById(R.id.points);
+        TextView text = findViewById(R.id.points);
         text.setText(String.valueOf(getScore()));
     }
 

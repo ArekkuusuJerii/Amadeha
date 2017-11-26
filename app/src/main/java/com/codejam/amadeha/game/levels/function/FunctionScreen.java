@@ -49,7 +49,7 @@ public class FunctionScreen extends LevelBase implements ITickable {
 
         for (int i = 0; i < 12; i++) {
             int id = getResources().getIdentifier("q_" + i, "id", getPackageName());
-            ImageView image = (ImageView) findViewById(id);
+            ImageView image = findViewById(id);
             builder.put(image, cards.get(i));
         }
 
