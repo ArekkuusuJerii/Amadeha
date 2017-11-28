@@ -27,4 +27,7 @@
     <!--Score menu -->
     <color name="score_lvl_1">#00695C</color>
     <color name="score_lvl_2">#004D40</color>
+
+    <!-- Dialog -->
+    <color name="dark_transparent">#80000000</color>
 </resources>

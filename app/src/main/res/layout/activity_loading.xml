@@ -17,7 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="50sp"
-        android:background="#40FFFFFF"
         android:contentDescription="@string/app_name"
         android:src="@drawable/amadhea_logo"/>
 

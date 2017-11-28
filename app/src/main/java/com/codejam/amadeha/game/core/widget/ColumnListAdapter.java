@@ -4,13 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.support.annotation.Nullable;
 import android.support.test.espresso.core.internal.deps.guava.base.Predicate;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.codejam.amadeha.R;
 
@@ -72,7 +70,7 @@ public class ColumnListAdapter extends BaseAdapter {
 
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.multi_view_list, null);
-            LinearLayout layout = (LinearLayout) convertView.findViewById(R.id.multi_view_root);
+            LinearLayout layout = convertView.findViewById(R.id.multi_view_root);
             for (View view : list) {
                 if (view.getParent() != null)
                     ((ViewGroup) view.getParent()).removeView(view);

@@ -1,5 +1,6 @@
 package com.codejam.amadeha.game;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -12,14 +13,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -58,7 +57,6 @@ public class LevelsScreen extends AppCompatActivity {
         pager.setAdapter(adapter);
         pager.setOffscreenPageLimit(Game.values().length);
         pager.addOnPageChangeListener(new LevelBlocking());
-        showMaxScore();
     }
 
     public void showSettings(View view) {
@@ -90,11 +88,11 @@ public class LevelsScreen extends AppCompatActivity {
                 .setFeature(Window.FEATURE_NO_TITLE)
                 .setMinimizable(true)
                 .setCancelable(true)
-                .build(0.75F, 0.6F);
-        SeekBar music = ((SeekBar) wrapper.findViewById(R.id.volume_music));
+                .build(0.75F, 0.65F);
+        SeekBar music = wrapper.findViewById(R.id.volume_music);
         music.setProgress((int) (MusicHelper.getVolumes().get(SoundType.MUSIC) * (float) music.getMax()));
         music.setOnSeekBarChangeListener(listener);
-        SeekBar effect = ((SeekBar) wrapper.findViewById(R.id.volume_effect));
+        SeekBar effect = wrapper.findViewById(R.id.volume_effect);
         effect.setProgress((int) (MusicHelper.getVolumes().get(SoundType.EFFECT) * (float) effect.getMax()));
         effect.setOnSeekBarChangeListener(listener);
         wrapper.show();
@@ -129,61 +127,38 @@ public class LevelsScreen extends AppCompatActivity {
                 .setFeature(Window.FEATURE_NO_TITLE)
                 .setMinimizable(true)
                 .setCancelable(true)
-                .build(0.95F, 0.55F);
-        wrapper.findViewById(R.id.score_delete).setOnTouchListener(new SimpleTouchListener() {
-            @Override
-            public void touchLift(View v) {
-                deleteScores(wrapper);
-            }
-        });
+                .build(1F, 1F);
         updateScores(wrapper);
-    }
-
-    public void deleteScores(final Dialog wrapper) {
-        new AlertDialog.Builder(LevelsScreen.this)
-                .setTitle(getText(R.string.delete_highscores))
-                .setMessage(getText(R.string.delete_highscores_question))
-                .setPositiveButton(getText(R.string.yes), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        ScoreHandler.deleteScore(LevelsScreen.this, getCurrentGame());
-                        updateScores(wrapper);
-                        showMaxScore();
-                    }
-                })
-                .setNegativeButton(getText(R.string.no), null)
-                .show();
     }
 
     private void updateScores(Dialog wrapper) {
         ColumnListAdapter.Builder adapter = new ColumnListAdapter.Builder(this)
                 .addRow()
-                .addColumn(createView(getText(R.string.player)))
-                .addColumn(createView(getText(R.string.date)))
-                .addColumn(createView(getText(R.string.score)))
-                .close();
+                .addColumn(inflateScoreRow(
+                        getText(R.string.player).toString(),
+                        getText(R.string.score).toString(),
+                        getText(R.string.date).toString())
+                ).close();
 
         List<Score> get = GameInfo.getScores().get(getCurrentGame());
         for (int i = 0; i < get.size() && i < 3; i++) {
             Score score = get.get(i);
-            adapter.addRow()
-                    .addColumn(createView(score.getUser()))
-                    .addColumn(createView(score.getDate()))
-                    .addColumn(createView(score.getScore()))
-                    .close();
+            View row = inflateScoreRow(score.getUser(), String.valueOf(score.getScore()), score.getDate().toString());
+            adapter.addRow().addColumn(row).close();
         }
 
         ((ListView) wrapper.findViewById(R.id.score_list)).setAdapter(adapter.build());
         wrapper.show();
     }
 
-    private View createView(Object o) {
-        TextView view = new TextView(this);
-        view.setText(o.toString());
-        view.setGravity(Gravity.CENTER);
-        view.setTextSize(15);
-        view.setMaxLines(1);
-        return view;
+    private View inflateScoreRow(String user, String score, String date) {
+        LayoutInflater inflater = getLayoutInflater();
+        @SuppressLint("InflateParams")
+        View row = inflater.inflate(R.layout.score_row, null);
+        ((TextView) row.findViewById(R.id.user)).setText(user);
+        ((TextView) row.findViewById(R.id.score)).setText(score);
+        ((TextView) row.findViewById(R.id.date)).setText(date);
+        return row;
     }
 
     public void scroll(View view) {
@@ -321,6 +296,7 @@ public class LevelsScreen extends AppCompatActivity {
 
                     check.startAnimation(block());
                 }
+                showMaxScore();
             }
         }
 
@@ -335,11 +311,6 @@ public class LevelsScreen extends AppCompatActivity {
             unblock.setRepeatMode(Animation.REVERSE);
             unblock.setDuration(1000);
             return unblock;
-        }
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            showMaxScore();
         }
     }
 }
