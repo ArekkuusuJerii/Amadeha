@@ -1,130 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.codejam.amadeha">
+          package="com.codejam.amadeha">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
+        android:name=".game.AcraReport"
         android:icon="@drawable/amadhea_logo_white"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".game.AcraReport">
-        <!--Amadeha-->
+        android:theme="@style/AppTheme">
+
+        <!-- Amadeha -->
         <activity
-            android:name="com.codejam.amadeha.main.MainActivity"
+            android:name=".main.MainActivity"
             android:configChanges="screenSize|orientation"
+            android:screenOrientation="sensorPortrait"
             android:label="AMADEHA">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!--Amadeha game-->
+        <!-- Amadeha game -->
         <activity
-            android:name="com.codejam.amadeha.game.LoadingScreen"
+            android:name=".game.LoadingScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:noHistory="true"
             android:screenOrientation="sensorLandscape"/>
         <activity
-            android:name="com.codejam.amadeha.game.LevelsScreen"
+            android:name=".game.LevelsScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
-        <!--Levels-->
+        <!-- Levels -->
         <activity
-            android:name="com.codejam.amadeha.game.levels.equation.EquationScreen"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:noHistory="false"
-            android:screenOrientation="sensorLandscape"/>
-        <activity
-            android:name="com.codejam.amadeha.game.levels.function.FunctionScreen"
+            android:name=".game.levels.equation.EquationScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
         <activity
-            android:name="com.codejam.amadeha.game.levels.matrix.MatrixScreen"
+            android:name=".game.levels.function.FunctionScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
         <activity
-            android:name="com.codejam.amadeha.game.levels.sets.SetsScreen"
+            android:name=".game.levels.matrix.MatrixScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
         <activity
-            android:name="com.codejam.amadeha.game.levels.statistic.StatisticScreen"
+            android:name=".game.levels.sets.SetsScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:noHistory="false"
             android:screenOrientation="sensorLandscape"/>
-        <!--Amadeha service-->
+        <activity
+            android:name=".game.levels.statistic.StatisticScreen"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:noHistory="false"
+            android:screenOrientation="sensorLandscape"/>
+        <!-- Amadeha service -->
         <service
-            android:name="com.codejam.amadeha.game.data.settings.MusicHelper$SoundService"
+            android:name=".game.data.settings.MusicHelper$SoundService"
             android:enabled="true"
-            android:stopWithTask="true" />
+            android:stopWithTask="true"/>
 
-        <!--Amadeha main-->
+        <!-- Amadeha main -->
         <activity
-            android:name="com.codejam.amadeha.main.contenido.MenuContenido"
+            android:name=".main.contenido.MenuContenido"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.contenido.MenuContenidoTemaUno"
+            android:name=".main.contenido.MenuContenidoTemaUno"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.contenido.MenuContenidoTemaDos"
+            android:name=".main.contenido.MenuContenidoTemaDos"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.contenido.MenuContenidoTemaTres"
+            android:name=".main.contenido.MenuContenidoTemaTres"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.contenido.MenuContenidoTemaCuatro"
+            android:name=".main.contenido.MenuContenidoTemaCuatro"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.contenido.MenuContenidoTemaCinco"
+            android:name=".main.contenido.MenuContenidoTemaCinco"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.videos.MenuVideos"
+            android:name=".main.videos.MenuVideos"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.videos.youtube.VideoUno"
+            android:name=".main.videos.youtube.VideoUno"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.videos.youtube.VideoDos"
+            android:name=".main.videos.youtube.VideoDos"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.videos.youtube.videoTres"
+            android:name=".main.videos.youtube.VideoTres"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.videos.youtube.VideoCuatro"
+            android:name=".main.videos.youtube.VideoCuatro"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
         <activity
-            android:name="com.codejam.amadeha.main.videos.youtube.VideoCinco"
+            android:name=".main.videos.youtube.VideoCinco"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme"/>
     </application>
+
 </manifest>

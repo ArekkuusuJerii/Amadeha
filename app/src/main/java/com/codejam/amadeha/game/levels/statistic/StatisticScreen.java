@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
 import com.codejam.amadeha.game.core.widget.AutoResizeTextView;
-import com.codejam.amadeha.game.core.widget.SimpleAnimationListener;
 import com.codejam.amadeha.game.core.widget.SimpleTouchListener;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
@@ -62,6 +61,14 @@ public class StatisticScreen extends LevelBase implements ITickable {
             score -= 5;
             incorrect.play();
         }
+        nextStatistic();
+    }
+
+    @Override
+    public void skip(View view) {
+        if(!canAnswer) return;
+        score -= 10;
+        lose.play();
         nextStatistic();
     }
 
@@ -148,7 +155,7 @@ public class StatisticScreen extends LevelBase implements ITickable {
 
     @Override
     public int getScore() {
-        return !isGameOver() ? score : score > 0 ? score : 0;
+        return score;
     }
 
     @Override

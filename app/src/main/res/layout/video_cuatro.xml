@@ -33,7 +33,6 @@
             android:textColor="@color/bg_screen3"/>
     </RelativeLayout>
 
-
     <!-- App Bar -->
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"

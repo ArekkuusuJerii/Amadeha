@@ -1,9 +1,7 @@
 package com.codejam.amadeha.game;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,11 +26,9 @@ import com.codejam.amadeha.game.core.widget.ColumnListAdapter;
 import com.codejam.amadeha.game.core.widget.DialogWrapper;
 import com.codejam.amadeha.game.core.widget.SimpleAnimationListener;
 import com.codejam.amadeha.game.core.widget.SimpleSeekBarListener;
-import com.codejam.amadeha.game.core.widget.SimpleTouchListener;
 import com.codejam.amadeha.game.data.GameInfo;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.score.Score;
-import com.codejam.amadeha.game.data.score.ScoreHandler;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
 import com.codejam.amadeha.game.data.settings.MusicHelper.SoundType;
 
@@ -44,8 +40,10 @@ import java.util.List;
  * Amadeha is open source, and is distributed under the MIT licence.
  */
 
-public class LevelsScreen extends AppCompatActivity {
+public final class LevelsScreen extends AppCompatActivity {
 
+    private Dialog settings;
+    private Dialog highscores;
     private ViewPager pager;
 
     @Override
@@ -60,6 +58,7 @@ public class LevelsScreen extends AppCompatActivity {
     }
 
     public void showSettings(View view) {
+        if(settings != null && settings.isShowing()) return;
         SimpleSeekBarListener listener = new SimpleSeekBarListener() {
 
             private final MusicHelper.Sound drag = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card1);
@@ -96,6 +95,7 @@ public class LevelsScreen extends AppCompatActivity {
         effect.setProgress((int) (MusicHelper.getVolumes().get(SoundType.EFFECT) * (float) effect.getMax()));
         effect.setOnSeekBarChangeListener(listener);
         wrapper.show();
+        settings = wrapper;
     }
 
     public void showMaxScore() {
@@ -105,9 +105,9 @@ public class LevelsScreen extends AppCompatActivity {
 
         if (scores != null && !scores.isEmpty()) {
             Score score = scores.get(0); //First Score
-            string = getString(R.string.score) + ": " + score.getScore() + " " +
-                    getString(R.string.score_date) + ": " + score.getDate() + " " +
-                    getString(R.string.score_user) + ": " + score.getUser();
+            string = getString(R.string.score_user) + ": " + score.user + " | " +
+                    getString(R.string.score) + ": " + score.score + " | " +
+                    getString(R.string.score_date) + ": " + score.date;
         }
         Snackbar.make(findViewById(R.id.icon_float_credits), string, Snackbar.LENGTH_INDEFINITE).show();
     }
@@ -118,10 +118,11 @@ public class LevelsScreen extends AppCompatActivity {
     }
 
     public void play(View view) {
-        startActivity(new Intent(getBaseContext(), getCurrentGame().getLevel()));
+        startActivity(new Intent(getBaseContext(), getCurrentGame().level));
     }
 
     public void showScores(View view) {
+        if(highscores != null && highscores.isShowing()) return;
         final Dialog wrapper = new DialogWrapper(this, R.layout.activity_score)
                 .setStyle(R.style.transparentDialog)
                 .setFeature(Window.FEATURE_NO_TITLE)
@@ -129,6 +130,7 @@ public class LevelsScreen extends AppCompatActivity {
                 .setCancelable(true)
                 .build(1F, 1F);
         updateScores(wrapper);
+        highscores = wrapper;
     }
 
     private void updateScores(Dialog wrapper) {
@@ -143,7 +145,7 @@ public class LevelsScreen extends AppCompatActivity {
         List<Score> get = GameInfo.getScores().get(getCurrentGame());
         for (int i = 0; i < get.size() && i < 3; i++) {
             Score score = get.get(i);
-            View row = inflateScoreRow(score.getUser(), String.valueOf(score.getScore()), score.getDate().toString());
+            View row = inflateScoreRow(score.user, String.valueOf(score.score), score.date.toString());
             adapter.addRow().addColumn(row).close();
         }
 
@@ -205,7 +207,7 @@ public class LevelsScreen extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             int frag = getArguments().getInt("position");
             Game game = Game.values()[frag];
-            View view = inflater.inflate(game.getFragment(), container, false);
+            View view = inflater.inflate(game.fragment, container, false);
             View right = view.findViewById(R.id.arrow_right);
             View left = view.findViewById(R.id.arrow_left);
             View icon = view.findViewById(R.id._game);

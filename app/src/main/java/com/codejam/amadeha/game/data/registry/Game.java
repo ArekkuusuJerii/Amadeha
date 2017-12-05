@@ -21,45 +21,52 @@ import com.codejam.amadeha.game.levels.statistic.StatisticScreen;
  */
 
 public enum Game {
-    EQUATION(EquationScreen.class, Equation.class, R.layout.fragment_equation, R.raw.equation) {
-        @Override
-        public boolean canUnblock(Game from, Score score) {
-            return from == FUNCTION && score.getScore() >= 20;
-        }
-    },
-    FUNCTION(FunctionScreen.class, Function.class, R.layout.fragment_function, R.raw.function) {
+    SETS(SetsScreen.class, Sets.class, R.string.sets_game, R.layout.fragment_sets, R.raw.sets) {
         @Override
         public boolean isUnblocked(User user) {
             return true;
         }
-    },
-    STATISTIC(StatisticScreen.class, Statistic.class, R.layout.fragment_statistic, R.raw.statistic) {
+
         @Override
         public boolean canUnblock(Game from, Score score) {
-            return from == MATRIX && score.getScore() >= 20;
+            return from == SETS && score.score >= 40;
         }
     },
-    SETS(SetsScreen.class, Sets.class, R.layout.fragment_sets, R.raw.sets) {
+    FUNCTION(FunctionScreen.class, Function.class, R.string.function_game, R.layout.fragment_function, R.raw.function) {
         @Override
         public boolean canUnblock(Game from, Score score) {
-            return from == STATISTIC && score.getScore() >= 8;
+            return from == SETS && score.score >= 30;
         }
     },
-    MATRIX(MatrixScreen.class, Matrix.class, R.layout.fragment_matrix, R.raw.matrix) {
+    EQUATION(EquationScreen.class, Equation.class, R.string.equation_game, R.layout.fragment_equation, R.raw.equation) {
         @Override
         public boolean canUnblock(Game from, Score score) {
-            return from == EQUATION && score.getScore() >= 8;
+            return from == FUNCTION && score.score >= 30;
+        }
+    },
+    MATRIX(MatrixScreen.class, Matrix.class, R.string.matrix_game, R.layout.fragment_matrix, R.raw.matrix) {
+        @Override
+        public boolean canUnblock(Game from, Score score) {
+            return from == EQUATION && score.score >= 40;
+        }
+    },
+    STATISTIC(StatisticScreen.class, Statistic.class, R.string.statistic_game, R.layout.fragment_statistic, R.raw.statistic) {
+        @Override
+        public boolean canUnblock(Game from, Score score) {
+            return from == MATRIX && score.score >= 40;
         }
     };
 
-    private final Class level;
-    private final Class json;
-    private final int fragment;
-    private final int resource;
+    public final Class level;
+    public final Class json;
+    public final int name;
+    public final int fragment;
+    public final int resource;
 
-    Game(Class level, Class json, int fragment, int resource) {
+    Game(Class level, Class json, int name, int fragment, int resource) {
         this.level = level;
         this.json = json;
+        this.name = name;
         this.fragment = fragment;
         this.resource = resource;
     }
@@ -69,23 +76,7 @@ public enum Game {
     }
 
     public boolean isUnblocked(User user) {
-        return user.getLevels() != null && user.getLevels().contains(this);
-    }
-
-    public Class getLevel() {
-        return level;
-    }
-
-    public Class getJson() {
-        return json;
-    }
-
-    public int getFragment() {
-        return fragment;
-    }
-
-    public int getRaw() {
-        return resource;
+        return user.levels != null && user.levels.contains(this);
     }
 
     @Override

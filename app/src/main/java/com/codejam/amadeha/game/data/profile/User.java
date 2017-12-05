@@ -13,10 +13,10 @@ import java.util.UUID;
 
 public class User {
 
-    private transient UUID id;
-    private Set<Game> levels;
-    private String name;
-    private int score;
+    public transient UUID id;
+    public Set<Game> levels;
+    public String name;
+    public int score;
 
     public User(){}
 
@@ -24,37 +24,4 @@ public class User {
         this.id = id;
         this.name = name;
     }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public Set<Game> getLevels() {
-        return levels;
-    }
-
-    public void setLevels(Set<Game> levels) {
-        this.levels = levels;
-    }
-
 }

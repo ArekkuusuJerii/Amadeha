@@ -19,14 +19,6 @@
             android:textColor="@color/fontWhite"
             android:textSize="25sp"/>
 
-        <!--<Button
-            android:id="@+id/score_delete"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:text="@string/delete_highscores"/>-->
-
     </LinearLayout>
 
     <RelativeLayout

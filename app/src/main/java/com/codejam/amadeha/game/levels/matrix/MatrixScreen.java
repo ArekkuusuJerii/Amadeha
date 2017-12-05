@@ -72,19 +72,25 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
         drop.setText(from);
         String tag = (String) target.getTag();
         if (isMatrixCorrect()) {
-            this.win.play();
+            this.correct.play();
             score += matrix.score;
             for (TextView view : views) {
                 view.setOnClickListener(null);
                 view.setOnDragListener(null);
             }
             nextMatrix();
-        } else if (tag.equals(to)) {
-            this.correct.play();
-        } else {
+        } else if (!tag.equals(to)) {
             this.incorrect.play();
             score -= 1;
         }
+    }
+
+    @Override
+    public void skip(View view) {
+        if(!canMove) return;
+        score -= 10;
+        lose.play();
+        nextMatrix();
     }
 
     private void nextMatrix() {
@@ -185,7 +191,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
 
     @Override
     public int getScore() {
-        return !isGameOver() ? score : ((score > 0) ? score : 0);
+        return score;
     }
 
     @Override

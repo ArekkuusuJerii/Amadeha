@@ -2,14 +2,11 @@ package com.codejam.amadeha.main.inicio;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.codejam.amadeha.R;
@@ -18,9 +15,6 @@ import com.codejam.amadeha.main.contenido.MenuContenidoTemaCuatro;
 import com.codejam.amadeha.main.contenido.MenuContenidoTemaDos;
 import com.codejam.amadeha.main.contenido.MenuContenidoTemaTres;
 import com.codejam.amadeha.main.contenido.MenuContenidoTemaUno;
-import com.codejam.amadeha.main.slider.ImageModel;
-
-import java.util.ArrayList;
 
 public class FragmentInicio extends Fragment {
     private Context context;

@@ -7,21 +7,13 @@
              tools:context="com.codejam.amadeha.game.LevelsScreen$LevelFragment">
 
     <ImageView
-        android:id="@+id/arrow_left"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:contentDescription="@string/app_name"
-        android:onClick="scroll"
-        app:srcCompat="@drawable/arrow_reverse"/>
-
-    <ImageView
         android:id="@+id/arrow_right"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end"
         android:contentDescription="@string/app_name"
         android:onClick="scroll"
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/arrow"/>
 
     <FrameLayout

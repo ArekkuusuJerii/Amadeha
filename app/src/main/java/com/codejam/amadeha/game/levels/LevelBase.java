@@ -7,9 +7,9 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
@@ -64,22 +64,21 @@ public abstract class LevelBase extends Activity {
                 wrapper.cancel();
             }
         });
-        wrapper.findViewById(R.id.instruction_show).setOnTouchListener(new SimpleTouchListener() {
-            @Override
-            public void touchLift(View v) {
-                showInstructions();
-            }
-        });
         wrapper.show();
         incorrect = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.incorrect);
         correct = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.correct);
         lose = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.lose);
         win = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.win);
         tick = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.tick);
+        showInstructions();
     }
 
     public void showInstructions() {
 
+    }
+
+    public void skip(View view) {
+        //For rent
     }
 
     public final void startCountdown(long milliseconds) {
@@ -94,13 +93,13 @@ public abstract class LevelBase extends Activity {
                         , TimeUnit.MILLISECONDS.toMinutes(remaining) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(remaining))
                         , TimeUnit.MILLISECONDS.toSeconds(remaining) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(remaining))
                 ));
-                if (LevelBase.this instanceof ITickable) {
-                    ((ITickable) LevelBase.this).onCountdownTick(remaining);
-                }
                 countDown = remaining;
                 updateBarProgress();
                 updateScore();
                 tick.play();
+                if (LevelBase.this instanceof ITickable) {
+                    ((ITickable) LevelBase.this).onCountdownTick(remaining);
+                }
             }
 
             @Override
@@ -158,29 +157,35 @@ public abstract class LevelBase extends Activity {
     }
 
     public boolean canResume() {
-        return true;
+        return false;
     }
 
     public final void pause() {
-        stopCountdown();
+        if(canResume()) stopCountdown();
         final Dialog wrapper = new DialogWrapper(LevelBase.this, R.layout.activity_game_pause)
+                .setMinimizable(!canResume())
+                .setCancelable(!canResume())
                 .setFeature(Window.FEATURE_NO_TITLE)
                 .build(0.45F, 0.35F);
         wrapper.findViewById(R.id.pause_exit).setOnTouchListener(new SimpleTouchListener() {
             @Override
             public void touchLift(View v) {
-                finish();
                 wrapper.cancel();
+                finish();
             }
         });
-        wrapper.findViewById(R.id.pause_continue).setOnTouchListener(new SimpleTouchListener() {
+        ((Button) wrapper.findViewById(R.id.pause_option)).setText(getText(canResume() ? R.string.continue_game : R.string.retry));
+        wrapper.findViewById(R.id.pause_option).setOnTouchListener(new SimpleTouchListener() {
             @Override
             public void touchLift(View v) {
                 if (canResume()) {
                     startCountdown(countDown);
                     wrapper.cancel();
                 } else {
-                    Toast.makeText(getBaseContext(), getText(R.string.game_resume_warning), Toast.LENGTH_LONG).show();
+                    stopCountdown();
+                    wrapper.cancel();
+                    finish();
+                    startActivity(getIntent());
                 }
             }
         });
@@ -196,7 +201,9 @@ public abstract class LevelBase extends Activity {
     public final void gameover() {
         setGameOver();
         stopCountdown();
-        GameInfo.save(LevelBase.this, getGame(), getScore());
+        if(getScore() > 0) {
+            GameInfo.save(LevelBase.this, getGame(), getScore());
+        }
         final Dialog wrapper = new DialogWrapper(LevelBase.this, R.layout.activity_game_over)
                 .setFeature(Window.FEATURE_NO_TITLE)
                 .build(0.75F, 0.5F);

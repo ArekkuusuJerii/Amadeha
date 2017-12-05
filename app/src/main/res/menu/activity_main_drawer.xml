@@ -25,6 +25,10 @@
         android:title="Otras opciones">
         <menu>
             <item
+                android:id="@+id/nav_leaderboard"
+                android:icon="@drawable/iconpremio"
+                android:title="@string/leaderboard"/>
+            <item
                 android:id="@+id/nav_puntaje"
                 android:icon="@drawable/icondesarrollador"
                 android:title="Créditos" />

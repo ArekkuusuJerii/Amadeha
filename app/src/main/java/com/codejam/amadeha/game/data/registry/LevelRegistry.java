@@ -8,7 +8,6 @@ import android.support.test.espresso.core.internal.deps.guava.collect.Lists;
 import com.codejam.amadeha.game.core.FileReader;
 import com.codejam.amadeha.game.core.JsonLoader;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.Collections;
 import java.util.List;
@@ -27,7 +26,7 @@ public class LevelRegistry {
     public static void init(Resources resources) {
         ImmutableMap.Builder<Game, Level> builder = new ImmutableMap.Builder<>();
         for (Game game : Game.values()) {
-            builder.put(game, LevelRegistry.load(resources, game.getJson(), game.getRaw()));
+            builder.put(game, LevelRegistry.load(resources, game.json, game.resource));
         }
         levels = builder.build();
     }

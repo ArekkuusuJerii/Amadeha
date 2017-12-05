@@ -12,11 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.codejam.amadeha.R;
-import com.codejam.amadeha.main.slider.ImageModel;
 import com.codejam.amadeha.main.slider.SlidingImage_Adapter;
 import com.viewpagerindicator.CirclePageIndicator;
 
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -34,9 +32,7 @@ public class FragmentContenido extends Fragment {
             R.drawable.slider2
     };
 
-    public FragmentContenido() {
-
-    }
+    public FragmentContenido() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,               //El sistema lo llama cuando el fragmento debe
@@ -45,16 +41,15 @@ public class FragmentContenido extends Fragment {
         View v = inflater.inflate(R.layout.fragment_fragment_contenido, container, false);
         context = v.getContext();
 
-        ArrayList<ImageModel> imageModelArrayList = populateList();
         // init
         mPager = v.findViewById(R.id.pager_contenido);
-        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), imageModelArrayList));
+        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), myImageList));
         CirclePageIndicator indicator = v.findViewById(R.id.indicador_contenido);
         indicator.setViewPager(mPager);
         float density = getResources().getDisplayMetrics().density;
         //SetType circle indicator radius
         indicator.setRadius(5 * density);
-        NUM_PAGES = imageModelArrayList.size();
+        NUM_PAGES = myImageList.length;
         // Auto start of viewpager
         // See following code which is responsible for auto sliding of image
         final Handler handler = new Handler();
@@ -89,16 +84,5 @@ public class FragmentContenido extends Fragment {
             }
         });
         return v;
-    }
-
-    // Inicio AutoImageSlider
-    private ArrayList<ImageModel> populateList() {
-        ArrayList<ImageModel> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            ImageModel imageModel = new ImageModel();
-            imageModel.setImage_drawable(myImageList[i]);
-            list.add(imageModel);
-        }
-        return list;
     }
 }

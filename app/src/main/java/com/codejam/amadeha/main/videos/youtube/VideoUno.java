@@ -1,6 +1,5 @@
 package com.codejam.amadeha.main.videos.youtube;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -10,7 +9,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.codejam.amadeha.R;
-import com.codejam.amadeha.main.videos.MenuVideos;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -37,22 +35,20 @@ public class VideoUno extends YouTubeBaseActivity {
 
         setContentView(R.layout.video_uno);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
 
         // initCollapsingToolbar();
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MenuVideos.class);
-                startActivity(intent);
                 finish();
             }
         });
 
         Log.d(TAG, "onCreate: Starting.");
-        buttonPlay = (Button) findViewById(R.id.buttonPlay);
-        mYouTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubePlayer);
+        buttonPlay = findViewById(R.id.buttonPlay);
+        mYouTubePlayerView = findViewById(R.id.youtubePlayer);
 
         mOnInicializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override

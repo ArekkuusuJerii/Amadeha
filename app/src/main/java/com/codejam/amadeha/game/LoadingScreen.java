@@ -11,10 +11,12 @@ import android.support.annotation.Nullable;
 import android.text.InputType;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.core.widget.DialogWrapper;
@@ -54,14 +56,15 @@ public class LoadingScreen extends Activity {
                 .setFeature(Window.FEATURE_NO_TITLE)
                 .setMinimizable(false)
                 .setCancelable(true)
-                .build(0.85F, 0.65F);
+                .build(1F, 1F);
         wrapper.setCanceledOnTouchOutside(false);
         wrapper.findViewById(R.id.profile_add_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(LoadingScreen.this).setTitle(getText(R.string.new_user));
+                AlertDialog.Builder builder = new AlertDialog.Builder(LoadingScreen.this).setTitle(getText(R.string.add_user));
                 //Create input
                 final EditText input = new EditText(getBaseContext());
+                input.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
                 input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
                 input.setTextColor(Color.BLACK);
                 //Add input
@@ -71,10 +74,13 @@ public class LoadingScreen extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         String name = input.getText().toString();
                         if (!name.isEmpty()) {
+                            dialog.cancel();
                             input.setText("");
+                            input.setHint(R.string.player);
                             GameInfo.addUser(getBaseContext(), name);
                             setUser(GameInfo.getUsers().get(GameInfo.getUsers().size() - 1));
-                            dialog.cancel();
+                        } else {
+                            Toast.makeText(getBaseContext(), R.string.wrong_user, Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -140,7 +146,7 @@ public class LoadingScreen extends Activity {
     private void listUsers() {
         String[] names = new String[GameInfo.getUsers().size()];
         for (int i = 0; i < names.length; i++) {
-            names[i] = GameInfo.getUsers().get(i).getName();
+            names[i] = GameInfo.getUsers().get(i).name;
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.view_list,

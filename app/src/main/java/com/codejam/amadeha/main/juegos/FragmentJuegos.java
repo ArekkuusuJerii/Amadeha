@@ -13,11 +13,9 @@ import android.widget.Button;
 
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.LoadingScreen;
-import com.codejam.amadeha.main.slider.ImageModel;
 import com.codejam.amadeha.main.slider.SlidingImage_Adapter;
 import com.viewpagerindicator.CirclePageIndicator;
 
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -50,10 +48,9 @@ public class FragmentJuegos extends Fragment {
             }
         });
         context = v.getContext();
-        ArrayList<ImageModel> imageModelArrayList = populateList();
         // init
         mPager = v.findViewById(R.id.pager_juegos);
-        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), imageModelArrayList));
+        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), myImageListJuegos));
 
         CirclePageIndicator indicator = v.findViewById(R.id.indicador_juegos);
         indicator.setViewPager(mPager);
@@ -61,7 +58,7 @@ public class FragmentJuegos extends Fragment {
         //SetType circle indicator radius
         indicator.setRadius(5 * density);
 
-        NUM_PAGES = imageModelArrayList.size();
+        NUM_PAGES = myImageListJuegos.length;
 
         // Auto start of viewpager
         // See following code which is responsible for auto sliding of image
@@ -90,16 +87,5 @@ public class FragmentJuegos extends Fragment {
             }
         });
         return v;
-    }
-
-    // Inicio AutoImageSlider
-    private ArrayList<ImageModel> populateList() {
-        ArrayList<ImageModel> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            ImageModel imageModel = new ImageModel();
-            imageModel.setImage_drawable(myImageListJuegos[i]);
-            list.add(imageModel);
-        }
-        return list;
     }
 }

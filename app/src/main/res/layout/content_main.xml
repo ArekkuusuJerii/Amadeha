@@ -4,6 +4,8 @@
               android:id="@+id/content_main"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:layout_above="@+id/img"
+              android:layout_below="@+id/toolbar"
               android:orientation="vertical"
               tools:context="com.codejam.amadeha.main.MainActivity"
               tools:showIn="@layout/app_bar_main">

@@ -12,15 +12,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.codejam.amadeha.R;
-import com.codejam.amadeha.main.slider.ImageModel;
 import com.codejam.amadeha.main.slider.SlidingImage_Adapter;
 import com.viewpagerindicator.CirclePageIndicator;
 
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class FragmentVideos extends Fragment {
+
     private ViewPager mPager;
     private int currentPage = 0;
     private int NUM_PAGES = 0;
@@ -54,10 +53,9 @@ public class FragmentVideos extends Fragment {
             }
         });
         context = v.getContext();
-        ArrayList<ImageModel> imageModelArrayList = populateList();
         // init
         mPager = v.findViewById(R.id.pager_videos);
-        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), imageModelArrayList));
+        mPager.setAdapter(new SlidingImage_Adapter(context.getApplicationContext(), myImageListVideos));
 
         CirclePageIndicator indicator = v.findViewById(R.id.indicador_videos);
 
@@ -68,7 +66,7 @@ public class FragmentVideos extends Fragment {
         //SetType circle indicator radius
         indicator.setRadius(5 * density);
 
-        NUM_PAGES = imageModelArrayList.size();
+        NUM_PAGES = myImageListVideos.length;
 
         // Auto start of viewpager
         // See following code which is responsible for auto sliding of image
@@ -96,16 +94,5 @@ public class FragmentVideos extends Fragment {
             }
         });
         return v;
-    }
-
-    // Inicio AutoImageSlider
-    private ArrayList<ImageModel> populateList() {
-        ArrayList<ImageModel> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            ImageModel imageModel = new ImageModel();
-            imageModel.setImage_drawable(myImageListVideos[i]);
-            list.add(imageModel);
-        }
-        return list;
     }
 }

@@ -95,6 +95,14 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
         nextSet();
     }
 
+    @Override
+    public void skip(View view) {
+        if(!canAnswer) return;
+        score -= 10;
+        lose.play();
+        nextSet();
+    }
+
     private void nextSet() {
         canAnswer = false;
         showAnswer();
@@ -143,7 +151,7 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
 
     @Override
     public int getScore() {
-        return !isGameOver() ? score : score > 0 ? score : 0;
+        return score;
     }
 
     @Override

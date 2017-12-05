@@ -10,7 +10,7 @@ import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.score.Score;
 import com.codejam.amadeha.game.data.score.ScoreHandler;
 
-import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,13 +42,26 @@ public final class GameInfo {
     }
 
     public static void removeUser(Context context, User user) {
-        UserHandler.removeUser(context, user.getId().toString());
+        UserHandler.removeUser(context, user.id.toString());
         users.remove(user);
     }
 
     public static void save(Context context, Game game, int points) {
-        Score score = new Score(getUser().getName(), points);
+        Score score = new Score(getUser().name, points);
         ScoreHandler.saveScore(context, game, score);
+        //Update User
+        if (!isGuest()) {
+            if (user.levels == null) {
+                user.levels = new HashSet<>();
+            }
+            for (Game unblocked : Game.values()) {
+                if (unblocked.canUnblock(game, score)) {
+                    user.levels.add(unblocked);
+                }
+            }
+            user.score = user.score + score.score;
+            UserHandler.modifyUser(context, getUser());
+        }
     }
 
     public static ImmutableMap<Game, List<Score>> getScores() {

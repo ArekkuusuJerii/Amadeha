@@ -11,9 +11,9 @@ import java.util.Date;
  */
 public class Score implements Comparable<Score> {
 
-    private String user;
-    private Date date;
-    private int score;
+    public String user;
+    public Date date;
+    public int score;
 
     public Score(String user, Date date, int score) {
         this.user = user;
@@ -24,30 +24,6 @@ public class Score implements Comparable<Score> {
     public Score(String user, int score) {
         this.date = new Date();
         this.user = user;
-        this.score = score;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
         this.score = score;
     }
 

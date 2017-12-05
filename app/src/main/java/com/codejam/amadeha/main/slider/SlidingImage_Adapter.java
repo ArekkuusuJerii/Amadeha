@@ -10,24 +10,19 @@ import android.widget.ImageView;
 
 import com.codejam.amadeha.R;
 
-import java.util.ArrayList;
-
 /**
- * Created by Magdalena on 21/07/2017.
+ * This file was created by Magdalena on 21/07/2017. It's distributed as part of Amadeha.
+ * Get the source code in GitHub: https://github.com/ArekkuusuJerii/Amadeha
+ * Amadeha is open source, and is distributed under the MIT licence.
  */
-
 public class SlidingImage_Adapter extends PagerAdapter {
 
-
-    private ArrayList<ImageModel> imageModelArrayList;
+    private int[] images;
     private LayoutInflater inflater;
-    private Context context;
 
-
-    public SlidingImage_Adapter(Context context, ArrayList<ImageModel> imageModelArrayList) {
-        this.context = context;
-        this.imageModelArrayList = imageModelArrayList;
-        inflater = LayoutInflater.from(context);
+    public SlidingImage_Adapter(Context context, int... images) {
+        this.inflater = LayoutInflater.from(context);
+        this.images = images;
     }
 
     @Override
@@ -37,23 +32,17 @@ public class SlidingImage_Adapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return imageModelArrayList.size();
+        return images.length;
     }
 
     @Override
     public Object instantiateItem(ViewGroup view, int position) {
-        View imageLayout = inflater.inflate(R.layout.slidingimages_layout, view, false);
-
-        assert imageLayout != null;
-        final ImageView imageView = (ImageView) imageLayout
-                .findViewById(R.id.image);
-
-
-        imageView.setImageResource(imageModelArrayList.get(position).getImage_drawable());
-
-        view.addView(imageLayout, 0);
-
-        return imageLayout;
+        View layout = inflater.inflate(R.layout.slidingimages_layout, view, false);
+        assert layout != null;
+        ImageView image = layout.findViewById(R.id.image);
+        image.setImageResource(images[position]);
+        view.addView(layout, 0);
+        return layout;
     }
 
     @Override

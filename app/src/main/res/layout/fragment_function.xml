@@ -13,6 +13,7 @@
         android:layout_gravity="start"
         android:contentDescription="@string/app_name"
         android:onClick="scroll"
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/arrow_reverse"/>
 
     <ImageView
@@ -22,6 +23,7 @@
         android:layout_gravity="end"
         android:contentDescription="@string/app_name"
         android:onClick="scroll"
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/arrow"/>
 
     <FrameLayout

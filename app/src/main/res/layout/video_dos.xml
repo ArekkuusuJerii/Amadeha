@@ -29,7 +29,7 @@
             android:layout_below="@+id/youtubePlayer2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:background="@color/bg_screen1"
+            android:background="@color/bg_screen2"
             android:text="Reproducir"
             android:textColor="@color/bg_screen3"/>
     </RelativeLayout>

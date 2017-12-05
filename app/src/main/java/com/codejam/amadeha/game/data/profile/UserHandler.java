@@ -28,7 +28,7 @@ public final class UserHandler {
                 String json = preferences.getString(uuid, "");
 
                 User user = new Gson().fromJson(json, User.class);
-                user.setId(UUID.fromString(uuid));
+                user.id = UUID.fromString(uuid);
                 list.add(user);
             }
         }
@@ -46,7 +46,7 @@ public final class UserHandler {
     public static void modifyUser(Context context, User user) {
         SharedPreferences preferences = context.getSharedPreferences(PROFILES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(user.getId().toString(), new Gson().toJson(user));
+        editor.putString(user.id.toString(), new Gson().toJson(user));
         editor.apply();
     }
 

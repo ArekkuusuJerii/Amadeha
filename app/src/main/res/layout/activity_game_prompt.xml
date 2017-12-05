@@ -27,13 +27,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/exit_button"/>
-
-            <Button
-                android:id="@+id/instruction_show"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/show_instructions"/>
         </TableRow>
     </TableLayout>
 </android.support.constraint.ConstraintLayout>

@@ -6,19 +6,20 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:paddingTop="110dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:paddingTop="40dp"
                 android:text="Desarrolladores:"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"/>
@@ -26,28 +27,32 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:paddingTop="10dp"
                 android:text="Cuenca Araujo Yadsiry Guadalupe"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:paddingTop="5dp"
                 android:text="García Castrejon Edgar Alejandro"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:paddingTop="5dp"
                 android:text="Solís Sánchez María Magdalena"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:paddingTop="20dp"
                 android:text="Asesor Intitucional:"
                 android:textColor="@color/colorPrimaryDark"
@@ -56,14 +61,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:paddingTop="10dp"
                 android:text="M. I. García Uribe Diego"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:paddingTop="20dp"
                 android:text="Asesor académico:"
                 android:textColor="@color/colorPrimaryDark"
@@ -72,18 +79,20 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:paddingTop="10dp"
                 android:text="M. A. Del Pilar Degante Miguel Rosemberg"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:paddingTop="30dp"
                 android:text="Agradecimientos a la:"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <ImageView
                 android:layout_width="match_parent"

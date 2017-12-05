@@ -99,9 +99,21 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
             for (String s : answerData.keySet()) {
                 answerAllDrops(s);
             }
+            score -= (int) ((float) equation.score * 0.5F);
             incorrect.play();
             nextEquation();
         }
+    }
+
+    @Override
+    public void skip(View view) {
+        if(!canMove) return;
+        for (String s : answerData.keySet()) {
+            answerAllDrops(s);
+        }
+        score -= 10;
+        lose.play();
+        nextEquation();
     }
 
     private void answerAllDrops(String key) {
@@ -202,16 +214,11 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         TextView view = new TextView(this);
         view.setGravity(Gravity.CENTER);
         view.setText(line);
-        view.setTextSize(40);
+        view.setTextSize(120);
         view.setMaxLines(1);
         equationLayout.addView(view, params);
 
         return view;
-    }
-
-    @Override
-    public boolean canResume() {
-        return false;
     }
 
     @Override

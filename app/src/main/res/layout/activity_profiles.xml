@@ -3,8 +3,13 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:layout_alignParentTop="true"
+              android:background="@color/dark_transparent"
               android:gravity="top"
-              android:orientation="vertical">
+              android:orientation="vertical"
+              android:paddingBottom="60dp"
+              android:paddingLeft="40dp"
+              android:paddingRight="40dp"
+              android:paddingTop="80dp">
 
     <LinearLayout
         android:id="@+id/_add_profile"
@@ -19,8 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/white"
-            android:text="@string/add_user"/>
+            android:background="@color/dark_transparent"
+            android:text="@string/new_user"
+            android:textColor="@color/fontWhite"/>
 
         <Button
             android:id="@+id/profile_guest_button"
@@ -28,8 +34,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/white"
-            android:text="@string/play_guest"/>
+            android:background="@color/dark_transparent"
+            android:text="@string/play_guest"
+            android:textColor="@color/fontWhite"/>
 
     </LinearLayout>
 
@@ -39,7 +46,6 @@
         android:layout_height="0dp"
         android:layout_margin="10sp"
         android:layout_weight="1"
-        android:background="#BFFFFFFF"
         android:divider="@android:color/transparent"
         android:dividerHeight="5sp"/>
 

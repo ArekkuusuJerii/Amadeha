@@ -12,13 +12,14 @@
     <color name="bg_screen5">#00ab84</color>
 
     <!-- dots active colors -->
-    <color name="dot_active">#000000</color>
+    <color name="dot_active">#00ab84</color>
 
     <!-- dots inactive colors -->
-    <color name="dot_inactive">#cccccc</color>
+    <color name="dot_inactive">#9198b4</color>
 
     <color name="fontWhite">#ffffff</color>
     <color name="fontBlack">#000000</color>
+    <color name="fontBlue">#152c60</color>
 
     <!-- Game menu -->
     <color name="lvl_1">#1565C0</color>
@@ -28,6 +29,7 @@
     <color name="score_lvl_1">#00695C</color>
     <color name="score_lvl_2">#004D40</color>
 
-    <!-- Dialog -->
+    <!-- Game -->
     <color name="dark_transparent">#80000000</color>
+    <color name="transparent">#90FFFFFF</color>
 </resources>

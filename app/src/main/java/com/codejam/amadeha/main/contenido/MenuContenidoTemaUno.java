@@ -1,7 +1,6 @@
 package com.codejam.amadeha.main.contenido;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -21,17 +20,13 @@ import com.codejam.amadeha.R;
 public class MenuContenidoTemaUno extends AppCompatActivity {
 
     private ViewPager viewPager;
-    private MenuContenidoTemaUno.ViewPagerAdapter viewPagerAdapter;
     private LinearLayout dotsLayout;
-    private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
-    private int currentPage;
-    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.SimpleOnPageChangeListener() {
 
         @Override
         public void onPageSelected(int position) {
-            currentPage = position;
             addBottomDots(position);
 
             // changing the next button text 'NEXT' / 'GOT IT'
@@ -45,17 +40,6 @@ public class MenuContenidoTemaUno extends AppCompatActivity {
                 btnSkip.setVisibility(View.VISIBLE);
             }
         }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-
-        }
-
     };
 
     @Override
@@ -68,10 +52,10 @@ public class MenuContenidoTemaUno extends AppCompatActivity {
 
         setContentView(R.layout.activity_menu_contenido_tema_uno);
 
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-        btnSkip = (Button) findViewById(R.id.btn_skip);
-        btnNext = (Button) findViewById(R.id.btn_next);
+        viewPager = findViewById(R.id.view_pager);
+        dotsLayout = findViewById(R.id.layoutDots);
+        btnSkip = findViewById(R.id.btn_skip);
+        btnNext = findViewById(R.id.btn_next);
 
         layouts = new int[]{
                 R.layout.contenido_tema_uno,
@@ -84,14 +68,14 @@ public class MenuContenidoTemaUno extends AppCompatActivity {
         // adding bottom dots
         addBottomDots(0);
 
-        viewPagerAdapter = new MenuContenidoTemaUno.ViewPagerAdapter();
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter();
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
     }
 
     public void btnSkipClick(View v) {
-        launchHomeScreen();
+        finish();
     }
 
     public void btnNextClick(View v) {
@@ -102,17 +86,12 @@ public class MenuContenidoTemaUno extends AppCompatActivity {
             // move to next screen
             viewPager.setCurrentItem(current);
         } else {
-            launchHomeScreen();
+            finish();
         }
     }
 
-    public final int getCurrentPage() {
-        return currentPage;
-    }
-
-
     private void addBottomDots(int currentPage) {
-        dots = new TextView[layouts.length];
+        TextView[] dots = new TextView[layouts.length];
 
         dotsLayout.removeAllViews();
         for (int i = 0; i < dots.length; i++) {
@@ -127,19 +106,13 @@ public class MenuContenidoTemaUno extends AppCompatActivity {
             dots[currentPage].setTextColor(getResources().getColor(R.color.dot_active));
     }
 
-
     private int getItem(int i) {
         return viewPager.getCurrentItem() + i;
     }
 
-    private void launchHomeScreen() {
-        startActivity(new Intent(this, MenuContenido.class));
-        finish();
-    }
-
     public class ViewPagerAdapter extends PagerAdapter {
-        private LayoutInflater layoutInflater;
 
+        private LayoutInflater layoutInflater;
 
         public ViewPagerAdapter() {
 

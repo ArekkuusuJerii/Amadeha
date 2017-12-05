@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/dark_transparent"
               android:orientation="horizontal">
 
     <TextView
@@ -10,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="end|center_vertical|start"
-        android:textColor="@android:color/black"
+        android:textColor="@color/fontWhite"
         android:textSize="25sp"
         android:textStyle="normal|italic">
     </TextView>

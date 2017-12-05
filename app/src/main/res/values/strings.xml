@@ -7,7 +7,7 @@
     <string name="function_game">Funciones</string>
     <string name="statistic_game">Estadística</string>
     <string name="sets_game">Conjuntos</string>
-    <string name="matrix_game">Matrix</string>
+    <string name="matrix_game">Matrices</string>
 
     <!--Amadeha level-->
     <string name="jugar">Jugar</string>
@@ -17,14 +17,14 @@
     <string name="date">Fecha</string>
     <string name="score">Puntos</string>
     <string name="score_date">Fecha</string>
-    <string name="score_user">Logrado por</string>
+    <string name="score_user">Highscore</string>
     <string name="score_undefined">Aún no existen puntajes en este nivel</string>
 
-    <string name="equation_unblock">Para desploquear este nivel consigue 20+ puntos en Funciones</string>
-    <string name="function_unblock">Para desploquear este nivel consigue…</string>
-    <string name="statistic_unblock">Para desploquear este nivel consigue 20+ puntos en Matrices</string>
-    <string name="sets_unblock">Para desploquear este nivel consigue 8+ puntos en Estadística</string>
-    <string name="matrix_unblock">Para desploquear este nivel consigue 8+ puntos en Ecuaciones</string>
+    <string name="equation_unblock">Para desploquear este nivel consigue 30+ puntos en Funciones</string>
+    <string name="function_unblock">Para desploquear este nivel consigue 30+ puntos en Conjuntos</string>
+    <string name="statistic_unblock">Para desploquear este nivel consigue 40+ puntos en Matrices</string>
+    <string name="sets_unblock">Desbloqueado por default</string>
+    <string name="matrix_unblock">Para desploquear este nivel consigue 40+ puntos en Ecuaciones</string>
 
     <!--Amadeha level menus-->
     <string name="pause_button">Pausa</string>
@@ -44,6 +44,7 @@
     <string name="points_">Puntos:</string>
     <string name="progress_">Progreso:</string>
     <string name="player_">Jugador:</string>
+    <string name="skip">SALTAR</string>
 
     <!--Amadeha instruction-->
     <string name="close_">Cerrar</string>
@@ -58,14 +59,16 @@
     <string name="game_resume_warning">"No puedes resumir el juego una vez pausado!"</string>
 
     <!--Amadeha profile-->
-    <string name="new_user">Nuevo perfil</string>
+    <string name="new_user">Nuevo usuario</string>
+    <string name="add_user">Introduce nombre de usuario:</string>
+    <string name="wrong_user">Usuario incorrecto</string>
     <string name="play_guest">Jugar como invitado</string>
-    <string name="add_user">Añadir usuario</string>
     <string name="menu_settings">Opciones</string>
     <string name="delete_user">Eliminar usuario</string>
     <string name="delete_user_question">¿Desea eliminar este usuario?</string>
 
     <!--Amadeha score-->
+    <string name="leaderboard">Tabla de clasificación</string>
     <string name="delete_highscores">Eliminar HighScores</string>
     <string name="delete_highscores_question">¿Desea eliminar los HighScores?</string>
 
@@ -76,13 +79,13 @@
     <string name="volume">Volumen:</string>
 
     <!--Amadeha misc-->
-    <string name="chronometer_placeholder">%02d:%02d</string>
-    <string name="chronometer">00:00</string>
-    <string name="default_points">00</string>
-    <string name="question_mark">\?</string>
-    <string name="bracket_right">]</string>
-    <string name="bracket_left">[</string>
-    <string name="equals">=</string>
+    <string name="chronometer_placeholder" translatable="false">%02d:%02d</string>
+    <string name="chronometer" translatable="false">00:00</string>
+    <string name="default_points" translatable="false">00</string>
+    <string name="question_mark" translatable="false">\?</string>
+    <string name="bracket_right" translatable="false">]</string>
+    <string name="bracket_left" translatable="false">[</string>
+    <string name="equals" translatable="false">=</string>
     <string name="_false">Falso</string>
     <string name="_true">Verdadero</string>
     <string name="yes">Si</string>
@@ -93,14 +96,6 @@
     <string name="equation_second_grade">"Ecuación de segundo grado"</string>
     <string name="equation_bi_unknown">"Ecuación de dos incógnitas"</string>
     <string name="crash_toast_text">Ha ocurrido un error en la Aplicación…</string>
-    <string name="leaderboard">Leaderboard</string>
-
-    <!--Amadeha treats-->
-    <string name="incorrect">¡INCORRECTO!</string>
-    <string name="shout_good">¡BIEN!</string>
-    <string name="shout_excelent">¡EXCELENTE!</string>
-    <string name="shout_perfect">¡PERFECTO!</string>
-    <string name="shout_correct">¡CORRECTO!</string>
 
     <!--Amadeha main-->
     <string name="start">INICIO</string>
@@ -109,8 +104,9 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="omit">Omitir</string>
     <string name="next">Siguiente</string>
-    <string name="skip">Regresar</string>
+    <string name="back">Regresar</string>
     <string name="stuty">Estudiar</string>
 
     <string name="titulo1">Teoría de conjuntos</string>
@@ -132,9 +128,9 @@
     <string name="objetivoUnidadCuatroVídeos">Objetivo: Deducir los conceptos básicos de las matrices y sus variadas operaciones.</string>
     <string name="objetivoUnidadCincoVídeos">Objetivo: Asociar la información para establecer el comportamiento de los datos que se le presenten en su día a día.</string>
 
-    <string name="videosFragment">Entonces… ¡Te encuentras en el lugar indicado!, aquí encontrarás diferentes vídeos explicativos referente a cada unidad de la materia que te ayudarán a estudiar de una manera más divertida.\n</string>
+    <string name="videosFragment">Entonces... ¡Te encuentras en el lugar indicado!, aquí encontrarás diferentes vídeos explicativos referente a cada unidad de la materia que te ayudarán a estudiar de una manera más divertida.\n</string>
     <string name="contenido1Fragment">Bienvenidos (as) al apartado del contenido teórico que AMADEHA te tiene preparado para ayudarte de una forma concreta y rápida en tus clases.\n</string>
-    <string name="contenido2Fragment">Aquí encontrarán contenido básico de cada una de las unidades que abarca la materia de Desarrollo de habilidades del pensamiento matemático.</string>
+    <string name="contenido2Fragment">Aquí encontrarán contenido básico de cada una de las unidades que abarca la materia de \nDesarrollo de habilidades del pensamiento matemático.</string>
     <string name="fragmentJuegos">Bien, entonces les deseamos mucha suerte porque aquí encontrarán ejercicios que los pondrá a pensar.\n</string>
 
     //Teoría
@@ -162,68 +158,27 @@
 
     //Conjuntos
     <string name="layout1Conjuntos">Los conjuntos se emplean en muchas áreas de las matemáticas, de modo que es importante una compresión de los conjuntos y de su notación. \n\nUn conjunto es una colección de objetos, estos a su vez se denominan elementos del conjunto. Los conjuntos se indican mediante llaves, {}, y con frecuencia sus nombres son letras mayúsculas.\n</string>
-    <string name="layout1.1Conjuntos">Cuando los elementos de un conjunto están listados dentro de las llaves, como se ilustra a continuación, se dice que el conjunto está en forma de lista. \n
-    \n A = {a, b, c} \n
-    B = {amarillo, verde, azul, rojo} \n
-    C = {1, 2, 3, 4, 5} \n</string>
+    <string name="layout1.1Conjuntos">Cuando los elementos de un conjunto están listados dentro de las llaves, como se ilustra a continuación, se dice que el conjunto está en forma de lista. \n\n A = {a, b, c} \nB = {amarillo, verde, azul, rojo} \nC = {1, 2, 3, 4, 5} \n</string>
     <string name="layout2Conjuntos">El conjunto A tiene tres elementos, el conjunto B tiene cuatro elementos y el conjunto C tiene cinco elementos. El símbolo ∈ se usa para indicar que un objeto es un elemento de un conjunto. Como 2 es un elemento del conjunto C podemos escribir 2 ∈ C; esto se lee “2 es un elemento del conjunto C”. \n\n</string>
-    <string name="layout2.1Conjuntos">\nUn conjunto puede ser finito o infinito. Los conjuntos A, B  y C tienen, cada uno, un número finito de elementos y, por lo tanto, son conjuntos finitos. \n El conjunto siguiente, llamado el conjunto de números naturales o conjunto de números para contar, es un ejemplo de un conjunto infinito. \n
-    \nN = {1, 2, 3, 4, 5,…} \n</string>
-    <string name="layout3Conjuntos">Los tres puntos después de la última coma, llamados puntos suspensivos, indican que el conjunto continúa de la misma manera.
-Otro importante conjunto  infinito es el de enteros. El conjunto de enteros es: \n\n
-I = {…, -4, -3, -2, -1, 0, 1, 2, 3, 4,…} \n\n
-Observe que el conjunto de enteros incluye tanto a los enteros positivos como a los negativos y al número cero, 0. \n\n
-Si escribimos \n\n
-D = {1, 2, 3, 4, 5,…, 163} \n\n</string>
+    <string name="layout2.1Conjuntos">\nUn conjunto puede ser finito o infinito. Los conjuntos A, B  y C tienen, cada uno, un número finito de elementos y, por lo tanto, son conjuntos finitos. \n El conjunto siguiente, llamado el conjunto de números naturales o conjunto de números para contar, es un ejemplo de un conjunto infinito. \n\nN = {1, 2, 3, 4, 5,…} \n</string>
+    <string name="layout3Conjuntos">Los tres puntos después de la última coma, llamados puntos suspensivos, indican que el conjunto continúa de la misma manera.ro importante conjunto  infinito es el de enteros. El conjunto de enteros es: \n\nI = {…, -4, -3, -2, -1, 0, 1, 2, 3, 4,…} \n\nObserve que el conjunto de enteros incluye tanto a los enteros positivos como a los negativos y al número cero, 0. \n\nSi escribimos \n\nD = {1, 2, 3, 4, 5,…, 163} \n\n</string>
     <string name="layout3Conjuntos1.1">Queremos decir que el conjunto continúa de la misma manera hasta el número 163. El conjunto D es el conjunto de los primeros 163 números naturales, por tanto D es un conjunto finito.\n\n</string>
     <string name="layout4Conjuntos">Un conjunto especial que no tiene elementos se llama el conjunto nulo o conjunto vacío, se escribe { } o ∅. Por ejemplo, el conjunto de estudiantes en su clase que tienen más de 150 años es el conjunto vacío o nulo.\n</string>
     <string name="layout5Conjuntos">Al igual que operaciones tales como la suma y la multiplicación se realizan sobre los números, existen operaciones que pueden realizarse sobre conjuntos. Dos operaciones de conjuntos son la unión y la intersección. \n</string>
-    <string name="layout6Conjuntos">La unión del conjunto A y el conjunto B, escrita A ∪ B, es el conjunto de elementos que pertenecen al conjunto A o al conjunto B.\n\n
-Ejemplos de unión de conjuntos\n\n
-A = {1, 2, 3, 4, 5},	B = {3, 4, 5, 6, 7},	A ∪ B = {1, 2, 3, 4, 5, 6, 7}\n\n
-A = {a, b, c, d, e},	B = {x, y, z},		A ∪ B = {a, b, c, d, e, x, y, z} \n\n
-En la notación constructiva de conjuntos podemos expresar a A ∪ B como \n\n
-A ∪ B = {x | x ∈ A o x ∈ B}\n</string>
-    <string name="layout7Conjuntos">La intersección del conjunto A y el conjunto B, denotada A ∩ B, es el conjunto de todos los elementos que son comunes a ambos conjuntos A y B.\n\n
-Ejemplos de intersección de conjuntos\n \n
-A = {1, 2, 3, 4, 5},		B = {3, 4, 5, 6, 7},		A ∩ B = {3, 4, 5}\n\n
-A = {a, b, c, d, e},		B = {x, y, z},			A ∩ B = {  }\n\n
-Observe que en el último ejemplo, los conjuntos A y B no tienen elementos en común. Por lo tanto, su intersección es el conjunto vacío. En la notación constructiva de conjuntos podemos expresar A ∩ B como \n\n
-A ∩ B = {x | x ∈ A y x ∈ B}\n
-</string>
+    <string name="layout6Conjuntos">La unión del conjunto A y el conjunto B, escrita A ∪ B, es el conjunto de elementos que pertenecen al conjunto A o al conjunto B.\n\nEjemplos de unión de conjuntos\n\nA = {1, 2, 3, 4, 5},	B = {3, 4, 5, 6, 7},	A ∪ B = {1, 2, 3, 4, 5, 6, 7}\n\nA = {a, b, c, d, e},	B = {x, y, z},		A ∪ B = {a, b, c, d, e, x, y, z} \n\nEn la notación constructiva de conjuntos podemos expresar a A ∪ B como \n\nA ∪ B = {x | x ∈ A o x ∈ B}\n</string>
+    <string name="layout7Conjuntos">La intersección del conjunto A y el conjunto B, denotada A ∩ B, es el conjunto de todos los elementos que son comunes a ambos conjuntos A y B.\n\nEjemplos de intersección de conjuntos\n \nA = {1, 2, 3, 4, 5},		B = {3, 4, 5, 6, 7},		A ∩ B = {3, 4, 5}\n\nA = {a, b, c, d, e},		B = {x, y, z},			A ∩ B = {  }\n\nObserve que en el último ejemplo, los conjuntos A y B no tienen elementos en común. Por lo tanto, su intersección es el conjunto vacío. En la notación constructiva de conjuntos podemos expresar A ∩ B como \n\nA ∩ B = {x | x ∈ A y x ∈ B}\n</string>
 
     //Funciones
-    <string name="layout1Funciones">Una gráfica es una imagen que muestra la relación entre dos o más variables de una ecuación. \n\n
-	El sistema de coordenadas cartesiano (o rectangular), consiste en dos ejes (o rectas numéricas) en un plano, dibujado de forma perpendicular una de la otra. Observe cómo los dos ejes determinan cuadrantes, etiquetados con numerales romanos.\n
-</string>
+    <string name="layout1Funciones">Una gráfica es una imagen que muestra la relación entre dos o más variables de una ecuación. \n\nEl sistema de coordenadas cartesiano (o rectangular), consiste en dos ejes (o rectas numéricas) en un plano, dibujado de forma perpendicular una de la otra. Observe cómo los dos ejes determinan cuadrantes, etiquetados con numerales romanos.\n</string>
     <string name="layout2Funciones">\nIniciando en el origen y moviéndose hacia la derecha, los números crecen, moviéndose a la izquierda los números decrecen. \n\n</string>
-    <string name="layout3Funciones">Un par ordenado (x, y) se utiliza para dar las dos coordenadas de un punto. La coordenada x siempre es la primera coordenada en el par ordenado.\n\n
-Localizando el punto correspondiente al par ordenado:    (2,3)\n</string>
+    <string name="layout3Funciones">Un par ordenado (x, y) se utiliza para dar las dos coordenadas de un punto. La coordenada x siempre es la primera coordenada en el par ordenado.\n\nLocalizando el punto correspondiente al par ordenado:    (2,3)\n</string>
 
     //Ecuaciones
-    <string name="layout1Ecuaciones">Propiedad de la igualdad\n
-Para todos los números reales a, b y c:\n\n
-	a = a.	propiedad reflexiva\n
-	Si a = b, entonces b = a.	propiedad simétrica\n
-	Si a = b y b = c, entonces c = a.	propiedad transitiva\n
-Ejemplos de la propiedad\n\n
-7 = 7\n
-x+5=x+5\n\n
-Ejemplos de la propiedad simétrica\n
-Si x = 3, entonces 3 = x.\n
-</string>
-    <string name="layout2Ecuaciones">Si y = x + 9, entonces x + 9 = y.\n\n
-Ejemplo de la propiedad transitiva\n\n
-Si x = a y a = 4y, entonces x = 4y.\n
-            Si a + b = c y c = 4d, entonces a + b = 4d.</string>
-    <string name="layout3Ecuaciones">Una ecuación es una proposición matemática de igualdad. Una ecuación debe contener un signo igual y una expresión matemática de cada lado del signo igual.\n\n
-    \nEjemplo de ecuaciones\n
-    x+8= -7\n
-    2x^2-4= -3x+13\n\n\n
-    Los números que hacen de una ecuación una proposición verdadera se llaman soluciones (o raíces) de la ecuación. El conjunto solución de una ecuación es el conjunto de números reales que hacen verdadera la ecuación.\n</string>
+    <string name="layout1Ecuaciones">Propiedad de la igualdad\nPara todos los números reales a, b y c:\n\na = a.	propiedad reflexiva\nSi a = b, entonces b = a.	propiedad simétrica\nSi a = b y b = c, entonces c = a.	propiedad transitiva\nEjemplos de la propiedad\n\n7 = 7\nx+5=x+5\n\nEjemplos de la propiedad simétrica\nSi x = 3, entonces 3 = x.\n</string>
+    <string name="layout2Ecuaciones">Si y = x + 9, entonces x + 9 = y.\n\nEjemplo de la propiedad transitiva\n\nSi x = a y a = 4y, entonces x = 4y.\nSi a + b = c y c = 4d, entonces a + b = 4d.</string>
+    <string name="layout3Ecuaciones">Una ecuación es una proposición matemática de igualdad. Una ecuación debe contener un signo igual y una expresión matemática de cada lado del signo igual.\n\n\nEjemplo de ecuaciones\nx+8= -7\n2x^2-4= -3x+13\n\n\nLos números que hacen de una ecuación una proposición verdadera se llaman soluciones (o raíces) de la ecuación. El conjunto solución de una ecuación es el conjunto de números reales que hacen verdadera la ecuación.\n</string>
     <string name="layout4Ecuaciones">Dos o más ecuaciones con el mismo conjunto de solución son ecuaciones equivalentes. Por lo general las ecuaciones equivalentes más simples.\n</string>
-    <string name="layout5Ecuaciones">Una ecuación lineal es aquella que puede escribirse en la forma ax+b=c,a≠0.\n
-Para resolver ecuaciones, aplicamos las propiedades de suma y multiplicación de la igualdad para aislar la variable en un lado del signo igual.\n\n</string>
+    <string name="layout5Ecuaciones">Una ecuación lineal es aquella que puede escribirse en la forma ax+b=c,a≠0.\nPara resolver ecuaciones, aplicamos las propiedades de suma y multiplicación de la igualdad para aislar la variable en un lado del signo igual.\n\n</string>
     <string name="layout5Ecuaciones1.1">Propiedad de la suma para la igualdad\n\n</string>
     <string name="layout5Ecuaciones1.2">Si a = b, entonces a + b = b+ c para cualesquiera a, b y c.\n</string>
     <string name="layout6Ecuaciones">La propiedad de la suma para la igualdad establece que podemos sumar el mismo número en ambos lados de una ecuación sin cambiar la solución de la ecuación original. Como la resta está definida en términos de una suma, la propiedad de la suma para la igualdad también nos permite restar el mismo número en ambos lados de una ecuación.\n</string>
@@ -234,17 +189,12 @@ Para resolver ecuaciones, aplicamos las propiedades de suma y multiplicación de
     <string name="layout7Ecuaciones1.1">1.	Quite fracciones. Si la ecuación contiene fracciones, elimínelas multiplicando ambos lados de la ecuación por el mínimo común denominador.\n\n2.	Simplifique cada lado de forma separada. Simplifique cada lado de la ecuación tanto como sea posible. Utilice la propiedad distributiva para eliminar paréntesis y reduzca términos semejantes como sea necesario.\n\n</string>
     <string name="layout7Ecuaciones1.2">3.	Aísle el término variable en un lado. Utilice la propiedad de la suma para dejar todos los términos que contienen la variable en un lado de la ecuación y todos los términos constantes en el otro lado. Para hacer esto quizá se requiera aplicar varias veces la propiedad de la suma.\n\n4.	Despeje la variable. Aplique la propiedad de la multiplicación para obtener una ecuación que tenga sola la variable (con un coeficiente de 1) en un lado.\n\n5.	Compruebe. Verifique, mediante sustitución, la solución obtenida en el paso 4 en la ecuación original.\n</string>
     <string name="layout9Ecuaciones">La fórmula cuadrática puede usarse para resolver cualquier ecuación cuadrática. De hecho, es el método más útil u versátil para resolver ecuaciones cuadráticas. Por su eficiencia, por lo general se le utiliza en lugar del método de completar el cuadrado.\n\n</string>
-    <string name="layout9Ecuaciones1.1">La fórmula general de una ecuación cuadrática es ax2 + bx + c = 0, donde a es el coeficiente del término cuadrático, b es el coeficiente del término del primer grado y c es la constante.\n\n
-    Podemos deducir la fórmula cuadrática empezando con una ecuación cuadrática dada en la fórmula general y completando el cuadrado.\n</string>
-    <string name="layout10Ecuaciones">1.- Escriba la ecuación cuadrática en la fórmula general, ax^2+bx+c=0, y determine los valores numéricos, de a b y c.\n\n
-2.- Sustituya a, b y c con los valores correspondientes en la fórmula general cuadrática, y luego evalúe la fórmula para obtener la solución.\n</string>
-    <string name="layout11Ecuaciones">Ejemplo:  \n\n
-Resuelva la ecuación x^2+2x-8=0 mediante la fórmula cuadrática.\n
-Solución En esta ecuación a = 1, b = 2 y c = -8.\n</string>
-    <string name="layout12Ecuaciones">Si realiza una comprobación descubrirá que tanto 2 como -4 son soluciones para la ecuación. Observe que las soluciones para la ecuación son dos números reales.\n\n
-La solución del ejemplo también se puede obtener mediante la factorización, tal y como se muestra a continuación.\n</string>
+    <string name="layout9Ecuaciones1.1">La fórmula general de una ecuación cuadrática es ax2 + bx + c = 0, donde a es el coeficiente del término cuadrático, b es el coeficiente del término del primer grado y c es la constante.\n\nPodemos deducir la fórmula cuadrática empezando con una ecuación cuadrática dada en la fórmula general y completando el cuadrado.\n</string>
+    <string name="layout10Ecuaciones">1.- Escriba la ecuación cuadrática en la fórmula general, ax^2+bx+c=0, y determine los valores numéricos, de a b y c.\n\n2.- Sustituya a, b y c con los valores correspondientes en la fórmula general cuadrática, y luego evalúe la fórmula para obtener la solución.\n</string>
+    <string name="layout11Ecuaciones">Ejemplo:  \n\nResuelva la ecuación x^2+2x-8=0 mediante la fórmula cuadrática.\nSolución En esta ecuación a = 1, b = 2 y c = -8.\n</string>
+    <string name="layout12Ecuaciones">Si realiza una comprobación descubrirá que tanto 2 como -4 son soluciones para la ecuación. Observe que las soluciones para la ecuación son dos números reales.\n\nLa solución del ejemplo también se puede obtener mediante la factorización, tal y como se muestra a continuación.\n</string>
     <string name="layout13Ecuaciones">NOTA: Cuando tenga que resolver una ecuación cuadrática sin especificar el método, primero trate, mediante factorización. Si la ecuación no se puede factorizar con facilidad, utilice la fórmula cuadrática.\n</string>
-    <string name="layout14Ecuaciones">\nAl resolver una ecuación cuadrática mediante la fórmula cuadrática los cálculos pueden ser más sencillos si el coeficiente principal, a, es positivo, Por lo tanto, si tuviera que resolver una ecuación cuadrática como: 〖–x〗^2+3x–8=0, sería recomendable que la reescribiera como x^2–3x-8=0\n</string>
+    <string name="layout14Ecuaciones">\nAl resolver una ecuación cuadrática mediante la fórmula cuadrática los cálculos pueden ser más sencillos si el coeficiente principal, a, es positivo, Por lo tanto, si tuviera que resolver una ecuación cuadrática como: 〖-x〗^2+3x-8=0, sería recomendable que la reescribiera como x^2-3x-8=0\n</string>
 
     //Matrices
     <string name="layout1Matrices">Es definido como un conjunto ordenado de n números escritos como se muestra en la figura 4.1, a este vector se le llama vector renglón i o fila:\n</string>
@@ -258,11 +208,8 @@ La solución del ejemplo también se puede obtener mediante la factorización, t
     <string name="layout9Matrices">Dos matrices A= (aij) y B= (bij) son iguales si (1) son del mismo tamaño y (2) las componentes correspondientes son iguales.\n</string>
 
     //Estadistica
-    <string name="layout1Estadistica">Definiciones\n\n
-Una variable es una característica que cambia o varía con el tiempo o para diferentes personas u objetos.\n\n
-Una unidad experimental es el individuo u objeto en el que se mide una variable. Resulta una sola medición o datos cuando una variable se mide en realidad en  una unidad experimental.\n</string>
-    <string name="layout2Estadistica">Una población es el conjunto de mediciones de interés para el investigador.\n\n
-Una muestra es un subconjunto de mediciones seleccionado de la población.\n</string>
+    <string name="layout1Estadistica">Definiciones\n\nUna variable es una característica que cambia o varía con el tiempo o para diferentes personas u objetos.\n\nUna unidad experimental es el individuo u objeto en el que se mide una variable. Resulta una sola medición o datos cuando una variable se mide en realidad en  una unidad experimental.\n</string>
+    <string name="layout2Estadistica">Una población es el conjunto de mediciones de interés para el investigador.\n\nUna muestra es un subconjunto de mediciones seleccionado de la población.\n</string>
     <string name="layout3Estadistica">Las variables cualitativas miden una cualidad o característica en cada unidad experimental. Las variables cuantitativas miden una cantidad numérica en cada unidad experimental.\n\nLas variables cualitativas producen datos que se clasifican de acuerdo a similitudes o diferencias en clase; por lo tanto con frecuencias se denominan datos categóricos. Las variables con género, año y especialidad son variables cualitativas que producen datos categóricos.\n\nLas variables cuantitativas, con frecuencia representadas por la letra x, producen datos numéricos.\n\n</string>
     <string name="layout3Estadistica1.1">Una variable discreta toma sólo un número finito o contable de valores. Una variable continua puede tomar infinitamente muchos valores correspondientes a los puntos en un intervalo de recta.\n</string>
     <string name="layout4Estadistica">Definiciones\n\nLa media aritmética o promedio de un conjunto de n mediciones es igual a la suma de las mediciones dividida entre n.\n</string>
@@ -273,62 +220,26 @@ Una muestra es un subconjunto de mediciones seleccionado de la población.\n</st
     <string name="layout8Estadistica">\nLa desviación estándar de un conjunto de mediciones es igual a la raíz cuadrada positiva de la varianza.\n\n</string>
 
     //Inicio
+    <string name="indice">Índice</string>
     <string name="teoriaC">Teoría de conjuntos\n</string>
     <string name="funcion">Relaciones y funciones\n</string>
     <string name="ecuaciones">Sistema de ecuaciones\nlineales</string>
     <string name="matrices">Matrices\n</string>
     <string name="estadisticaD">Estadística descriptiva\n</string>
 
-
-    // AMADEHA A
-
-    <string name="load_text">Cargando…</string>
-
-    <!-- Menu titles -->
-    <string name="menu_play">Jugar</string>
-    <string name="menu_score">Puntajes</string>
-    <string name="menu_about">Acerca de</string>
-
-    <!-- Instrucctions -->
-    <string name="inst_1">Arrastra al contenedor el signo que corresponda a la fórmula mostrada</string>
-    <string name="inst_2">Relaciona los pares entre la fórmula y la gráfica mostrada.</string>
-    <string name="inst_button">Entendido</string>
-
-    <!-- Play Menu Strings -->
-    <string name="lvl_1_title">Unidad I</string>
-    <string name="lvl_1_text">Teoría de Conjuntos</string>
-    <string name="lvl_1_score">Unidad I - Puntajes</string>
-
-    <!--Losing lifes level 1 -->
-    <string name="lose_life_title">¡Se terminaron tus vidas!</string>
-    <string name="lose_life_text">¿Intentar de nuevo?</string>
-    <string name="lose_life_yes">Sí</string>
-    <string name="lose_life_no">No</string>
-
-    <!-- Win Menu -->
-    <string name="win_title">¡Ganaste!</string>
-    <string name="win_text">Nombre:</string>
-    <string name="win_button">Aceptar</string>
-    <string name="win_exit">Salir</string>
-
-    <string name="lvl_2_title">Unidad II</string>
-    <string name="lvl_2_text">Ecuaciones</string>
-    <string name="lvl_2_score">Unidad II - Puntajes</string>
-
-    <!-- Toast Messages -->
-    <string name="save_error">No se pudo guardar el récord</string>
-    <string name="save_success">Récord guardado</string>
-
-    <!-- EndGameMenu Strings -->
-    <string name="player_win">¡Ganaste!</string>
-    <string name="player_loose">Inténtalo de nuevo</string>
-    <string name="player_name">Nombre:</string>
-    <string name="save_score">Guardar</string>
-
     <!-- Copyright strings -->
-    <string name="copyright">2017. Derechos Reservados.</string>
-    <string name="instrucction_text">Instrucciones</string>
     <string name="ver">Ver</string>
     <string name="fragmentVideosInicio2">¿Eres de las personas que detestan leer?</string>
     <string name="fragmentVideosInico1">¿Qué hay?</string>
+
+    <!--Instrucciones menu-->
+    <string name="bienvenidos">Bienvenidos</string>
+    <string name="bienvenidos2">AMADEHA es una aplicación creada para ti, disfrutala!</string>
+    <string name="bienvenidos3">En este apartado encontrarás un atajo para ingresar a los temas de cada unidad, sólamente selecciona el tema deseado.</string>
+    <string name="bienvenidos4">Este es un menú donde podrás acceder a todos los apartados, sobre todo al de teoría, vídeo tutoriales y aprende jugando. Diviertete!!!</string>
+    <string name="bienvenidos5">La forma para ingresar al contenido de temas y vìdeos es seleccionando el icono de los menús.</string>
+    <string name="usuario_">Usuario:</string>
+    <string name="puntaje_">Puntaje:</string>
+    <string name="fecha_">Fecha:</string>
+    <string name="mejor_puntaje">Mejor puntaje:</string>
 </resources>

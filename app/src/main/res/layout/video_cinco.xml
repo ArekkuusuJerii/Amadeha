@@ -31,7 +31,7 @@
             android:layout_below="@+id/youtubePlayer5"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="17dp"
-            android:background="@color/bg_screen1"
+            android:background="@color/bg_screen2"
             android:text="Reproducir"
             android:textColor="@color/bg_screen3"/>
     </RelativeLayout>
@@ -66,5 +66,4 @@
                 tools:ignore="UnusedAttribute"/>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
-
 </android.support.design.widget.CoordinatorLayout>

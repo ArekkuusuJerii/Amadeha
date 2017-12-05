@@ -146,8 +146,13 @@ public class FunctionScreen extends LevelBase implements ITickable {
     }
 
     @Override
+    public boolean canResume() {
+        return true;
+    }
+
+    @Override
     public int getScore() {
-        return !isGameOver() ? score : ((score > 0) ? score : 0);
+        return score;
     }
 
     @Override

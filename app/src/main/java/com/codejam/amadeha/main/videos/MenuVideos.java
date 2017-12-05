@@ -17,27 +17,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.codejam.amadeha.R;
-import com.codejam.amadeha.main.MainActivity;
 import com.codejam.amadeha.main.videos.youtube.VideoCinco;
 import com.codejam.amadeha.main.videos.youtube.VideoCuatro;
 import com.codejam.amadeha.main.videos.youtube.VideoDos;
+import com.codejam.amadeha.main.videos.youtube.VideoTres;
 import com.codejam.amadeha.main.videos.youtube.VideoUno;
-import com.codejam.amadeha.main.videos.youtube.videoTres;
 
 public class MenuVideos extends Activity {
 
     private ViewPager viewPager;
-    private MenuVideos.ViewPagerAdapter viewPagerAdapter;
     private LinearLayout dotsLayout;
-    private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
-    private int currentPage;
-    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+    public ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.SimpleOnPageChangeListener() {
 
         @Override
         public void onPageSelected(int position) {
-            currentPage = position;
             addBottomDots(position);
 
             // changing the next button text 'NEXT' / 'GOT IT'
@@ -51,17 +46,6 @@ public class MenuVideos extends Activity {
                 btnSkip.setVisibility(View.VISIBLE);
             }
         }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-
-        }
-
     };
 
     @Override
@@ -74,10 +58,10 @@ public class MenuVideos extends Activity {
 
         setContentView(R.layout.activity_menu_videos);
 
-        viewPager = (ViewPager) findViewById(R.id.view_pager_videos);
-        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots_videos);
-        btnSkip = (Button) findViewById(R.id.btn_skip_videos);
-        btnNext = (Button) findViewById(R.id.btn_next_videos);
+        viewPager = findViewById(R.id.view_pager_videos);
+        dotsLayout = findViewById(R.id.layoutDots_videos);
+        btnSkip = findViewById(R.id.btn_skip_videos);
+        btnNext = findViewById(R.id.btn_next_videos);
 
         layouts = new int[]{
                 R.layout.menu_video_uno,
@@ -89,7 +73,7 @@ public class MenuVideos extends Activity {
         // adding bottom dots
         addBottomDots(0);
 
-        viewPagerAdapter = new MenuVideos.ViewPagerAdapter();
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter();
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
@@ -98,56 +82,46 @@ public class MenuVideos extends Activity {
     public void UnoVideo(View view) {
         Intent intent = new Intent(this, VideoUno.class);
         startActivity(intent);
-        finish();
     }
 
     public void DosVideo(View view) {
         Intent intent = new Intent(this, VideoDos.class);
         startActivity(intent);
-        finish();
     }
 
     public void TresVideo(View view) {
-        Intent intent = new Intent(this, videoTres.class);
+        Intent intent = new Intent(this, VideoTres.class);
         startActivity(intent);
-        finish();
     }
 
     public void CuatroVideo(View view) {
         Intent intent = new Intent(this, VideoCuatro.class);
         startActivity(intent);
-        finish();
     }
 
     public void CincoVideo(View view) {
         Intent intent = new Intent(this, VideoCinco.class);
         startActivity(intent);
-        finish();
     }
 
     public void btnSkipClickVideos(View v) {
-        launchHomeScreen();
+        finish();
     }
 
     public void btnNextClickVideos(View v) {
         // checking for last page
         // if last page home screen will be launched
-        int current = getItem(1);
+        int current = getItem();
         if (current < layouts.length) {
             // move to next screen
             viewPager.setCurrentItem(current);
         } else {
-            launchHomeScreen();
+            finish();
         }
     }
 
-    public final int getCurrentPage() {
-        return currentPage;
-    }
-
-
     private void addBottomDots(int currentPage) {
-        dots = new TextView[layouts.length];
+        TextView[] dots = new TextView[layouts.length];
 
         dotsLayout.removeAllViews();
         for (int i = 0; i < dots.length; i++) {
@@ -162,19 +136,13 @@ public class MenuVideos extends Activity {
             dots[currentPage].setTextColor(getResources().getColor(R.color.dot_active));
     }
 
-
-    private int getItem(int i) {
-        return viewPager.getCurrentItem() + i;
-    }
-
-    private void launchHomeScreen() {
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
+    private int getItem() {
+        return viewPager.getCurrentItem() + 1;
     }
 
     public class ViewPagerAdapter extends PagerAdapter {
-        private LayoutInflater layoutInflater;
 
+        private LayoutInflater layoutInflater;
 
         public ViewPagerAdapter() {
 

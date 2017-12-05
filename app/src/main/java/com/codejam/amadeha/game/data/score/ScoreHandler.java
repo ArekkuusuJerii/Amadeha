@@ -7,16 +7,12 @@ import android.support.test.espresso.core.internal.deps.guava.collect.Lists;
 
 import com.codejam.amadeha.game.core.JsonLoader;
 import com.codejam.amadeha.game.data.GameInfo;
-import com.codejam.amadeha.game.data.profile.User;
-import com.codejam.amadeha.game.data.profile.UserHandler;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * This file was created by Snack on 23/02/2017. It's distributed as part of Amadeha.
@@ -59,23 +55,6 @@ public final class ScoreHandler {
 
         editor.putString(game.toString(), new Gson().toJson(list.subList(0, Math.min(list.size(), 3))));
         editor.apply();
-
-        //Update User
-        if (!GameInfo.isGuest()) {
-            User user = GameInfo.getUser();
-            for (Game unblocked : Game.values()) {
-                if (unblocked.canUnblock(game, score)) {
-                    Set<Game> games = user.getLevels();
-                    if (games == null) {
-                        games = new HashSet<>();
-                        user.setLevels(games);
-                    }
-                    games.add(unblocked);
-                }
-            }
-            user.setScore(user.getScore() + score.getScore());
-            UserHandler.modifyUser(context, GameInfo.getUser());
-        }
     }
 
     public static void saveScores(Context context, Game game, List<Score> list) {
