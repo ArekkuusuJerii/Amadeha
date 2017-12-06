@@ -15,6 +15,7 @@ import com.codejam.amadeha.game.core.intefaze.IDropListener;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
 import com.codejam.amadeha.game.core.widget.DragListener;
 import com.codejam.amadeha.game.core.widget.DropListener;
+import com.codejam.amadeha.game.core.widget.GameInstructionDialog;
 import com.codejam.amadeha.game.core.widget.TextMatrix;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
@@ -32,6 +33,13 @@ import java.util.List;
 
 public class MatrixScreen extends LevelBase implements ITickable, IDropListener<TextView, TextView>, IDragListener<TextView> {
 
+    private static final int[][] instructions = {
+            {R.string.matrix_description},
+            {R.string.equation_0, R.drawable.equation_0},
+            {R.string.equation_1, R.drawable.equation_1},
+            {R.string.equation_2, R.drawable.equation_2},
+            {R.string.equation_3, R.drawable.equation_3}
+    };
     private final TableRow.LayoutParams startParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT);
     private final TableRow.LayoutParams endParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT);
     private final List<Matrix> matrices = LevelRegistry.getShuffledRegistry(getGame());
@@ -41,7 +49,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
     private TextMatrix xField;
     private TextMatrix yField;
 
-    private List<TextView> views = Lists.newArrayList();
+    private List<TextView> views;
     private Matrix matrix;
     private boolean canMove;
     private int score;
@@ -55,6 +63,16 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
         answerLayout = findViewById(R.id.matrix_answer);
         xField = findViewById(R.id.matrix_x);
         yField = findViewById(R.id.matrix_y);
+    }
+
+    @Override
+    public int getInstruction() {
+        return R.string.objetivoUnidadCuatroTeoria;
+    }
+
+    @Override
+    public void showInstructions() {
+        GameInstructionDialog.create(this, instructions).show();
     }
 
     @Override
@@ -107,7 +125,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
     @Override
     public void play() {
         canMove = true;
-        views.clear();
+        views = Lists.newArrayList();
         answerLayout.removeAllViewsInLayout();
         if(level < 10) {
             matrix = matrices.get(level);
@@ -181,12 +199,13 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
     }
 
     private boolean isMatrixCorrect() {
-        boolean correct = true;
         for (TextView view : views) {
             String tag = (String) view.getTag();
-            correct = view.getText().equals(tag);
+            if (!view.getText().equals(tag)) {
+                return false;
+            }
         }
-        return correct;
+        return true;
     }
 
     @Override

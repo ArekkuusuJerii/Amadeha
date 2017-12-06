@@ -17,7 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.codejam.amadeha.R;
-import com.codejam.amadeha.game.core.widget.InstructionDialog;
+import com.codejam.amadeha.game.core.widget.AutoScrollDialog;
 import com.codejam.amadeha.main.contenido.FragmentContenido;
 import com.codejam.amadeha.main.contenido.FragmentCreditos;
 import com.codejam.amadeha.main.contenido.FragmentLeaderboard;
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
         //Show instructions
         if(isFirstSession()) {
-            InstructionDialog.create(this,
+            AutoScrollDialog.create(this,
                     R.layout.activity_bienvenida,
                     R.layout.activity_instrucciones1,
                     R.layout.activity_instrucciones2,

@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -48,7 +49,7 @@ public abstract class LevelBase extends Activity {
         //Issue game start
         final Dialog wrapper = new DialogWrapper(this, R.layout.activity_game_prompt)
                 .setFeature(Window.FEATURE_NO_TITLE)
-                .build(0.75F, 0.35F);
+                .build(0.85F, 0.75F);
         wrapper.findViewById(R.id.instruction_play).setOnTouchListener(new SimpleTouchListener() {
             @Override
             public void touchLift(View v) {
@@ -64,6 +65,8 @@ public abstract class LevelBase extends Activity {
                 wrapper.cancel();
             }
         });
+        ((ImageView) wrapper.findViewById(R.id.instructor)).setImageResource(GameInfo.getUser().character.img);
+        ((TextView) wrapper.findViewById(R.id.string)).setText(getInstruction());
         wrapper.show();
         incorrect = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.incorrect);
         correct = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.correct);
@@ -73,8 +76,10 @@ public abstract class LevelBase extends Activity {
         showInstructions();
     }
 
-    public void showInstructions() {
+    public abstract int getInstruction();
 
+    public void showInstructions() {
+        //For rent
     }
 
     public void skip(View view) {
@@ -222,7 +227,7 @@ public abstract class LevelBase extends Activity {
                 wrapper.cancel();
             }
         });
-        ((TextView) wrapper.findViewById(R.id.over_score)).setText(String.valueOf(getScore()));
+        ((TextView) wrapper.findViewById(R.id.over_score)).setText(String.format(getText(R.string.score_final).toString(), getScore()));
         wrapper.show();
     }
 

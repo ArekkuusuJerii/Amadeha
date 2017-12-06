@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.test.espresso.core.internal.deps.guava.collect.Lists;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -17,16 +18,22 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.core.widget.ColumnListAdapter;
 import com.codejam.amadeha.game.core.widget.DialogWrapper;
 import com.codejam.amadeha.game.core.widget.SimpleAnimationListener;
 import com.codejam.amadeha.game.core.widget.SimpleSeekBarListener;
+import com.codejam.amadeha.game.core.widget.SimpleTouchListener;
 import com.codejam.amadeha.game.data.GameInfo;
+import com.codejam.amadeha.game.data.profile.Character;
+import com.codejam.amadeha.game.data.profile.User;
+import com.codejam.amadeha.game.data.profile.UserHandler;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.score.Score;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
@@ -59,43 +66,97 @@ public final class LevelsScreen extends AppCompatActivity {
 
     public void showSettings(View view) {
         if(settings != null && settings.isShowing()) return;
-        SimpleSeekBarListener listener = new SimpleSeekBarListener() {
+        if(settings == null) {
+            SimpleSeekBarListener listener = new SimpleSeekBarListener() {
 
-            private final MusicHelper.Sound drag = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card1);
-            private final MusicHelper.Sound drop = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card2);
+                private final MusicHelper.Sound drag = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card1);
+                private final MusicHelper.Sound drop = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card2);
 
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                SoundType type = seekBar.getId() == R.id.volume_music
-                        ? SoundType.MUSIC : SoundType.EFFECT;
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    SoundType type = seekBar.getId() == R.id.volume_music
+                            ? SoundType.MUSIC : SoundType.EFFECT;
 
-                MusicHelper.setVolume(getBaseContext(), type, (float) progress / (float) seekBar.getMax());
+                    MusicHelper.setVolume(getBaseContext(), type, (float) progress / (float) seekBar.getMax());
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+                    MusicHelper.play(drag, 0);
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                    MusicHelper.play(drop, 0);
+                }
+            };
+
+            settings = new DialogWrapper(this, R.layout.activity_settings)
+                    .setFeature(Window.FEATURE_NO_TITLE)
+                    .setMinimizable(true)
+                    .setCancelable(true)
+                    .build(1F, 1F);
+            SeekBar music = settings.findViewById(R.id.volume_music);
+            music.setProgress((int) (MusicHelper.getVolumes().get(SoundType.MUSIC) * (float) music.getMax()));
+            music.setOnSeekBarChangeListener(listener);
+            SeekBar effect = settings.findViewById(R.id.volume_effect);
+            effect.setProgress((int) (MusicHelper.getVolumes().get(SoundType.EFFECT) * (float) effect.getMax()));
+            effect.setOnSeekBarChangeListener(listener);
+            //Characters
+            ((TextView) settings.findViewById(R.id.score)).setText(String.valueOf(GameInfo.isGuest() ? " ∞ " : GameInfo.getUser().score));
+            List<ImageView> instructors = Lists.newArrayList(
+                    (ImageView) settings.findViewById(R.id.i_0),
+                    (ImageView) settings.findViewById(R.id.i_1),
+                    (ImageView) settings.findViewById(R.id.i_2),
+                    (ImageView) settings.findViewById(R.id.i_3)
+            );
+            CharacterSelector selector = new CharacterSelector(instructors);
+            int i = 0;
+            for (View instructor : instructors) {
+                Character character = Character.values()[i++];
+                if (GameInfo.getUser().character == character) {
+                    instructor.setBackgroundColor(getResources().getColor(R.color.dark_transparent));
+                } else {
+                    ((ImageView) instructor).setColorFilter(getResources().getColor(R.color.dark_transparent));
+                }
+                instructor.setTag(character);
+                instructor.setOnTouchListener(selector);
             }
+        }
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                MusicHelper.play(drag, 0);
-            }
+        settings.show();
+    }
 
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                MusicHelper.play(drop, 0);
+    private class CharacterSelector extends SimpleTouchListener {
+
+        List<ImageView> instructors;
+
+        CharacterSelector(List<ImageView> instructors) {
+            this.instructors = instructors;
+        }
+
+        @Override
+        public void touchLift(View v) {
+            for (View instructor : instructors) {
+                if (v == instructor) {
+                    Character character = (Character) instructor.getTag();
+                    User user = GameInfo.getUser();
+                    if (character.canUnlock(user)) {
+                        user.character = character;
+                        if(!GameInfo.isGuest()) {
+                            UserHandler.modifyUser(getBaseContext(), user);
+                        }
+                        instructor.setBackgroundColor(getResources().getColor(R.color.dark_transparent));
+                        ((ImageView) instructor).setColorFilter(0);
+                    } else {
+                        Toast.makeText(getBaseContext(), String.format(getString(R.string.needed_points), character.scoreUnlock), Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    ((ImageView) instructor).setColorFilter(getResources().getColor(R.color.dark_transparent));
+                    instructor.setBackgroundColor(0);
+                }
             }
-        };
-        Dialog wrapper = new DialogWrapper(this, R.layout.activity_settings)
-                .setStyle(R.style.transparentDialog)
-                .setFeature(Window.FEATURE_NO_TITLE)
-                .setMinimizable(true)
-                .setCancelable(true)
-                .build(0.75F, 0.65F);
-        SeekBar music = wrapper.findViewById(R.id.volume_music);
-        music.setProgress((int) (MusicHelper.getVolumes().get(SoundType.MUSIC) * (float) music.getMax()));
-        music.setOnSeekBarChangeListener(listener);
-        SeekBar effect = wrapper.findViewById(R.id.volume_effect);
-        effect.setProgress((int) (MusicHelper.getVolumes().get(SoundType.EFFECT) * (float) effect.getMax()));
-        effect.setOnSeekBarChangeListener(listener);
-        wrapper.show();
-        settings = wrapper;
+        }
     }
 
     public void showMaxScore() {
@@ -123,17 +184,19 @@ public final class LevelsScreen extends AppCompatActivity {
 
     public void showScores(View view) {
         if(highscores != null && highscores.isShowing()) return;
-        final Dialog wrapper = new DialogWrapper(this, R.layout.activity_score)
-                .setStyle(R.style.transparentDialog)
-                .setFeature(Window.FEATURE_NO_TITLE)
-                .setMinimizable(true)
-                .setCancelable(true)
-                .build(1F, 1F);
-        updateScores(wrapper);
-        highscores = wrapper;
+        if(highscores == null) {
+            highscores = new DialogWrapper(this, R.layout.activity_score)
+                    .setStyle(R.style.transparentDialog)
+                    .setFeature(Window.FEATURE_NO_TITLE)
+                    .setMinimizable(true)
+                    .setCancelable(true)
+                    .build(1F, 1F);
+        }
+        updateScores();
     }
 
-    private void updateScores(Dialog wrapper) {
+    private void updateScores() {
+        if(highscores != null && highscores.isShowing()) return;
         ColumnListAdapter.Builder adapter = new ColumnListAdapter.Builder(this)
                 .addRow()
                 .addColumn(inflateScoreRow(
@@ -149,8 +212,8 @@ public final class LevelsScreen extends AppCompatActivity {
             adapter.addRow().addColumn(row).close();
         }
 
-        ((ListView) wrapper.findViewById(R.id.score_list)).setAdapter(adapter.build());
-        wrapper.show();
+        ((ListView) highscores.findViewById(R.id.score_list)).setAdapter(adapter.build());
+        highscores.show();
     }
 
     private View inflateScoreRow(String user, String score, String date) {

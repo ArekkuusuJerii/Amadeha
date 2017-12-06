@@ -18,6 +18,7 @@
     <string name="score">Puntos</string>
     <string name="score_date">Fecha</string>
     <string name="score_user">Highscore</string>
+    <string name="score_final">Puntos: %s</string>
     <string name="score_undefined">Aún no existen puntajes en este nivel</string>
 
     <string name="equation_unblock">Para desploquear este nivel consigue 30+ puntos en Funciones</string>
@@ -48,15 +49,14 @@
 
     <!--Amadeha instruction-->
     <string name="close_">Cerrar</string>
-
     <string name="instruction">"Intrucciones del juego"</string>
-    <string name="instruction_sets">Selecciona (Verdadero) o (Falso) de acuerdo a la afirmación que se realiza.</string>
-    <string name="instruction_function">Selecciona el inciso que contenga el valor de la función dada.</string>
-    <string name="instruction_equation">Encuentra el o los valores de la incógnita de la siguiente ecuación.</string>
-    <string name="instruction_matrix">Resuelve la siguiente opercaión de matrices.</string>
-    <string name="instruction_statistic">Selecciona el inciso que correcto de acuerdo a lo que se pregunta.</string>
-
-    <string name="game_resume_warning">"No puedes resumir el juego una vez pausado!"</string>
+    <string name="equation_description">El objetivo es resolver la equación y arrastrar la solución de las incógnitas sobre esta.\n\nPor ejemplo, en la ecuación \'x = 3\', deberás arrastrar el número \'3\' sobre la incógnita \'x\'.\n\nSi la instrucción lo incida, deberás arrastrar ambas soluciones o la solución a la incógnita donde corresponde.</string>
+    <string name="equation_0">Inspecciona la ecuación, si no la puedes responder, presiona el botón SALTAR.</string>
+    <string name="equation_1">Arrastra la solución.</string>
+    <string name="equation_2">Suelta la solución sobre la incógnita a responder.</string>
+    <string name="equation_3">No permitas que se te acabe el tiempo y responde correctamente.\n\nMucha suerte!</string>
+    <string name="function_description">El objetivo es voltear todas las cartas en el menor tiempo posible.\n\nEntre más cartas reveles, más puntos pierdes, así que cuida tus movimientos.\n\nPara revelar una carta, simplemente de click sobre este, para seleccionar su par, seleccione otra carta. Si el par es incorrecto, se ocultan las cartas.\n\nRecuerde que no puede deshacer sus movimientos.\n\nMucha suerte!</string>
+    <string name="matrix_description">El objetivo principal es ordenar las Matrices que se te presenten, pero la verdadera tarea está en realizar las multiplicaciones y sumas de Matrices que se te pidan.\n\n\n\nA continuación una serie de imágenes para ayudarte a comprender el juego:</string>
 
     <!--Amadeha profile-->
     <string name="new_user">Nuevo usuario</string>
@@ -71,12 +71,18 @@
     <string name="leaderboard">Tabla de clasificación</string>
     <string name="delete_highscores">Eliminar HighScores</string>
     <string name="delete_highscores_question">¿Desea eliminar los HighScores?</string>
+    <string name="usuario_">Usuario:</string>
+    <string name="puntaje_">Puntaje:</string>
+    <string name="fecha_">Fecha:</string>
+    <string name="mejor_puntaje">Mejor puntaje:</string>
 
     <!--Amadeha setting-->
     <string name="settings">Configuración</string>
     <string name="volume_effects">Volumen de Efectos</string>
     <string name="volume_musics">Volumen de Música</string>
     <string name="volume">Volumen:</string>
+    <string name="available_points">Puntos disponibles: </string>
+    <string name="needed_points">No cuentas con los puntos requeridos: %o</string>
 
     <!--Amadeha misc-->
     <string name="chronometer_placeholder" translatable="false">%02d:%02d</string>
@@ -238,8 +244,4 @@
     <string name="bienvenidos3">En este apartado encontrarás un atajo para ingresar a los temas de cada unidad, sólamente selecciona el tema deseado.</string>
     <string name="bienvenidos4">Este es un menú donde podrás acceder a todos los apartados, sobre todo al de teoría, vídeo tutoriales y aprende jugando. Diviertete!!!</string>
     <string name="bienvenidos5">La forma para ingresar al contenido de temas y vìdeos es seleccionando el icono de los menús.</string>
-    <string name="usuario_">Usuario:</string>
-    <string name="puntaje_">Puntaje:</string>
-    <string name="fecha_">Fecha:</string>
-    <string name="mejor_puntaje">Mejor puntaje:</string>
 </resources>

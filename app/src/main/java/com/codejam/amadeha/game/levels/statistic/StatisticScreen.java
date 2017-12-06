@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
 import com.codejam.amadeha.game.core.widget.AutoResizeTextView;
+import com.codejam.amadeha.game.core.widget.GameInstructionDialog;
 import com.codejam.amadeha.game.core.widget.SimpleTouchListener;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
@@ -32,6 +33,13 @@ import java.util.List;
 
 public class StatisticScreen extends LevelBase implements ITickable {
 
+    private static final int[][] instructions = {
+            {R.string.equation_description},
+            {R.string.equation_0, R.drawable.equation_0},
+            {R.string.equation_1, R.drawable.equation_1},
+            {R.string.equation_2, R.drawable.equation_2},
+            {R.string.equation_3, R.drawable.equation_3}
+    };
     private final List<Statistic> statistics = LevelRegistry.getShuffledRegistry(getGame());
     private TableLayout tableLayout;
     private TextView question;
@@ -49,6 +57,16 @@ public class StatisticScreen extends LevelBase implements ITickable {
         tableLayout = findViewById(R.id.answers);
         question = findViewById(R.id.question);
         startCountdown(100000);
+    }
+
+    @Override
+    public int getInstruction() {
+        return R.string.objetivoUnidadCincoTeoria;
+    }
+
+    @Override
+    public void showInstructions() {
+        GameInstructionDialog.create(this, instructions).show();
     }
 
     public void selectAnswer(View view) {
@@ -115,7 +133,7 @@ public class StatisticScreen extends LevelBase implements ITickable {
         List<String> strings = new ArrayList<>(Arrays.asList(statistic.answers));
         Collections.shuffle(strings);
         if (strings.size() > 4) {
-            strings = strings.subList(0, 4);
+            strings = strings.subList(0, 3);
         }
         String none = getString(R.string.none_of_the_above);
         boolean override = statistic.random && rand.nextFloat() <= 0.8F;

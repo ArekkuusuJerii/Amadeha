@@ -23,6 +23,7 @@ import com.codejam.amadeha.game.core.intefaze.IDropListener;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
 import com.codejam.amadeha.game.core.widget.DragListener;
 import com.codejam.amadeha.game.core.widget.DropListener;
+import com.codejam.amadeha.game.core.widget.GameInstructionDialog;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
@@ -40,6 +41,13 @@ import java.util.Set;
 
 public class EquationScreen extends LevelBase implements ITickable, IDragListener<Button>, IDropListener<TextView, Button> {
 
+    private static final int[][] instructions = {
+            {R.string.equation_description},
+            {R.string.equation_0, R.drawable.equation_0},
+            {R.string.equation_1, R.drawable.equation_1},
+            {R.string.equation_2, R.drawable.equation_2},
+            {R.string.equation_3, R.drawable.equation_3}
+    };
     private final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
@@ -74,6 +82,16 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
             builder.add((Button) view);
         }
         buttons = builder.build();
+    }
+
+    @Override
+    public int getInstruction() {
+        return R.string.objetivoUnidadTresTeoria;
+    }
+
+    @Override
+    public void showInstructions() {
+        GameInstructionDialog.create(this, instructions).show();
     }
 
     @Override

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
+import com.codejam.amadeha.game.core.widget.GameInstructionDialog;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
@@ -28,6 +29,9 @@ import static com.codejam.amadeha.game.levels.function.Function.Card;
 
 public class FunctionScreen extends LevelBase implements ITickable {
 
+    private static final int[][] instructions = {
+            {R.string.function_description}
+    };
     private ImmutableMap<ImageView, Function.Card> cards;
     private MusicHelper.Sound[] pop = new MusicHelper.Sound[2];
     private Pair<ImageView, Card> cardOne;
@@ -55,6 +59,16 @@ public class FunctionScreen extends LevelBase implements ITickable {
 
         this.cards = builder.build();
         startCountdown(120000L);
+    }
+
+    @Override
+    public int getInstruction() {
+        return R.string.objetivoUnidadDosTeoria;
+    }
+
+    @Override
+    public void showInstructions() {
+        GameInstructionDialog.create(this, instructions).show();
     }
 
     @Override

@@ -14,6 +14,7 @@ import com.codejam.amadeha.game.core.intefaze.IDropListener;
 import com.codejam.amadeha.game.core.intefaze.ITickable;
 import com.codejam.amadeha.game.core.widget.DragListener;
 import com.codejam.amadeha.game.core.widget.DropListener;
+import com.codejam.amadeha.game.core.widget.GameInstructionDialog;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
@@ -21,7 +22,6 @@ import com.codejam.amadeha.game.levels.LevelBase;
 import com.codejam.amadeha.game.levels.sets.Sets.SetType;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -30,14 +30,21 @@ import java.util.Set;
  * Amadeha is open source, and is distributed under the MIT licence.
  */
 
-public class SetsScreen extends LevelBase implements ITickable, IDragListener<ImageView>, IDropListener<TextView, ImageView> {
+public class SetsScreen extends LevelBase implements ITickable, IDragListener<ImageView>, IDropListener<ImageView, ImageView> {
 
+    private static final int[][] instructions = {
+            {R.string.equation_description},
+            {R.string.equation_0, R.drawable.equation_0},
+            {R.string.equation_1, R.drawable.equation_1},
+            {R.string.equation_2, R.drawable.equation_2},
+            {R.string.equation_3, R.drawable.equation_3}
+    };
     private final List<Sets> setsList = LevelRegistry.getShuffledRegistry(getGame());
     private MusicHelper.Sound drag;
     private MusicHelper.Sound drop;
     private Animation fade;
     private Set<ImageView> answers;
-    private TextView text;
+    private ImageView drop_image;
     private ImageView image;
 
     private Sets sets;
@@ -51,8 +58,8 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
         drop = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.drop_op);
         fade = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade);
         fade.setDuration(2000);
-        text = findViewById(R.id.question);
-        text.setOnDragListener(new DropListener(this));
+        drop_image = findViewById(R.id.drop_image);
+        drop_image.setOnDragListener(new DropListener(this));
         image = findViewById(R.id.image);
         ImmutableSet.Builder<ImageView> builder = new ImmutableSet.Builder<>();
         ImageView none = findViewById(R.id.none);
@@ -76,12 +83,22 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
     }
 
     @Override
+    public int getInstruction() {
+        return R.string.objetivoUnidadUnoTeoria;
+    }
+
+    @Override
+    public void showInstructions() {
+        GameInstructionDialog.create(this, instructions).show();
+    }
+
+    @Override
     public void onDrag(ImageView drag) {
         this.drag.play();
     }
 
     @Override
-    public void onDrop(TextView target, ImageView drop) {
+    public void onDrop(ImageView target, ImageView drop) {
         if (!canAnswer) return;
         this.drop.play();
         SetType set = (SetType) drop.getTag();
@@ -118,6 +135,7 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
         for (ImageView image : answers) {
             SetType set = (SetType) image.getTag();
             if (answer != set) {
+                drop_image.setImageResource(answer.image);
                 image.startAnimation(fade);
             }
         }
@@ -143,10 +161,13 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
     }
 
     private void setupSet() {
-        Map.Entry<String, SetType> entry = sets.getRandomEntry();
-        text.setText(entry.getKey());
+        Sets.Entry entry = sets.getRandomEntry();
+        ((TextView) findViewById(R.id.question_left)).setText(entry.l);
+        ((TextView) findViewById(R.id.question_right)).setText(entry.r);
+        ((TextView) findViewById(R.id.answer)).setText(entry.q);
+        drop_image.setImageResource(R.drawable.tj_back);
         image.setImageResource(sets.loadImage(this));
-        answer = entry.getValue();
+        answer = entry.answer;
     }
 
     @Override

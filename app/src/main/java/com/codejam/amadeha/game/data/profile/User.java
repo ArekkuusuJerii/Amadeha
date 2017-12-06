@@ -14,6 +14,7 @@ import java.util.UUID;
 public class User {
 
     public transient UUID id;
+    public Character character = Character.INSTRUCTOR;
     public Set<Game> levels;
     public String name;
     public int score;

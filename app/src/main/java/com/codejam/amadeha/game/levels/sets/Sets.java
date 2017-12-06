@@ -2,10 +2,11 @@ package com.codejam.amadeha.game.levels.sets;
 
 import android.content.Context;
 
+import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * This file was created by Snack on 07/11/2017. It's distributed as part of Amadeha.
@@ -15,40 +16,38 @@ import java.util.Map;
 
 public class Sets {
 
-    public Map<String, SetType> answers;
+    public List<Entry> answers;
     public String image;
 
-    public Map.Entry<String, SetType> getRandomEntry() {
+    public Entry getRandomEntry() {
         int index = LevelRegistry.RAND.nextInt(answers.size());
-        int i = 0;
-
-        Map.Entry<String, SetType> entry = null;
-        for (Map.Entry<String, SetType> s : answers.entrySet()) {
-            entry = s;
-            if (i++ >= index) break;
-        }
-        return entry;
+        return answers.get(index);
     }
 
     public int loadImage(Context context) {
         return context.getResources().getIdentifier(image, "drawable", context.getPackageName());
     }
 
+    public static class Entry {
+        public String l;
+        public String r;
+        public String q;
+        public SetType answer;
+    }
+
     public enum SetType {
         @SerializedName("none")
-        NONE(0, 0),
+        NONE(R.drawable.set_none),
         @SerializedName("empty")
-        EMPTY(0, 0),
+        EMPTY(R.drawable.sets_empty),
         @SerializedName("union")
-        UNION(0, 0),
+        UNION(R.drawable.set_union),
         @SerializedName("intersection")
-        INTERSECTION(0, 0);
+        INTERSECTION(R.drawable.set_intersection);
 
-        public final int name;
         public final int image;
 
-        SetType(int name, int image) {
-            this.name = name;
+        SetType(int image) {
             this.image = image;
         }
     }

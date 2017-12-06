@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/dark_transparent"
+              android:background="@drawable/chalkboard_mini"
               android:orientation="vertical">
-    <!--android:padding="75dp"-->
 
     <TextView
         android:layout_width="match_parent"
@@ -66,6 +65,63 @@
             android:progressDrawable="@color/dark_transparent"
             android:thumb="@drawable/seekbar_big"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/available_points"
+            android:textColor="@color/fontWhite"/>
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_points"
+            android:textColor="@color/fontWhite"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/dark_transparent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/i_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/instructor"/>
+
+        <ImageView
+            android:id="@+id/i_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/instructor_deportes"/>
+
+        <ImageView
+            android:id="@+id/i_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/instructor_ropa_interior"/>
+
+        <ImageView
+            android:id="@+id/i_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/instructor_santa_claus"/>
     </LinearLayout>
 
 </LinearLayout>
