@@ -85,11 +85,6 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
     }
 
     @Override
-    public int getInstruction() {
-        return R.string.objetivoUnidadTresTeoria;
-    }
-
-    @Override
     public void showInstructions() {
         GameInstructionDialog.create(this, instructions).show();
     }

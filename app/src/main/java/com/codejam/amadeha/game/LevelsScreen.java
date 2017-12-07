@@ -92,6 +92,7 @@ public final class LevelsScreen extends AppCompatActivity {
             };
 
             settings = new DialogWrapper(this, R.layout.activity_settings)
+                    .setStyle(R.style.transparentDialog)
                     .setFeature(Window.FEATURE_NO_TITLE)
                     .setMinimizable(true)
                     .setCancelable(true)
@@ -117,7 +118,7 @@ public final class LevelsScreen extends AppCompatActivity {
                 if (GameInfo.getUser().character == character) {
                     instructor.setBackgroundColor(getResources().getColor(R.color.dark_transparent));
                 } else {
-                    ((ImageView) instructor).setColorFilter(getResources().getColor(R.color.dark_transparent));
+                    ((ImageView) instructor).setColorFilter(getResources().getColor(R.color.fontBlack));
                 }
                 instructor.setTag(character);
                 instructor.setOnTouchListener(selector);
@@ -136,25 +137,24 @@ public final class LevelsScreen extends AppCompatActivity {
         }
 
         @Override
-        public void touchLift(View v) {
-            for (View instructor : instructors) {
-                if (v == instructor) {
-                    Character character = (Character) instructor.getTag();
-                    User user = GameInfo.getUser();
-                    if (character.canUnlock(user)) {
-                        user.character = character;
-                        if(!GameInfo.isGuest()) {
-                            UserHandler.modifyUser(getBaseContext(), user);
-                        }
-                        instructor.setBackgroundColor(getResources().getColor(R.color.dark_transparent));
-                        ((ImageView) instructor).setColorFilter(0);
-                    } else {
-                        Toast.makeText(getBaseContext(), String.format(getString(R.string.needed_points), character.scoreUnlock), Toast.LENGTH_LONG).show();
-                    }
-                } else {
-                    ((ImageView) instructor).setColorFilter(getResources().getColor(R.color.dark_transparent));
-                    instructor.setBackgroundColor(0);
+        public void touchLift(View instructor) {
+            Character character = (Character) instructor.getTag();
+            User user = GameInfo.getUser();
+            if (character.canUnlock(user)) {
+                user.character = character;
+                if (!GameInfo.isGuest()) {
+                    UserHandler.modifyUser(getBaseContext(), user);
                 }
+                instructor.setBackgroundColor(getResources().getColor(R.color.dark_transparent));
+                ((ImageView) instructor).setColorFilter(0);
+                for (View lock : instructors) {
+                    if (lock != instructor) {
+                        ((ImageView) lock).setColorFilter(getResources().getColor(R.color.fontBlack));
+                        lock.setBackgroundColor(0);
+                    }
+                }
+            } else {
+                Toast.makeText(getBaseContext(), String.format(getString(R.string.needed_points), character.scoreUnlock), Toast.LENGTH_LONG).show();
             }
         }
     }

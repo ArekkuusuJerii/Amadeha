@@ -30,7 +30,11 @@ import static com.codejam.amadeha.game.levels.function.Function.Card;
 public class FunctionScreen extends LevelBase implements ITickable {
 
     private static final int[][] instructions = {
-            {R.string.function_description}
+            {R.string.function_description},
+            {R.string.function_0, R.drawable.function_0},
+            {R.string.function_1, R.drawable.function_1},
+            {R.string.function_2, R.drawable.function_2},
+            {R.string.function_3, R.drawable.function_3}
     };
     private ImmutableMap<ImageView, Function.Card> cards;
     private MusicHelper.Sound[] pop = new MusicHelper.Sound[2];
@@ -59,11 +63,6 @@ public class FunctionScreen extends LevelBase implements ITickable {
 
         this.cards = builder.build();
         startCountdown(120000L);
-    }
-
-    @Override
-    public int getInstruction() {
-        return R.string.objetivoUnidadDosTeoria;
     }
 
     @Override

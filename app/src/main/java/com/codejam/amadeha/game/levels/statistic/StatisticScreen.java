@@ -34,11 +34,10 @@ import java.util.List;
 public class StatisticScreen extends LevelBase implements ITickable {
 
     private static final int[][] instructions = {
-            {R.string.equation_description},
-            {R.string.equation_0, R.drawable.equation_0},
-            {R.string.equation_1, R.drawable.equation_1},
-            {R.string.equation_2, R.drawable.equation_2},
-            {R.string.equation_3, R.drawable.equation_3}
+            {R.string.statistic_description},
+            {R.string.statistic_0, R.drawable.statistic_0},
+            {R.string.statistic_1, R.drawable.statistic_1},
+            {R.string.statistic_2, R.drawable.statistic_2}
     };
     private final List<Statistic> statistics = LevelRegistry.getShuffledRegistry(getGame());
     private TableLayout tableLayout;
@@ -57,11 +56,6 @@ public class StatisticScreen extends LevelBase implements ITickable {
         tableLayout = findViewById(R.id.answers);
         question = findViewById(R.id.question);
         startCountdown(100000);
-    }
-
-    @Override
-    public int getInstruction() {
-        return R.string.objetivoUnidadCincoTeoria;
     }
 
     @Override
@@ -140,7 +134,7 @@ public class StatisticScreen extends LevelBase implements ITickable {
         if (override) {
             int index = rand.nextInt(strings.size());
             strings.set(index, statistic.answer);
-            if(rand.nextFloat() <= 0.6F) {
+            if(rand.nextFloat() <= 0.2F) {
                 strings.add(none);
             }
         } else {

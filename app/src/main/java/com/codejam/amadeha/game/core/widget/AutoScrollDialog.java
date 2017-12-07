@@ -49,7 +49,6 @@ public final class AutoScrollDialog {
 
     public void show() {
         final Dialog dialog = new DialogWrapper(context, R.layout.fragment_instruction)
-                .setStyle(R.style.transparentDialog)
                 .setFeature(Window.FEATURE_NO_TITLE)
                 .setCancelable(true)
                 .setMinimizable(true)
@@ -60,7 +59,7 @@ public final class AutoScrollDialog {
         pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageScrollStateChanged(int state) {
-                if(state == ViewPager.SCROLL_STATE_IDLE) {
+                if(state == ViewPager.SCROLL_STATE_IDLE && pager.getCurrentItem() == ints.length - 1) {
                     pager.stopAutoScroll();
                 }
             }

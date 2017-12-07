@@ -35,10 +35,9 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
 
     private static final int[][] instructions = {
             {R.string.matrix_description},
-            {R.string.equation_0, R.drawable.equation_0},
-            {R.string.equation_1, R.drawable.equation_1},
-            {R.string.equation_2, R.drawable.equation_2},
-            {R.string.equation_3, R.drawable.equation_3}
+            {R.string.matrix_0, R.drawable.matrix_0},
+            {R.string.matrix_1, R.drawable.matrix_1},
+            {R.string.matrix_2, R.drawable.matrix_2}
     };
     private final TableRow.LayoutParams startParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT);
     private final TableRow.LayoutParams endParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT);
@@ -63,11 +62,6 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
         answerLayout = findViewById(R.id.matrix_answer);
         xField = findViewById(R.id.matrix_x);
         yField = findViewById(R.id.matrix_y);
-    }
-
-    @Override
-    public int getInstruction() {
-        return R.string.objetivoUnidadCuatroTeoria;
     }
 
     @Override

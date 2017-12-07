@@ -33,11 +33,10 @@ import java.util.Set;
 public class SetsScreen extends LevelBase implements ITickable, IDragListener<ImageView>, IDropListener<ImageView, ImageView> {
 
     private static final int[][] instructions = {
-            {R.string.equation_description},
-            {R.string.equation_0, R.drawable.equation_0},
-            {R.string.equation_1, R.drawable.equation_1},
-            {R.string.equation_2, R.drawable.equation_2},
-            {R.string.equation_3, R.drawable.equation_3}
+            {R.string.sets_description},
+            {R.string.sets_0, R.drawable.set_0},
+            {R.string.sets_1, R.drawable.set_1},
+            {R.string.sets_2, R.drawable.set_2}
     };
     private final List<Sets> setsList = LevelRegistry.getShuffledRegistry(getGame());
     private MusicHelper.Sound drag;
@@ -65,6 +64,9 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
         ImageView none = findViewById(R.id.none);
         none.setTag(SetType.NONE);
         builder.add(none);
+        ImageView from = findViewById(R.id.from);
+        from.setTag(SetType.FROM);
+        builder.add(from);
         ImageView union = findViewById(R.id.union);
         union.setTag(SetType.UNION);
         builder.add(union);
@@ -80,11 +82,6 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
             view.setOnTouchListener(listener);
         }
         startCountdown(500000);
-    }
-
-    @Override
-    public int getInstruction() {
-        return R.string.objetivoUnidadUnoTeoria;
     }
 
     @Override

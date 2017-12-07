@@ -34,7 +34,6 @@ public class MenuVideos extends Activity {
         @Override
         public void onPageSelected(int position) {
             addBottomDots(position);
-
             // changing the next button text 'NEXT' / 'GOT IT'
             if (position == layouts.length - 1) {
                 // last page. make button text to GOT IT
@@ -69,14 +68,12 @@ public class MenuVideos extends Activity {
                 R.layout.menu_video_tres,
                 R.layout.menu_video_cuatro,
                 R.layout.menu_video_cinco};
-
         // adding bottom dots
         addBottomDots(0);
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter();
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-
     }
 
     public void UnoVideo(View view) {
@@ -144,14 +141,11 @@ public class MenuVideos extends Activity {
 
         private LayoutInflater layoutInflater;
 
-        public ViewPagerAdapter() {
-
-        }
-
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+            assert layoutInflater != null;
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
 

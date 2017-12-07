@@ -187,6 +187,12 @@
             android:src="@drawable/set_none"/>
 
         <ImageView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/set_from"/>
+
+        <ImageView
             android:id="@+id/union"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

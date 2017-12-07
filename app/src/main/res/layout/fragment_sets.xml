@@ -101,5 +101,6 @@
         android:layout_gravity="center"
         android:button="@drawable/check_box"
         android:clickable="false"
-        android:text="@string/sets_unblock"/>
+        android:text="@string/sets_unblock"
+        android:textColor="@color/fontBlack"/>
 </FrameLayout>

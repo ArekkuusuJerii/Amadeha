@@ -21,23 +21,16 @@ public class VideoCinco extends YouTubeBaseActivity {
 
     private static final String TAG = "MainActivity";
 
-    YouTubePlayerView mYouTubePlayerView;
-    Button buttonPlay;
-    YouTubePlayer.OnInitializedListener mOnInicializedListener;
+    private YouTubePlayerView mYouTubePlayerView;
+    private YouTubePlayer.OnInitializedListener mOnInicializedListener;
+    private boolean isPlaying;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Ocupa toda la pantalla... escondiento la barra de notificaciones
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.video_cinco);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-
-        // initCollapsingToolbar();
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,9 +39,7 @@ public class VideoCinco extends YouTubeBaseActivity {
         });
 
         Log.d(TAG, "onCreate: Starting.");
-        buttonPlay = findViewById(R.id.buttonPlay5);
         mYouTubePlayerView = findViewById(R.id.youtubePlayer5);
-
         mOnInicializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
@@ -70,13 +61,9 @@ public class VideoCinco extends YouTubeBaseActivity {
             }
         };
 
-        buttonPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: Intializing YouTube Player.");
-                mYouTubePlayerView.initialize(YouTubeConfig.getApi_Key(), mOnInicializedListener);
-                Log.d(TAG, "onClick: Done initializing.");
-            }
-        });
+        if(!isPlaying) {
+            mYouTubePlayerView.initialize(YouTubeConfig.getApi_Key(), mOnInicializedListener);
+            isPlaying = true;
+        }
     }
 }

@@ -19,9 +19,9 @@
         android:id="@+id/indicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:foregroundGravity="center"
-        android:layout_marginBottom="@dimen/dots_bottom_margin"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dots_bottom_margin"
+        android:foregroundGravity="center"
         app:pageColor="@color/bg_screen4"/>
 
 </RelativeLayout>

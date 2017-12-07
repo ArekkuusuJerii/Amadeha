@@ -26,9 +26,10 @@
             android:layout_height="450dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="25dp"
-            android:src="@drawable/instructor" />
+            android:src="@drawable/instructor"/>
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_alignStart="@+id/imageView8"
@@ -37,9 +38,8 @@
             android:layout_marginTop="48dp"
             android:text="@string/bienvenidos"
             android:textColor="@color/bg_screen1"
-            android:textStyle="bold"
             android:textSize="25sp"
-            android:id="@+id/textView" />
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="150dp"
@@ -49,7 +49,7 @@
             android:layout_marginTop="39dp"
             android:text="@string/bienvenidos2"
             android:textColor="@color/bg_screen2"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
     </RelativeLayout>
 

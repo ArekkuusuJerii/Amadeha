@@ -49,7 +49,7 @@ public abstract class LevelBase extends Activity {
         //Issue game start
         final Dialog wrapper = new DialogWrapper(this, R.layout.activity_game_prompt)
                 .setFeature(Window.FEATURE_NO_TITLE)
-                .build(0.85F, 0.75F);
+                .build(0.45F, 0.35F);
         wrapper.findViewById(R.id.instruction_play).setOnTouchListener(new SimpleTouchListener() {
             @Override
             public void touchLift(View v) {
@@ -65,8 +65,6 @@ public abstract class LevelBase extends Activity {
                 wrapper.cancel();
             }
         });
-        ((ImageView) wrapper.findViewById(R.id.instructor)).setImageResource(GameInfo.getUser().character.img);
-        ((TextView) wrapper.findViewById(R.id.string)).setText(getInstruction());
         wrapper.show();
         incorrect = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.incorrect);
         correct = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.correct);
@@ -75,8 +73,6 @@ public abstract class LevelBase extends Activity {
         tick = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.tick);
         showInstructions();
     }
-
-    public abstract int getInstruction();
 
     public void showInstructions() {
         //For rent

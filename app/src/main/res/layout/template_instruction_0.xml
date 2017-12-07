@@ -26,7 +26,7 @@
             android:gravity="center"
             android:text="@string/instruction"
             android:textColor="@color/fontWhite"
-            android:textSize="20sp"/>
+            android:textSize="30sp"/>
 
         <TextView
             android:id="@+id/description"
@@ -35,6 +35,6 @@
             android:layout_margin="10dp"
             android:text="@string/equation_description"
             android:textColor="@color/fontWhite"
-            android:textSize="15sp"/>
+            android:textSize="18sp"/>
     </LinearLayout>
 </LinearLayout>

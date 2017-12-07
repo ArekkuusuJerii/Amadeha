@@ -106,27 +106,27 @@
         <activity
             android:name=".main.videos.youtube.VideoUno"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="sensorPortrait"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme"/>
         <activity
             android:name=".main.videos.youtube.VideoDos"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="sensorPortrait"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme"/>
         <activity
             android:name=".main.videos.youtube.VideoTres"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="sensorPortrait"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme"/>
         <activity
             android:name=".main.videos.youtube.VideoCuatro"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="sensorPortrait"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme"/>
         <activity
             android:name=".main.videos.youtube.VideoCinco"
             android:configChanges="screenSize|orientation"
-            android:screenOrientation="sensorPortrait"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme"/>
     </application>
 

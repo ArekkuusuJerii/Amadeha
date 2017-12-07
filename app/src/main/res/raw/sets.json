@@ -5,13 +5,25 @@
       {
         "l": "A",
         "r": "B",
-        "q": "{5, 4, 1}",
+        "q": "{20}",
+        "answer": "intersection"
+      },
+      {
+        "l": "200",
+        "r": "C",
+        "q": "",
         "answer": "none"
       },
       {
+        "l": "10",
+        "r": "A",
+        "q": "",
+        "answer": "from"
+      },
+      {
         "l": "A",
-        "r": "B",
-        "q": "{20}",
+        "r": "C",
+        "q": "{}",
         "answer": "intersection"
       }
     ]
@@ -20,15 +32,15 @@
     "image": "sets_1",
     "answers": [
       {
-        "l": "A",
-        "r": "B",
-        "q": "{5, 4, 1}",
+        "l": "B",
+        "r": "C",
+        "q": "{4, 7, 8}",
         "answer": "none"
       },
       {
         "l": "A",
         "r": "B",
-        "q": "{20}",
+        "q": "{2, 3}",
         "answer": "intersection"
       }
     ]
@@ -38,15 +50,15 @@
     "answers": [
       {
         "l": "A",
-        "r": "B",
-        "q": "{5, 4, 1}",
+        "r": "B - C",
+        "q": "{3}",
         "answer": "none"
       },
       {
-        "l": "A",
-        "r": "B",
-        "q": "{20}",
-        "answer": "intersection"
+        "l": "B",
+        "r": "A - C",
+        "q": "{4, 6, 8}",
+        "answer": "none"
       }
     ]
   },
@@ -54,15 +66,15 @@
     "image": "sets_3",
     "answers": [
       {
-        "l": "A",
-        "r": "B",
-        "q": "{5, 4, 1}",
-        "answer": "none"
+        "l": "C",
+        "r": "A - B",
+        "q": "{7, 2}",
+        "answer": "intersection"
       },
       {
         "l": "A",
-        "r": "B",
-        "q": "{20}",
+        "r": "C",
+        "q": "{7, 3}",
         "answer": "intersection"
       }
     ]
@@ -72,15 +84,15 @@
     "answers": [
       {
         "l": "A",
-        "r": "B",
-        "q": "{5, 4, 1}",
-        "answer": "none"
+        "r": "B∩C",
+        "q": "{7}",
+        "answer": "intersection"
       },
       {
-        "l": "A",
-        "r": "B",
-        "q": "{20}",
-        "answer": "intersection"
+        "l": "9",
+        "r": "A - B",
+        "q": "",
+        "answer": "from"
       }
     ]
   },
@@ -88,16 +100,10 @@
     "image": "sets_0",
     "answers": [
       {
-        "l": "A",
-        "r": "B",
-        "q": "{5, 4, 1}",
-        "answer": "none"
-      },
-      {
-        "l": "A",
-        "r": "B",
-        "q": "{20}",
-        "answer": "intersection"
+        "l": "18",
+        "r": "C",
+        "q": "",
+        "answer": "from"
       }
     ]
   },
@@ -105,16 +111,10 @@
     "image": "sets_1",
     "answers": [
       {
-        "l": "A",
+        "l": "2",
         "r": "B",
-        "q": "{5, 4, 1}",
-        "answer": "none"
-      },
-      {
-        "l": "A",
-        "r": "B",
-        "q": "{20}",
-        "answer": "intersection"
+        "q": "",
+        "answer": "from"
       }
     ]
   },
@@ -122,16 +122,10 @@
     "image": "sets_2",
     "answers": [
       {
-        "l": "A",
-        "r": "B",
-        "q": "{5, 4, 1}",
-        "answer": "none"
-      },
-      {
-        "l": "A",
-        "r": "B",
-        "q": "{20}",
-        "answer": "intersection"
+        "l": "4",
+        "r": "B∩C",
+        "q": "",
+        "answer": "from"
       }
     ]
   },
@@ -139,16 +133,10 @@
     "image": "sets_3",
     "answers": [
       {
-        "l": "A",
-        "r": "B",
-        "q": "{5, 4, 1}",
+        "l": "2",
+        "r": "B∩A",
+        "q": "",
         "answer": "none"
-      },
-      {
-        "l": "A",
-        "r": "B",
-        "q": "{20}",
-        "answer": "intersection"
       }
     ]
   },
@@ -158,14 +146,8 @@
       {
         "l": "A",
         "r": "B",
-        "q": "{5, 4, 1}",
+        "q": "{}",
         "answer": "none"
-      },
-      {
-        "l": "A",
-        "r": "B",
-        "q": "{20}",
-        "answer": "intersection"
       }
     ]
   },
@@ -173,16 +155,10 @@
     "image": "sets_0",
     "answers": [
       {
-        "l": "A",
-        "r": "B",
-        "q": "{5, 4, 1}",
+        "l": "A∩B",
+        "r": "C",
+        "q": "{}",
         "answer": "none"
-      },
-      {
-        "l": "A",
-        "r": "B",
-        "q": "{20}",
-        "answer": "intersection"
       }
     ]
   }

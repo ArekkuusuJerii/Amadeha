@@ -39,12 +39,12 @@
             android:id="@+id/imageView12"
             android:layout_width="200dp"
             android:layout_height="150dp"
-            android:scaleY="1.5"
-            android:scaleX="1.2"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="19dp"
             android:rotation="90"
+            android:scaleX="1.2"
+            android:scaleY="1.5"
             android:src="@drawable/dialogo"/>
 
         <LinearLayout

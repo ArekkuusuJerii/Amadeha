@@ -70,10 +70,16 @@ public class LoadingScreen extends Activity {
                 //Add input
                 builder.setView(input);
                 builder.setPositiveButton(R.string.play, new DialogInterface.OnClickListener() {
+
+                    private boolean pressed;
+
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String name = input.getText().toString();
                         if (!name.isEmpty()) {
+                            if(pressed) return;
+                            pressed= true;
+
                             dialog.cancel();
                             input.setText("");
                             input.setHint(R.string.player);

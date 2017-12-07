@@ -38,6 +38,8 @@ public class Sets {
     public enum SetType {
         @SerializedName("none")
         NONE(R.drawable.set_none),
+        @SerializedName("from")
+        FROM(R.drawable.set_from),
         @SerializedName("empty")
         EMPTY(R.drawable.sets_empty),
         @SerializedName("union")

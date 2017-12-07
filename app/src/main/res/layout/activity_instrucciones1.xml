@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/start_instruction_0"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/start_instruction_0">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/transparent">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,7 +19,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="113dp"
-                android:src="@drawable/instructor" />
+                android:src="@drawable/instructor"/>
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -29,7 +28,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="99dp"
-                android:src="@drawable/dialogo" />
+                android:src="@drawable/dialogo"/>
 
             <TextView
                 android:layout_width="190dp"
@@ -41,7 +40,7 @@
                 android:text="@string/bienvenidos3"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
         </RelativeLayout>
     </LinearLayout>
