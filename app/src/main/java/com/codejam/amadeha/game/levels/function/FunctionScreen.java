@@ -81,7 +81,7 @@ public class FunctionScreen extends LevelBase implements ITickable {
                 startCountdown(120000L);
                 correct.play();
                 level++;
-                score += 20;
+                score += 10;
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
