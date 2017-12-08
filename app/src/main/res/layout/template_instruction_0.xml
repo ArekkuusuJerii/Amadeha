@@ -35,6 +35,6 @@
             android:layout_margin="10dp"
             android:text="@string/equation_description"
             android:textColor="@color/fontWhite"
-            android:textSize="18sp"/>
+            android:textSize="17sp"/>
     </LinearLayout>
 </LinearLayout>

@@ -1,6 +1,7 @@
 <resources>
     <!--Amadeha-->
     <string name="app_name">AMADEHA</string>
+    <string name="crash_toast_text">Ha ocurrido un error en la Aplicación…</string>
 
     <!--Amadeha game-->
     <string name="equation_game">Ecuaciones</string>
@@ -52,31 +53,31 @@
     <string name="instruction">"Intrucciones"</string>
 
     <string name="equation_description">Objetivo: Conocer y entender el sistema de ecuaciones lineales y sus conceptos básicos.\n\nDeberás arrastrar y soltar la solución sobre las incógnitas de las equaciones indicadas.\n\nA continuación una serie de imágenes para ayudarte a comprender el juego:</string>
-    <string name="equation_0">Cuentas con 5 posibles respuestas para las incógnitas.\nDebes elegir cuidadosamente, de lo contrario perderás puntos.</string>
+    <string name="equation_0">Cuentas con 5 posibles respuestas para las incógnitas.\n\nDebes elegir cuidadosamente, de lo contrario perderás puntos.</string>
     <string name="equation_1">Dependiendo de la ecuación, deberás arrastrar ambas soluciones o la solución a la incógnita donde corresponda.</string>
-    <string name="equation_2">Suelta la solución sobre la incógnita.\n\nAsegúrate de estar correctamente posicionado sobre ella.</string>
-    <string name="equation_3">No permitas que se te acabe el tiempo y responde correctamente.\n\n¡Mucha suerte!</string>
+    <string name="equation_2">Suelta la solución sobre la incógnita.\nAsegúrate de estar correctamente posicionado sobre ella.</string>
+    <string name="equation_3">No permitas que se acabe el tiempo y responde correctamente.\n\n¡Mucha suerte!</string>
 
     <string name="function_description">Objetivo: Diferenciar las relaciones y funciones para poder representar la asociación y el comportamiento de elementos.\n\nDeberás completar un memorama, descubriendo todas las cartas en el tiempo indicado.\n\nA continuación una serie de imágenes para ayudarte a comprender el juego:</string>
-    <string name="function_0">Las cartas son completamente al azar, y cada una tiene su par.</string>
-    <string name="function_1">Para descubrir una carta, gentilmente toca la parte superior de esta.\nNo puedes deshacer tus movimientos. ¡Ten cuidado!</string>
-    <string name="function_2">Para descubrir una segunda carta, toca cualquiera excepto la carta activa.\nCada par incorrecto te cuesta puntos. ¡Ouch!</string>
-    <string name="function_3">No permitas que se te acabe el tiempo y responde correctamente.\n\nMucha suerte!</string>
+    <string name="function_0">Las cartas son completamente al azar, y cada una tiene su par.\n\nHay un total de 6 pares y tienes 2 minutos por cada uno.</string>
+    <string name="function_1">Para descubrir una carta, gentilmente toca la parte superior de esta.\n\nNo puedes deshacer tus movimientos. ¡Ten cuidado!</string>
+    <string name="function_2">Para descubrir una segunda carta, toca cualquiera excepto la carta activa.\n\nCada par incorrecto te cuesta puntos. ¡Ouch!</string>
+    <string name="function_3">No permitas que se acabe el tiempo y responde correctamente.\n\nMucha suerte!</string>
 
     <string name="matrix_description">Objetivo: Conocer los conceptos básicos de las matrices y sus variadas operaciones.\n\nDeberás ordenar elementos de una matriz para hacerla coincidir con la operación.\n\nA continuación una serie de imágenes para ayudarte a comprender el juego:</string>
     <string name="matrix_0">Realiza la operación entre Matrices, en este juego tienes que ser rápido.\n\nArrastra los elementos con tus dedos.</string>
     <string name="matrix_1">Ordena los elementos para que coincidan con tu respuesta, por cada movimiento erróneo perderás puntos. ¡Ten cuidado!</string>
-    <string name="matrix_2">No permitas que se te acabe el tiempo y responde correctamente.\n\nMucha suerte!</string>
+    <string name="matrix_2">No permitas que se acabe el tiempo y responde correctamente.\n\nMucha suerte!</string>
 
     <string name="sets_description">Objetivo: Clasificar los diferentes tipos de conjuntos y operaciones.\n\nDeberás arrastrar y soltar elementos en este juego, así que prepara tus pulgares.\n\nA continuación una serie de imágenes para ayudarte a comprender el juego:</string>
-    <string name="sets_0">Tienes un conjunto y una serie de opciones, arrastra la opción a la incógnita marcada.\nSi no hay respuesta arrastra NONE.</string>
-    <string name="sets_1">Suelta la opción sobre la incógnita marcada.\nAsegúrate que sea la respuesta correcta, ya que perderás puntos de lo contrario.</string>
-    <string name="sets_2">No permitas que se te acabe el tiempo y responde correctamente.\n\nMucha suerte!</string>
+    <string name="sets_0">Tienes un conjunto y una serie de imágenes, arrastra la imágen a la incógnita marcada.\n\nSi no hay respuesta arrastra NONE.</string>
+    <string name="sets_1">Suelta la imágen sobre la incógnita marcada.\n\nAsegúrate que sea la respuesta correcta, ya que perderás puntos de lo contrario.</string>
+    <string name="sets_2">No permitas que se acabe el tiempo y responde correctamente.\n\nMucha suerte!</string>
 
     <string name="statistic_description">Objetivo: Interpretar la información para establecer el comportamiento de los datos que se le presenten en su día a día.\n\nDeberás seleccionar una respuesta de una lista, así que prepara tu conocimiento.\n\nA continuación una serie de imágenes para ayudarte a comprender el juego:</string>
-    <string name="statistic_0">Se te presenta una pregunta en la parte superior y varias respuestas en la parte inferior.\nSelecciona la respuesta correcta</string>
+    <string name="statistic_0">Se te presenta una pregunta en la parte superior y varias respuestas en la parte inferior.\n\nSelecciona la respuesta correcta</string>
     <string name="statistic_1">Al ser opción múltiple, existe la posibilidad de que ningúna sea correcta, como lo es en este ejemplo.\n¡Mucho cuidado!</string>
-    <string name="statistic_2">No permitas que se te acabe el tiempo y responde correctamente.\n\n¡Mucha suerte!</string>
+    <string name="statistic_2">No permitas que se acabe el tiempo y responde correctamente.\n\n¡Mucha suerte!</string>
 
     <!--Amadeha profile-->
     <string name="new_user">Nuevo usuario</string>
@@ -102,7 +103,7 @@
     <string name="volume_musics">Volumen de Música</string>
     <string name="volume">Volumen:</string>
     <string name="available_points">Selección de personaje, puntos disponibles: </string>
-    <string name="needed_points">No cuentas con los puntos requeridos: %o</string>
+    <string name="needed_points">No cuentas con los puntos requeridos: %s</string>
 
     <!--Amadeha misc-->
     <string name="chronometer_placeholder" translatable="false">%02d:%02d</string>
@@ -121,7 +122,6 @@
     <string name="equation_first_grade">"Ecuación de primer grado"</string>
     <string name="equation_second_grade">"Ecuación de segundo grado"</string>
     <string name="equation_bi_unknown">"Ecuación de dos incógnitas"</string>
-    <string name="crash_toast_text">Ha ocurrido un error en la Aplicación…</string>
 
     <!--Amadeha main-->
     <string name="start">INICIO</string>
