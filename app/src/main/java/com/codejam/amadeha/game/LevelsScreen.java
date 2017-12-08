@@ -3,6 +3,7 @@ package com.codejam.amadeha.game;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -154,7 +155,7 @@ public final class LevelsScreen extends AppCompatActivity {
                     }
                 }
             } else {
-                Toast.makeText(getBaseContext(), String.format(getString(R.string.needed_points), character.scoreUnlock), Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), String.format(getString(R.string.needed_points), String.valueOf(character.scoreUnlock)), Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -267,10 +268,12 @@ public final class LevelsScreen extends AppCompatActivity {
 
         @Nullable
         @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
             int frag = getArguments().getInt("position");
             Game game = Game.values()[frag];
             View view = inflater.inflate(game.fragment, container, false);
+            Typeface type = Typeface.createFromAsset(container.getContext().getAssets(), "fonts/Orbitron-Regular.ttf");
+            ((TextView) view.findViewById(R.id.game_title)).setTypeface(type);
             View right = view.findViewById(R.id.arrow_right);
             View left = view.findViewById(R.id.arrow_left);
             View icon = view.findViewById(R.id._game);
