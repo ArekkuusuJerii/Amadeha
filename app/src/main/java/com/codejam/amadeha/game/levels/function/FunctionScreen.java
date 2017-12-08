@@ -78,6 +78,7 @@ public class FunctionScreen extends LevelBase implements ITickable {
             canSelectCard = false;
 
             if (one.mirror == two && two.mirror == one) {
+                startCountdown(120000L);
                 correct.play();
                 level++;
                 score += 20;

@@ -33,6 +33,7 @@ public class Sets {
         public String r;
         public String q;
         public SetType answer;
+        public int time;
     }
 
     public enum SetType {

@@ -81,7 +81,6 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
         for (View view : answers) {
             view.setOnTouchListener(listener);
         }
-        startCountdown(500000);
     }
 
     @Override
@@ -165,6 +164,7 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
         drop_image.setImageResource(R.drawable.tj_back);
         image.setImageResource(sets.loadImage(this));
         answer = entry.answer;
+        startCountdown((long) entry.time * 1000L);
     }
 
     @Override

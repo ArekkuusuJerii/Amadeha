@@ -55,7 +55,7 @@ public class StatisticScreen extends LevelBase implements ITickable {
         poof.setDuration(2000);
         tableLayout = findViewById(R.id.answers);
         question = findViewById(R.id.question);
-        startCountdown(100000);
+        startCountdown(120000L);
     }
 
     @Override
