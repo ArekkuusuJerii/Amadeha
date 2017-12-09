@@ -229,6 +229,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         view.setText(line);
         view.setTextSize(120);
         view.setMaxLines(1);
+        view.setTextColor(Color.BLACK);
         equationLayout.addView(view, params);
 
         return view;

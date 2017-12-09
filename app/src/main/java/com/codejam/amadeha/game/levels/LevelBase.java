@@ -2,13 +2,13 @@ package com.codejam.amadeha.game.levels;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -31,6 +31,8 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class LevelBase extends Activity {
 
+    public static final String SHOW_INSTRUCTIONS = "instructions";
+
     protected final Random rand = new Random();
     protected MusicHelper.Sound incorrect;
     protected MusicHelper.Sound correct;
@@ -43,8 +45,8 @@ public abstract class LevelBase extends Activity {
     private boolean gameOver;
 
     @Override
-    protected final void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected final void onCreate(@Nullable Bundle bundle) {
+        super.onCreate(bundle);
         this.setContentView(getView());
         //Issue game start
         final Dialog wrapper = new DialogWrapper(this, R.layout.activity_game_prompt)
@@ -71,7 +73,9 @@ public abstract class LevelBase extends Activity {
         lose = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.lose);
         win = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.win);
         tick = MusicHelper.load(getBaseContext(), MusicHelper.SoundType.EFFECT, R.raw.tick);
-        showInstructions();
+        if (getIntent().getBooleanExtra(SHOW_INSTRUCTIONS, false)) {
+            showInstructions();
+        }
     }
 
     public void showInstructions() {
@@ -186,7 +190,9 @@ public abstract class LevelBase extends Activity {
                     stopCountdown();
                     wrapper.cancel();
                     finish();
-                    startActivity(getIntent());
+                    Intent intent = getIntent();
+                    intent.putExtra(SHOW_INSTRUCTIONS, false);
+                    startActivity(intent);
                 }
             }
         });
@@ -212,7 +218,9 @@ public abstract class LevelBase extends Activity {
             @Override
             public void touchLift(View v) {
                 finish();
-                startActivity(getIntent());
+                Intent intent = getIntent();
+                intent.putExtra(SHOW_INSTRUCTIONS, false);
+                startActivity(intent);
                 wrapper.cancel();
             }
         });

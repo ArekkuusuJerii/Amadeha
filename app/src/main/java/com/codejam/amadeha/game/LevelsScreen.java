@@ -39,6 +39,7 @@ import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.score.Score;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
 import com.codejam.amadeha.game.data.settings.MusicHelper.SoundType;
+import com.codejam.amadeha.game.levels.LevelBase;
 
 import java.util.List;
 
@@ -180,7 +181,9 @@ public final class LevelsScreen extends AppCompatActivity {
     }
 
     public void play(View view) {
-        startActivity(new Intent(getBaseContext(), getCurrentGame().level));
+        Intent intent = new Intent(getBaseContext(), getCurrentGame().level);
+        intent.putExtra(LevelBase.SHOW_INSTRUCTIONS, true);
+        startActivity(intent);
     }
 
     public void showScores(View view) {

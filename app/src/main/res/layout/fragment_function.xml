@@ -42,6 +42,7 @@
             android:layout_marginStart="90dp"
             android:text="@string/function_game"
             android:textAllCaps="true"
+            android:textColor="@color/fontBlack"
             android:textSize="55sp"/>
 
         <LinearLayout
