@@ -163,9 +163,9 @@ public final class LevelsScreen extends AppCompatActivity {
 
     public void showMaxScore() {
         Game game = getCurrentGame();
+        if(GameInfo.getScores() == null) return;
         List<Score> scores = GameInfo.getScores().get(game);
         String string = getString(R.string.score_undefined);
-
         if (scores != null && !scores.isEmpty()) {
             Score score = scores.get(0); //First Score
             string = getString(R.string.score_user) + ": " + score.user + " | " +
