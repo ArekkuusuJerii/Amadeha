@@ -11,19 +11,19 @@ import com.codejam.amadeha.game.data.GameInfo;
 
 public enum Character {
     INSTRUCTOR(R.drawable.instructor, 0),
-    INSTRUCTOR_SPORT(R.drawable.instructor_deportes, 100),
-    INSTRUCTOR_PANTSU(R.drawable.instructor_ropa_interior, 200),
-    INSTRUCTOR_SANTA(R.drawable.instructor_santa_claus, 500);
+    INSTRUCTOR_SPORT(R.drawable.instructor_deportes, 1),
+    INSTRUCTOR_PANTSU(R.drawable.instructor_ropa_interior, 2),
+    INSTRUCTOR_SANTA(R.drawable.instructor_santa_claus, 3);
 
     public final int img;
-    public final int scoreUnlock;
+    public final int wins;
 
-    Character(int img, int scoreUnlock) {
+    Character(int img, int wins) {
         this.img = img;
-        this.scoreUnlock = scoreUnlock;
+        this.wins = wins;
     }
 
     public boolean canUnlock(User user) {
-        return GameInfo.isGuest() || user.score >= scoreUnlock;
+        return GameInfo.isGuest() || user.wins >= wins;
     }
 }

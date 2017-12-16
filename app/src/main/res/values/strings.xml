@@ -102,8 +102,8 @@
     <string name="volume_effects">Volumen de Efectos</string>
     <string name="volume_musics">Volumen de Música</string>
     <string name="volume">Volumen:</string>
-    <string name="available_points">Selección de personaje, puntos disponibles: </string>
-    <string name="needed_points">No cuentas con los puntos requeridos: %s</string>
+    <string name="available_points">Selección de personaje, puntos: </string>
+    <string name="needed_points">Debes completar el juego %s veces para desbloquear este personaje</string>
 
     <!--Amadeha misc-->
     <string name="chronometer_placeholder" translatable="false">%02d:%02d</string>

@@ -59,8 +59,22 @@ public final class GameInfo {
                     user.levels.add(unblocked);
                 }
             }
+            setProgress(game);
             user.score = user.score + score.score;
             UserHandler.modifyUser(context, getUser());
+        }
+    }
+
+    private static void setProgress(Game game) {
+        if (user.progress == null && game == Game.SETS) {
+            user.progress = Game.SETS;
+        } else if (user.progress != null) {
+            if (user.progress.ordinal() < game.ordinal()) {
+                user.progress = game;
+            } else if (user.progress == Game.MATRIX && game == Game.STATISTIC) {
+                user.progress = null;
+                user.wins++;
+            }
         }
     }
 

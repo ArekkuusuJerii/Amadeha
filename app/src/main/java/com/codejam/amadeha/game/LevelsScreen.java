@@ -156,7 +156,7 @@ public final class LevelsScreen extends AppCompatActivity {
                     }
                 }
             } else {
-                Toast.makeText(getBaseContext(), String.format(getString(R.string.needed_points), String.valueOf(character.scoreUnlock)), Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), String.format(getString(R.string.needed_points), String.valueOf(character.wins)), Toast.LENGTH_LONG).show();
             }
         }
     }

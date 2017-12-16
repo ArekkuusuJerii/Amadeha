@@ -18,6 +18,8 @@ public class User {
     public Set<Game> levels;
     public String name;
     public int score;
+    public Game progress;
+    public int wins;
 
     public User(){}
 
