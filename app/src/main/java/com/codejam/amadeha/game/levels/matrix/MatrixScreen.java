@@ -22,6 +22,7 @@ import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
 import com.codejam.amadeha.game.levels.LevelBase;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -139,10 +140,8 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
         yField.setMatrixArray(matrix.y);
         List<String> strings = Lists.newArrayList();
         //Setup views
-        for (int[] row : matrix.answer) {
-            for (int i : row) {
-                strings.add(String.valueOf(i));
-            }
+        for (String[] row : matrix.answer) {
+            strings.addAll(Arrays.asList(row));
             addRow(row);
         }
         //Shuffle and apply text
@@ -161,7 +160,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
         }
     }
 
-    private void addRow(int[] row) {
+    private void addRow(String[] row) {
         TableRow tableRow = new TableRow(this);
         tableRow.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         for (int i = 0; i < row.length; i++) {

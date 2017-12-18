@@ -9,9 +9,9 @@ package com.codejam.amadeha.game.levels.matrix;
 public class Matrix {
 
     public String operation;
-    public int[][] x;
-    public int[][] y;
-    public int[][] answer;
+    public String[][] x;
+    public String[][] y;
+    public String[][] answer;
     public int score;
     public int time;
 

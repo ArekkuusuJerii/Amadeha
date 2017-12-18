@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 
 public class TextMatrix extends AutoResizeTextView {
 
-    private int[][] matrixArray;
+    private String[][] matrixArray;
 
     public TextMatrix(Context context) {
         super(context);
@@ -25,18 +25,18 @@ public class TextMatrix extends AutoResizeTextView {
         super(context, attrs, defStyleAttr);
     }
 
-    public int[][] getMatrixArray() {
+    public String[][] getMatrixArray() {
         return matrixArray;
     }
 
-    public void setMatrixArray(int[][] matrixArray) {
+    public void setMatrixArray(String[][] matrixArray) {
         if(matrixArray != null) {
             this.matrixArray = matrixArray;
             StringBuilder builder = new StringBuilder();
             for (int i = 0, length = matrixArray.length; i < length; i++) {
-                int[] row = matrixArray[i];
+                String[] row = matrixArray[i];
                 for (int j = 0, rows = row.length; j < rows; j++) {
-                    int c = row[j];
+                    String c = row[j];
                     builder.append(c);
                     if (j != rows - 1) {
                         builder.append(" ");
