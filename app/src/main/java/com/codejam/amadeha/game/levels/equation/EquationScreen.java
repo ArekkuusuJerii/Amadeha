@@ -134,7 +134,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         for (TextView view : unknowns) {
             String tag = (String) view.getTag();
             if (tag.equals(key) && !view.getText().equals(triplet.second)) {
-                view.setText(String.format(triplet.third, triplet.second));
+                view.setText(triplet.third);
                 answered++;
             }
         }
