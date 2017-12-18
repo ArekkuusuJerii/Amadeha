@@ -1,104 +1,152 @@
 [
   {
-    "question": "¿Cuál es el promedio de los siguientes números [9,10,10,10]?",
+    "question": "Las variables pueden ser de dos tipos:",
     "answers": [
-      "9.24",
-      "8.75",
-      "9.99",
-      "9,4",
-      "9.5"
+      "Variables unidimensionales y bidimensionales.",
+      "Variables pluridimensionales y bidimensionales.",
+      "Variables unidimensionales y pluridimensionales."
     ],
-    "answer": "9.75",
+    "answer": "Variables cualitativas y cuantitativas.",
     "random": true
   },
   {
-    "question": "La sumatoria de n números entre la cantidad de n números se refiere a:",
+    "question": "Las variables cuantitativas se pueden clasificar en:",
     "answers": [
-      "n + n + n + ...",
-      "Cálculo de la moda",
-      "Cifra"
+      "Unidimensionales y bidimensionales.",
+      "Pluridimensionales y unidimensionales.",
+      "Bidimensionales y Pluridimensionales."
     ],
-    "answer": "La media aritmética",
+    "answer": "Discreta y continuas.",
     "random": true
   },
   {
-    "question": "Es la cifra en medio de un vector de números ordenados",
+    "question": "Es cualquier elemento que porte información sobre el fenómeno que se estudia:",
     "answers": [
-      "V/N",
-      "Medida",
-      "Diferencia modal"
+      "Muestra.",
+      "Población.",
+      "Organización."
+    ],
+    "answer": "Individuo",
+    "random": true
+  },
+  {
+    "question": "Es un conjunto de todos los individuos (personas, objetos, animales, etc.) que porten información sobre el fenómeno que se estudia:",
+    "answers": [
+      "Individuo.",
+      "Muestra",
+      "Organización"
+    ],
+    "answer": "Población",
+    "random": true
+  },
+  {
+    "question": "Subconjunto seleccionado de una población:",
+    "answers": [
+      "Individuo",
+      "Población",
+      "Organización"
+    ],
+    "answer": "Muestra",
+    "random": true
+  },
+  {
+    "question": "Son Medidas y/o números recopilados a partir de la observación:",
+    "answers": [
+      "Clasificación",
+      "Organización",
+      "Construcción de bloques estadísticos"
+    ],
+    "answer": "Datos",
+    "random": true
+  },
+  {
+    "question": "Los datos se pueden clasificar en:",
+    "answers": [
+      "Nominales y ordinales",
+      "Intervalos y de razón",
+      "Discretos y ordinales"
+    ],
+    "answer": "Discretos y continuos",
+    "random": true
+  },
+  {
+    "question": "Muestran la relación entre dos variables cuantitativas:",
+    "answers": [
+      "Gráfica de barras o histogramas",
+      "Gráficas circulares",
+      "Gráficas de dispersión"
+    ],
+    "answer": "Gráficas de líneas",
+    "random": true
+  },
+  {
+    "question": "Se emplea cuando la variable independiente es categórica:",
+    "answers": [
+      "Gráficas de líneas",
+      "Gráficas circulares",
+      "Gráficas de dispersión"
+    ],
+    "answer": "Gráfica de barras o histogramas",
+    "random": true
+  },
+  {
+    "question": "Denominadas también gráfica de pastel, se utilizan para mostrar porcentajes y proporciones:",
+    "answers": [
+      "Gráficas de líneas",
+      "Gráfica de barras o histogramas",
+      "Gráficas de dispersión"
+    ],
+    "answer": "Gráficas circulares",
+    "random": true
+  },
+  {
+    "question": "Una gráfica de dispersión tiene dos ejes de valores, mostrando un conjunto de datos numéricos en el eje x y otro en el eje y:",
+    "answers": [
+      "Gráficas de líneas",
+      "Gráficas circulares",
+      "Gráficas de dispersión"
+    ],
+    "answer": "Gráficas de dispersión",
+    "random": true
+  },
+  {
+    "question": "Es igual a la suma de todos ellos dividida entre n :",
+    "answers": [
+      "Mediana",
+      "Moda",
+      "Rango"
+    ],
+    "answer": "Media aritmética",
+    "random": true
+  },
+  {
+    "question": "Es el punto central de una serie de datos ordenados de forma ascendente o descendente:",
+    "answers": [
+      "Media aritmética",
+      "Moda",
+      "Rango"
     ],
     "answer": "Mediana",
     "random": true
   },
   {
-    "question": "Es el número que más se repite en un conjunto de números",
+    "question": "Es el valor que más se repite, es decir, el que tiene el mayor número de frecuencias absolutas:",
     "answers": [
-      "Diferencia Modal",
-      "#N",
-      "10"
+      "Media aritmética",
+      "Mediana",
+      "Rango"
     ],
     "answer": "Moda",
     "random": true
   },
   {
-    "question": "Es un estadístico de dispersión",
+    "question": "Es la diferencia entre el valor máximo (M) y el valor mínimo (m) de la variable estadística:",
     "answers": [
-      "Modo",
-      "Relación",
-      "Honda"
+      "Media aritmética",
+      "Mediana",
+      "Moda"
     ],
     "answer": "Rango",
-    "random": true
-  },
-  {
-    "question": "Es un índice muy sensible a las puntuaciones extremas.",
-    "answers": [
-      "Balanza",
-      "Moda",
-      "Variable"
-    ],
-    "answer": "Varianza",
-    "random": true
-  },
-  {
-    "question": "Es un índice de dispersión:",
-    "answers": [
-      "Dispersión",
-      "Índice",
-      "50"
-    ],
-    "answer": "Desviación estándar",
-    "random": true
-  },
-  {
-    "question": "Ejemplo variable cualitativa",
-    "answers": [
-      "10",
-      "Monedas",
-      "Fuego"
-    ],
-    "answer": "Sentimientos",
-    "random": true
-  },
-  {
-    "question": "Ejemplo de variables cuantitativas discretas",
-    "answers": [
-      "Si",
-      "No se",
-      "No"
-    ],
-    "answer": "Número de hijos de una familia",
-    "random": true
-  },
-  {
-    "question": "El histograma se usa para representar variables",
-    "answers": [
-      "Equitativas",
-      "Semejantes",
-      "Diferentes"
-    ],
-    "answer": "Cualitativas y cuantitativas",
     "random": true
   }
 ]

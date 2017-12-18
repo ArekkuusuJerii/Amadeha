@@ -1,26 +1,30 @@
 [
   {
-    "card_left": "tj_1sobrex",
-    "card_right": "tj_1sobrexcuadrada"
+    "card_left": "tj_x3",
+    "card_right": "tj_x3rp"
   },
   {
-    "card_left": "tj_raizx",
-    "card_right": "tj_x2"
-  },
-  {
-    "card_left": "tj_3raizx",
-    "card_right": "tj_x3"
-  },
-  {
-    "card_left": "tj_1sobrexrp",
-    "card_right": "tj_1sobrexcuadradarp"
-  },
-  {
-    "card_left": "tj_raizxrp",
+    "card_left": "tj_x2",
     "card_right": "tj_x2rp"
   },
   {
-    "card_left": "tj_3raizxrp",
-    "card_right": "tj_x3rp"
+    "card_left": "tj_1sobrex",
+    "card_right": "tj_1sobrexrp"
+  },
+  {
+    "card_left": "tj_1sobrexcuadrada",
+    "card_right": "tj_1sobrexcuadradarp"
+  },
+  {
+    "card_left": "tj_3raizx",
+    "card_right": "tj_3raizxrp"
+  },
+  {
+    "card_left": "tj_raizx",
+    "card_right": "tj_raizxrp"
+  },
+  {
+    "card_left": "tj_x",
+    "card_right": "tj_xrp"
   }
 ]
