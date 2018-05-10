@@ -18,6 +18,6 @@
         android:layout_height="match_parent"
         android:layout_margin="50sp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/amadhea_logo"/>
+        android:src="@drawable/logo"/>
 
 </FrameLayout>

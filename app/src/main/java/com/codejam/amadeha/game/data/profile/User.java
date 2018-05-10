@@ -2,6 +2,7 @@ package com.codejam.amadeha.game.data.profile;
 
 import com.codejam.amadeha.game.data.registry.Game;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -15,11 +16,12 @@ public class User {
 
     public transient UUID id;
     public Character character = Character.INSTRUCTOR;
-    public Set<Game> levels;
+    public Set<Game> levels = new HashSet<>();
     public String name;
     public int score;
     public Game progress;
     public int wins;
+    public transient boolean levelUp; //If it has a new unblocked Game
 
     public User(){}
 

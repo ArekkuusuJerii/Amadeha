@@ -1,15 +1,13 @@
 package com.codejam.amadeha.game.data.settings;
 
-import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.media.SoundPool;
-import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.support.test.espresso.core.internal.deps.guava.collect.ImmutableMap;
+import android.support.test.espresso.core.internal.deps.guava.collect.Maps;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -20,13 +18,13 @@ import java.util.Map;
 
 public final class MusicHelper {
 
-    private static Map<SoundType, Float> volumes;
+    private static final Map<SoundType, Float> volumes = Maps.newHashMap();
     private static SoundPool pool;
     private static Intent player;
 
     public static void init(Context context) {
         pool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        volumes = SettingsHandler.getVolumes(context);
+        volumes.putAll(SettingsHandler.getVolumes(context));
     }
 
     public static void setVolume(Context context, SoundType type, float volume) {
@@ -35,6 +33,7 @@ public final class MusicHelper {
             SettingsHandler.setVolume(context, type, volume);
             volumes.put(type, volume);
             if(type == SoundType.MUSIC && player != null) {
+                player.putExtra("volume", volumes.get(SoundType.MUSIC));
                 context.startService(player);
             }
         }
@@ -57,6 +56,7 @@ public final class MusicHelper {
     public static synchronized void playBackground(Context context, int raw) {
         stopBackground(context);
         player = new Intent(context, SoundService.class);
+        player.putExtra("volume", volumes.get(SoundType.MUSIC));
         player.putExtra("raw", raw);
         context.startService(player);
     }
@@ -100,68 +100,7 @@ public final class MusicHelper {
 
         @Override
         public String toString() {
-            return name().toLowerCase();
-        }
-    }
-
-    public static class Sound {
-
-        private final SoundType type;
-        private final int id;
-        private final int priority;
-        private final float rate;
-
-        Sound(SoundType type, int id, int priority, float rate) {
-            this.type = type;
-            this.id = id;
-            this.priority = priority;
-            this.rate = rate;
-        }
-
-        public void play() {
-            MusicHelper.play(this, 0);
-        }
-    }
-
-    public static class SoundService extends Service {
-
-        private MediaPlayer media;
-        private int music;
-
-        public SoundService() {
-            super();
-        }
-
-        @Override
-        public int onStartCommand(Intent intent, int flags, int id) {
-            float volume = volumes.get(SoundType.MUSIC);
-
-            int music = intent.getIntExtra("raw", 0);
-            if (media == null || music != this.music) {
-                media = MediaPlayer.create(this, music);
-                this.music = music;
-            }
-            media.setVolume(volume, volume);
-            media.setLooping(true);
-            if (intent.getBooleanExtra("pause", false) && media.isPlaying()) {
-                media.pause();
-            } else if (!media.isPlaying()) {
-                media.start();
-            }
-
-            return super.onStartCommand(intent, flags, id);
-        }
-
-        @Nullable
-        @Override
-        public IBinder onBind(Intent intent) {
-            return null;
-        }
-
-        @Override
-        public void onDestroy() {
-            media.stop();
-            media.release();
+            return name().toLowerCase(Locale.ROOT);
         }
     }
 }

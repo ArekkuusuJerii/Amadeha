@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#00ab84</color>
     <color name="colorPrimaryDark">#00305d</color>
-    <color name="colorAccent">#aa00ff</color>
+    <color name="colorAccent">#0044ff</color>
 
     <!-- Screens background -->
     <color name="bg_screen1">#00ab84</color>

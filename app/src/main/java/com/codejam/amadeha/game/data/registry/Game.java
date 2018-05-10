@@ -14,6 +14,8 @@ import com.codejam.amadeha.game.levels.sets.SetsScreen;
 import com.codejam.amadeha.game.levels.statistic.Statistic;
 import com.codejam.amadeha.game.levels.statistic.StatisticScreen;
 
+import java.util.Locale;
+
 /**
  * This file was created by Snack on 08/11/2017. It's distributed as part of Amadeha.
  * Get the source code in GitHub: https://github.com/ArekkuusuJerii/Amadeha
@@ -22,11 +24,6 @@ import com.codejam.amadeha.game.levels.statistic.StatisticScreen;
 
 public enum Game {
     SETS(SetsScreen.class, Sets.class, R.string.sets_game, R.layout.fragment_sets, R.raw.sets) {
-        @Override
-        public boolean isUnblocked(User user) {
-            return true;
-        }
-
         @Override
         public boolean canUnblock(Game from, Score score) {
             return from == SETS && score.score >= 40;
@@ -76,11 +73,11 @@ public enum Game {
     }
 
     public boolean isUnblocked(User user) {
-        return user.levels != null && user.levels.contains(this);
+        return ordinal() == 0 || (user.levels != null && user.levels.contains(this));
     }
 
     @Override
     public String toString() {
-        return name().toLowerCase();
+        return name().toLowerCase(Locale.ROOT);
     }
 }

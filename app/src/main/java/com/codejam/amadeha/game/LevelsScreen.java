@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.test.espresso.core.internal.deps.guava.collect.Lists;
@@ -39,6 +40,7 @@ import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.score.Score;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
 import com.codejam.amadeha.game.data.settings.MusicHelper.SoundType;
+import com.codejam.amadeha.game.data.settings.Sound;
 import com.codejam.amadeha.game.levels.LevelBase;
 
 import java.util.List;
@@ -64,6 +66,14 @@ public final class LevelsScreen extends AppCompatActivity {
         pager.setAdapter(adapter);
         pager.setOffscreenPageLimit(Game.values().length);
         pager.addOnPageChangeListener(new LevelBlocking());
+        pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                if(state == ViewPager.SCROLL_STATE_IDLE) {
+                    showMaxScore();
+                }
+            }
+        });
     }
 
     public void showSettings(View view) {
@@ -71,8 +81,8 @@ public final class LevelsScreen extends AppCompatActivity {
         if(settings == null) {
             SimpleSeekBarListener listener = new SimpleSeekBarListener() {
 
-                private final MusicHelper.Sound drag = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card1);
-                private final MusicHelper.Sound drop = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card2);
+                private final Sound drag = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card1);
+                private final Sound drop = MusicHelper.load(getBaseContext(), SoundType.EFFECT, R.raw.card2);
 
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -98,7 +108,7 @@ public final class LevelsScreen extends AppCompatActivity {
                     .setFeature(Window.FEATURE_NO_TITLE)
                     .setMinimizable(true)
                     .setCancelable(true)
-                    .build(1F, 1F);
+                    .build(0.95F, 0.95F);
             SeekBar music = settings.findViewById(R.id.volume_music);
             music.setProgress((int) (MusicHelper.getVolumes().get(SoundType.MUSIC) * (float) music.getMax()));
             music.setOnSeekBarChangeListener(listener);
@@ -194,7 +204,7 @@ public final class LevelsScreen extends AppCompatActivity {
                     .setFeature(Window.FEATURE_NO_TITLE)
                     .setMinimizable(true)
                     .setCancelable(true)
-                    .build(1F, 1F);
+                    .build(0.95F, 0.95F);
         }
         updateScores();
     }
@@ -208,14 +218,17 @@ public final class LevelsScreen extends AppCompatActivity {
                         getText(R.string.score).toString(),
                         getText(R.string.date).toString())
                 ).close();
-
         List<Score> get = GameInfo.getScores().get(getCurrentGame());
-        for (int i = 0; i < get.size() && i < 3; i++) {
-            Score score = get.get(i);
-            View row = inflateScoreRow(score.user, String.valueOf(score.score), score.date.toString());
-            adapter.addRow().addColumn(row).close();
+        if(get.isEmpty()) {
+            adapter.addRow().addColumn(inflateScoreRow("-", "-", "-")).close();
+            Toast.makeText(this, getString(R.string.score_undefined), Toast.LENGTH_SHORT).show();
+        } else {
+            for (int i = 0; i < get.size() && i < 3; i++) {
+                Score score = get.get(i);
+                View row = inflateScoreRow(score.user, String.valueOf(score.score), score.date.toString());
+                adapter.addRow().addColumn(row).close();
+            }
         }
-
         ((ListView) highscores.findViewById(R.id.score_list)).setAdapter(adapter.build());
         highscores.show();
     }
@@ -249,6 +262,10 @@ public final class LevelsScreen extends AppCompatActivity {
     @Override
     protected void onResume() {
         MusicHelper.playBackground(getBaseContext(), R.raw.ambient_loop);
+        if(!GameInfo.isGuest() && GameInfo.getUser().levelUp) {
+            pager.arrowScroll(View.FOCUS_RIGHT);
+            GameInfo.getUser().levelUp = false;
+        }
         showMaxScore();
         super.onResume();
     }
@@ -287,6 +304,7 @@ public final class LevelsScreen extends AppCompatActivity {
                 image.setVisibility(View.INVISIBLE);
             } else {
                 View play = view.findViewById(R.id.play_game);
+                play.setVisibility(View.INVISIBLE);
                 play.setClickable(false);
             }
 
@@ -330,44 +348,50 @@ public final class LevelsScreen extends AppCompatActivity {
 
         @Override
         public void onPageScrollStateChanged(int state) {
-            if(state == ViewPager.SCROLL_STATE_IDLE) {
-                final View view = pager.getChildAt(pager.getCurrentItem());
-                final View check = view.findViewById(R.id.screen_check);
-                final View image = view.findViewById(R.id.screen_block);
-                final View play = view.findViewById(R.id.play_game);
+            if (state == ViewPager.SCROLL_STATE_IDLE) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final View view = pager.getChildAt(pager.getCurrentItem());
+                        final View check = view.findViewById(R.id.screen_check);
+                        final View image = view.findViewById(R.id.screen_block);
+                        final View play = view.findViewById(R.id.play_game);
 
-                if (GameInfo.isGuest() || getCurrentGame().isUnblocked(GameInfo.getUser())) {
-                    if (image.isShown()) {
-                        Animation block = block();
-                        block.setAnimationListener(new SimpleAnimationListener() {
-                            @Override
-                            public void onAnimationEnd(Animation animation) {
-                                image.setVisibility(View.INVISIBLE);
-                                check.setVisibility(View.INVISIBLE);
+                        if (GameInfo.isGuest() || getCurrentGame().isUnblocked(GameInfo.getUser())) {
+                            if (image.isShown()) {
+                                Animation block = block();
+                                block.setAnimationListener(new SimpleAnimationListener() {
+                                    @Override
+                                    public void onAnimationEnd(Animation animation) {
+                                        image.setVisibility(View.INVISIBLE);
+                                        check.setVisibility(View.INVISIBLE);
+                                    }
+                                });
+                                image.startAnimation(block);
+                                play.setVisibility(View.VISIBLE);
+                                play.setClickable(true);
+
+                                check.startAnimation(unblock());
                             }
-                        });
-                        image.startAnimation(block);
-                        play.setClickable(true);
+                        } else if (!image.isShown()) {
+                            Animation unblock = unblock();
+                            unblock.setAnimationListener(new SimpleAnimationListener() {
 
-                        check.startAnimation(unblock());
-                    }
-                } else if (!image.isShown()) {
-                    Animation unblock = unblock();
-                    unblock.setAnimationListener(new SimpleAnimationListener() {
+                                @Override
+                                public void onAnimationStart(Animation animation) {
+                                    image.setVisibility(View.VISIBLE);
+                                    check.setVisibility(View.VISIBLE);
+                                }
 
-                        @Override
-                        public void onAnimationStart(Animation animation) {
-                            image.setVisibility(View.VISIBLE);
-                            check.setVisibility(View.VISIBLE);
+                            });
+                            image.startAnimation(unblock);
+                            play.setVisibility(View.INVISIBLE);
+                            play.setClickable(false);
+
+                            check.startAnimation(block());
                         }
-
-                    });
-                    image.startAnimation(unblock);
-                    play.setClickable(false);
-
-                    check.startAnimation(block());
-                }
-                showMaxScore();
+                    }
+                }, 1000);
             }
         }
 

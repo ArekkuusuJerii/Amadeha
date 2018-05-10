@@ -1,16 +1,22 @@
 package com.codejam.amadeha.game.data;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.net.Uri;
 import android.support.test.espresso.core.internal.deps.guava.collect.ImmutableList;
 import android.support.test.espresso.core.internal.deps.guava.collect.ImmutableMap;
+import android.view.Window;
+import android.widget.VideoView;
 
+import com.codejam.amadeha.R;
+import com.codejam.amadeha.game.core.widget.DialogWrapper;
 import com.codejam.amadeha.game.data.profile.User;
 import com.codejam.amadeha.game.data.profile.UserHandler;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.score.Score;
 import com.codejam.amadeha.game.data.score.ScoreHandler;
 
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -46,35 +52,42 @@ public final class GameInfo {
         users.remove(user);
     }
 
-    public static void save(Context context, Game game, int points) {
+    public static void saveGame(Context context, Game game, int points) {
         Score score = new Score(getUser().name, points);
         ScoreHandler.saveScore(context, game, score);
         //Update User
         if (!isGuest()) {
-            if (user.levels == null) {
-                user.levels = new HashSet<>();
-            }
             for (Game unblocked : Game.values()) {
                 if (unblocked.canUnblock(game, score)) {
-                    user.levels.add(unblocked);
+                    if (user.levels.add(unblocked)) {
+                        user.levelUp = true;
+                    }
                 }
             }
-            setProgress(game);
             user.score = user.score + score.score;
+            updateProgress(context, game);
             UserHandler.modifyUser(context, getUser());
         }
     }
 
-    private static void setProgress(Game game) {
-        if (user.progress == null && game == Game.SETS) {
-            user.progress = Game.SETS;
-        } else if (user.progress != null) {
-            if (user.progress.ordinal() < game.ordinal()) {
-                user.progress = game;
-            } else if (user.progress == Game.MATRIX && game == Game.STATISTIC) {
-                user.progress = null;
-                user.wins++;
-            }
+    private static void updateProgress(Context context, Game game) {
+        if (user.levels.containsAll(Arrays.asList(Game.values()))) {
+            user.progress = null;
+            user.levels.clear();
+            user.wins++;
+            //Show final video
+            Dialog dialog = new DialogWrapper(context, R.layout.activity_final_screen)
+                    .setFeature(Window.FEATURE_NO_TITLE)
+                    .setCancelable(true)
+                    .setMinimizable(true)
+                    .build(0.9F, 0.9F);
+            Uri uri = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.game_over);
+            VideoView video = dialog.findViewById(R.id.video);
+            video.setVideoURI(uri);
+            video.start();
+            dialog.show();
+        } else {
+            user.progress = game;
         }
     }
 

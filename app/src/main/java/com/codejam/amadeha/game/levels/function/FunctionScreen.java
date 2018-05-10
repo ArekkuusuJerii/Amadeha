@@ -13,11 +13,13 @@ import com.codejam.amadeha.game.core.widget.GameInstructionDialog;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
+import com.codejam.amadeha.game.data.settings.Sound;
 import com.codejam.amadeha.game.levels.LevelBase;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static com.codejam.amadeha.game.levels.function.Function.Card;
 
@@ -37,7 +39,7 @@ public class FunctionScreen extends LevelBase implements ITickable {
             {R.string.function_3, R.drawable.function_3}
     };
     private ImmutableMap<ImageView, Function.Card> cards;
-    private MusicHelper.Sound[] pop = new MusicHelper.Sound[2];
+    private Sound[] pop = new Sound[2];
     private Pair<ImageView, Card> cardOne;
     private Pair<ImageView, Card> cardTwo;
     private boolean canSelectCard = true;
@@ -51,9 +53,10 @@ public class FunctionScreen extends LevelBase implements ITickable {
         List<Function> functions = LevelRegistry.getShuffledRegistry(getGame());
         List<Function.Card> cards = Lists.newArrayList();
         for (Function function : functions) {
+            if(cards.size() >= 12) break;
             Collections.addAll(cards, function.getCards(getBaseContext()));
-            Collections.shuffle(cards);
         }
+        Collections.shuffle(cards);
 
         for (int i = 0; i < 12; i++) {
             int id = getResources().getIdentifier("q_" + i, "id", getPackageName());

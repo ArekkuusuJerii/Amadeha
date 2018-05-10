@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import com.codejam.amadeha.game.core.widget.SimpleTouchListener;
 import com.codejam.amadeha.game.data.GameInfo;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
+import com.codejam.amadeha.game.data.settings.Sound;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -34,11 +36,11 @@ public abstract class LevelBase extends Activity {
     public static final String SHOW_INSTRUCTIONS = "instructions";
 
     protected final Random rand = new Random();
-    protected MusicHelper.Sound incorrect;
-    protected MusicHelper.Sound correct;
-    protected MusicHelper.Sound lose;
-    protected MusicHelper.Sound win;
-    protected MusicHelper.Sound tick;
+    protected Sound incorrect;
+    protected Sound correct;
+    protected Sound lose;
+    protected Sound win;
+    protected Sound tick;
     protected long countDown = 0L;
     protected int level;
     private CountDownTimer timer;
@@ -48,6 +50,7 @@ public abstract class LevelBase extends Activity {
     protected final void onCreate(@Nullable Bundle bundle) {
         super.onCreate(bundle);
         this.setContentView(getView());
+        this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         //Issue game start
         final Dialog wrapper = new DialogWrapper(this, R.layout.activity_game_prompt)
                 .setFeature(Window.FEATURE_NO_TITLE)
@@ -121,6 +124,7 @@ public abstract class LevelBase extends Activity {
     public final void stopCountdown() {
         if(timer != null) {
             timer.cancel();
+            timer = null;
         }
     }
 
@@ -209,7 +213,7 @@ public abstract class LevelBase extends Activity {
         setGameOver();
         stopCountdown();
         if(getScore() > 0) {
-            GameInfo.save(LevelBase.this, getGame(), getScore());
+            GameInfo.saveGame(LevelBase.this, getGame(), getScore());
         }
         final Dialog wrapper = new DialogWrapper(LevelBase.this, R.layout.activity_game_over)
                 .setFeature(Window.FEATURE_NO_TITLE)

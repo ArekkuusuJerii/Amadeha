@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.codejam.amadeha.R;
 import com.codejam.amadeha.game.core.widget.ColumnListAdapter;
@@ -61,21 +62,22 @@ public class FragmentLeaderboard extends Fragment {
                             getText(R.string.score).toString(),
                             getText(R.string.date).toString())
                     ).close();
-
             List<Score> get = ScoreHandler.getScores(getContext(), game);
-            for (int i = 0; i < get.size() && i < 3; i++) {
-                Score score = get.get(i);
-                View row = inflateScoreRow(score.user, String.valueOf(score.score), score.date.toString());
-                adapter.addRow().addColumn(row).close();
+            if(get.isEmpty()) {
+                adapter.addRow().addColumn(inflateScoreRow("-", "-", "-")).close();
+            } else {
+                for (int i = 0; i < get.size() && i < 3; i++) {
+                    Score score = get.get(i);
+                    View row = inflateScoreRow(score.user, String.valueOf(score.score), score.date.toString());
+                    adapter.addRow().addColumn(row).close();
+                }
             }
             if(!get.isEmpty()) {
                 Score score = get.get(0);
-
                 ((TextView) view.findViewById(R.id.user)).setText(score.user);
                 ((TextView) view.findViewById(R.id.score)).setText(String.valueOf(score.score));
                 ((TextView) view.findViewById(R.id.date)).setText(score.date.toString());
             }
-
             ((ListView) view.findViewById(R.id.list)).setAdapter(adapter.build());
             return view;
         }

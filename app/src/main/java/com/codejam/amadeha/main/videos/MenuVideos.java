@@ -17,11 +17,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.codejam.amadeha.R;
-import com.codejam.amadeha.main.videos.youtube.VideoCinco;
-import com.codejam.amadeha.main.videos.youtube.VideoCuatro;
-import com.codejam.amadeha.main.videos.youtube.VideoDos;
-import com.codejam.amadeha.main.videos.youtube.VideoTres;
-import com.codejam.amadeha.main.videos.youtube.VideoUno;
+import com.codejam.amadeha.main.videos.youtube.EstadisticaVideo;
+import com.codejam.amadeha.main.videos.youtube.MatricesVideo;
+import com.codejam.amadeha.main.videos.youtube.FuncionesVideo;
+import com.codejam.amadeha.main.videos.youtube.EcuacionesVideo;
+import com.codejam.amadeha.main.videos.youtube.ConjuntosVideo;
 
 public class MenuVideos extends Activity {
 
@@ -76,28 +76,28 @@ public class MenuVideos extends Activity {
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
     }
 
-    public void UnoVideo(View view) {
-        Intent intent = new Intent(this, VideoUno.class);
+    public void conjuntos(View view) {
+        Intent intent = new Intent(this, ConjuntosVideo.class);
         startActivity(intent);
     }
 
-    public void DosVideo(View view) {
-        Intent intent = new Intent(this, VideoDos.class);
+    public void funciones(View view) {
+        Intent intent = new Intent(this, FuncionesVideo.class);
         startActivity(intent);
     }
 
-    public void TresVideo(View view) {
-        Intent intent = new Intent(this, VideoTres.class);
+    public void ecuaciones(View view) {
+        Intent intent = new Intent(this, EcuacionesVideo.class);
         startActivity(intent);
     }
 
-    public void CuatroVideo(View view) {
-        Intent intent = new Intent(this, VideoCuatro.class);
+    public void matrices(View view) {
+        Intent intent = new Intent(this, MatricesVideo.class);
         startActivity(intent);
     }
 
-    public void CincoVideo(View view) {
-        Intent intent = new Intent(this, VideoCinco.class);
+    public void estadistica(View view) {
+        Intent intent = new Intent(this, EstadisticaVideo.class);
         startActivity(intent);
     }
 

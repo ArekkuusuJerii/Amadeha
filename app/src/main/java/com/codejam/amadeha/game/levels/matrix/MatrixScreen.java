@@ -3,6 +3,8 @@ package com.codejam.amadeha.game.levels.matrix;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.test.espresso.core.internal.deps.guava.collect.Lists;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
@@ -20,6 +22,7 @@ import com.codejam.amadeha.game.core.widget.TextMatrix;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
+import com.codejam.amadeha.game.data.settings.Sound;
 import com.codejam.amadeha.game.levels.LevelBase;
 
 import java.util.Arrays;
@@ -43,8 +46,8 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
     private final TableRow.LayoutParams startParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT);
     private final TableRow.LayoutParams endParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT);
     private final List<Matrix> matrices = LevelRegistry.getShuffledRegistry(getGame());
-    private MusicHelper.Sound drag;
-    private MusicHelper.Sound drop;
+    private Sound drag;
+    private Sound drop;
     private TableLayout answerLayout;
     private TextMatrix xField;
     private TextMatrix yField;
@@ -101,7 +104,6 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
     @Override
     public void skip(View view) {
         if(!canMove) return;
-        score -= 10;
         lose.play();
         nextMatrix();
     }
@@ -154,7 +156,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
             TextView view = views.get(i);
             view.setText(strings.get(i));
         }
-
+        //Reshuffle
         if (isMatrixCorrect()) {
             setRows(strings);
         }
@@ -162,11 +164,12 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
 
     private void addRow(String[] row) {
         TableRow tableRow = new TableRow(this);
-        tableRow.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        tableRow.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         for (int i = 0; i < row.length; i++) {
             TextView matrix = new TextView(this);
+            matrix.setGravity(Gravity.CENTER_HORIZONTAL);
             matrix.setTextColor(Color.BLACK);
-            matrix.setTextSize(70);
+            matrix.setTextSize(TypedValue.COMPLEX_UNIT_SP, 60);
             if (i == 0 && i + 1 < row.length) {
                 matrix.setLayoutParams(endParams);
                 tableRow.addView(matrix, endParams);
@@ -181,7 +184,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
             matrix.setOnDragListener(new DropListener(this));
             ((View) matrix).setOnTouchListener(new DragListener(this));
         }
-        answerLayout.addView(tableRow, new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.MATCH_PARENT));
+        answerLayout.addView(tableRow, new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT));
     }
 
     private void showAnswer() {
@@ -230,6 +233,7 @@ public class MatrixScreen extends LevelBase implements ITickable, IDropListener<
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    if(!isFinishing())
                     if (level >= 10) {
                         gameover();
                     } else {

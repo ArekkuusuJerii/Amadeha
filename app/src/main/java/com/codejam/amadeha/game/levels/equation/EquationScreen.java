@@ -1,7 +1,6 @@
 package com.codejam.amadeha.game.levels.equation;
 
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Handler;
 import android.support.test.espresso.core.internal.deps.guava.collect.ImmutableSet;
@@ -27,6 +26,7 @@ import com.codejam.amadeha.game.core.widget.GameInstructionDialog;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
+import com.codejam.amadeha.game.data.settings.Sound;
 import com.codejam.amadeha.game.levels.LevelBase;
 
 import java.util.List;
@@ -54,8 +54,8 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
     );
     private final List<Equation> equations = LevelRegistry.getShuffledRegistry(getGame());
     private LinearLayout equationLayout;
-    private MusicHelper.Sound drag;
-    private MusicHelper.Sound drop;
+    private Sound drag;
+    private Sound drop;
     private Set<Button> buttons;
     private Animation explode;
 
@@ -75,10 +75,11 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         explode = AnimationUtils.loadAnimation(getBaseContext(), R.anim.vaporise_out);
         explode.setDuration(2000);
         ImmutableSet.Builder<Button> builder = new ImmutableSet.Builder<>();
+        DragListener listener = new DragListener(this);
         for (int i = 0; i < 5; i++) {
             int id = getResources().getIdentifier("answer_" + i, "id", getPackageName());
             View view = findViewById(id);
-            view.setOnTouchListener(new DragListener(this));
+            view.setOnTouchListener(listener);
             builder.add((Button) view);
         }
         buttons = builder.build();
@@ -124,7 +125,6 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         for (String s : answerData.keySet()) {
             answerAllDrops(s);
         }
-        score -= 10;
         lose.play();
         nextEquation();
     }
@@ -178,11 +178,11 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         List<String> mappedText = equation.getMappedString();
         views = Lists.newArrayList();
         unknowns = Lists.newArrayList();
+        DropListener listener = new DropListener(this);
         for (String map : mappedText) {
             if (answerData.containsKey(map)) {
                 TextView view = addSimpleText(answerData.get(map).first);
-                view.setOnDragListener(new DropListener(this));
-                view.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
+                view.setOnDragListener(listener);
                 view.setTextColor(Color.DKGRAY);
                 view.setGravity(Gravity.CENTER);
                 view.setTag(map);
@@ -209,7 +209,7 @@ public class EquationScreen extends LevelBase implements ITickable, IDragListene
         display.getSize(size);
         while (getWidthEquation() >= size.x) {
             for (TextView view : views) {
-                view.setTextSize(view.getTextSize() * 0.6F);
+                view.setTextSize(view.getTextSize() * 0.45F);
             }
         }
     }

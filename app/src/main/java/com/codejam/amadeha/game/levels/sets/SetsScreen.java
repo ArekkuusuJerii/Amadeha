@@ -18,6 +18,7 @@ import com.codejam.amadeha.game.core.widget.GameInstructionDialog;
 import com.codejam.amadeha.game.data.registry.Game;
 import com.codejam.amadeha.game.data.registry.LevelRegistry;
 import com.codejam.amadeha.game.data.settings.MusicHelper;
+import com.codejam.amadeha.game.data.settings.Sound;
 import com.codejam.amadeha.game.levels.LevelBase;
 import com.codejam.amadeha.game.levels.sets.Sets.SetType;
 
@@ -39,8 +40,8 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
             {R.string.sets_2, R.drawable.set_2}
     };
     private final List<Sets> setsList = LevelRegistry.getShuffledRegistry(getGame());
-    private MusicHelper.Sound drag;
-    private MusicHelper.Sound drop;
+    private Sound drag;
+    private Sound drop;
     private Animation fade;
     private Set<ImageView> answers;
     private ImageView drop_image;
@@ -111,7 +112,6 @@ public class SetsScreen extends LevelBase implements ITickable, IDragListener<Im
     @Override
     public void skip(View view) {
         if(!canAnswer) return;
-        score -= 10;
         lose.play();
         nextSet();
     }

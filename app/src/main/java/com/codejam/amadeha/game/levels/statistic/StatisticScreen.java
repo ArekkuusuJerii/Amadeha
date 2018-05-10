@@ -79,7 +79,6 @@ public class StatisticScreen extends LevelBase implements ITickable {
     @Override
     public void skip(View view) {
         if(!canAnswer) return;
-        score -= 10;
         lose.play();
         nextStatistic();
     }
@@ -100,7 +99,7 @@ public class StatisticScreen extends LevelBase implements ITickable {
             Boolean bool = (Boolean) view.getTag();
             view.setClickable(false);
             if(!bool) {
-                view.setTextColor(Color.GRAY);
+                view.setText("");
                 view.startAnimation(poof);
             }
         }
